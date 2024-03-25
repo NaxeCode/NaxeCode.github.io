@@ -5,6 +5,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://naxecode.github.io/',
+	site: 'https://naxe.dev/',
 	integrations: [mdx(), sitemap()],
 });
