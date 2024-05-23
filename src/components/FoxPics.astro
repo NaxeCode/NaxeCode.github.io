@@ -1,0 +1,30 @@
+---
+const randomFixPic = "https://randomfox.ca/images/" + Math.floor(Math.random() * (1 + 110 + 1)) + ".jpg";
+---
+<div>
+    <text>
+        <p><strong>🦊</strong></p>
+    </text>
+    <fox>
+        <img src={randomFixPic} />
+    </fox>
+</div>
+
+
+
+<style>
+    text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    fox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    img {
+        border-radius: 2%;
+        width: 60%;
+    }
+</style>

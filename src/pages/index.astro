@@ -1,4 +1,5 @@
 ---
+import FoxPics from '../components/FoxPics.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -13,13 +14,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>👾 Hello, I'm Naxe! 👾</h1>
+			<h2>Hello, I'm Naxe! 👾</h2>
 			<p>
-				...and welcome to my blog! I'm a software engineer, and I love to write about programming, technology, and other things that interest me.
+				Welcome! I'm a software engineer, and I love writing about programming, art, tech, and various things that interest me. 🍃
 			</p>
 			<p>
-				I'll be documenting my journey here, so feel free to follow along. 😊
+				With the occasional blog post, this site mainly serves as an archive for projects I've worked on, so feel free to look around. 😊
 			</p>
+			<FoxPics />
 		</main>
 		<Footer />
 	</body>
