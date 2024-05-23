@@ -12,9 +12,11 @@
   "dependencies": {
     "@astrojs/check": "^0.6.0",
     "@astrojs/mdx": "^3.0.0",
+    "@astrojs/preact": "^3.3.0",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.4",
     "astro": "^4.8.0",
+    "preact": "^10.22.0",
     "typescript": "^5.4.3"
   }
 }
