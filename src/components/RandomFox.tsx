@@ -10,5 +10,6 @@ export default function App() {
 		borderRadius: '3%',
 		width: '60%',
 	};
+	// console.log('testing, random image is ' + randomFixPic);
 	return <img src={randomFixPic} style={imgStyle} />;
 }

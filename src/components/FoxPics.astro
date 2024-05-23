@@ -1,12 +1,13 @@
 ---
-import RandomFox from "../components/RandomFox";
+import "preact/debug";
+import RandomFox from "./RandomFox";
 ---
 <div>
     <text>
         <p><strong>Random 🦊</strong></p>
     </text>
     <fox>
-        <RandomFox />
+        <RandomFox client:load />
     </fox>
 </div>
 
