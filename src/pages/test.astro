@@ -1,0 +1,31 @@
+---
+import NewHeader from '../components/NewHeader.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from '../components/BaseHead.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<div class="container">
+			<NewHeader />
+			<div class="content">
+				<h1>Simple Title Tag.</h1>
+				<p>Just a para para dancing tag</p>
+			</div>
+		</div>
+	</body><style>
+		.container {
+			display: flex;
+            margin-top: 5%;
+            margin-left: 10%;
+		}
+        .content {
+            flex-direction: column;
+            margin-left: 5%;
+        }
+	</style>
+</html>
