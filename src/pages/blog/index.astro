@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
+import Header from '../../components/NewHeader.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
@@ -17,7 +17,7 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
+				width: 75%;
 			}
 			ul {
 				display: flex;
@@ -83,29 +83,50 @@ const posts = (await getCollection('blog')).sort(
 					font-size: 1.563em;
 				}
 			}
+
+			.container {
+				display: flex;
+				margin-top: 5%;
+				margin-left: 10%;
+			}
+			.content {
+				flex-direction: column;
+				margin-left: 5%;
+				margin-right: 3%;
+				flex-grow: 2;
+			}
 		</style>
 	</head>
 	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
+		<div class="container">
+			<Header />
+			<div class="content">
+				<main>
+					<section>
+						<ul>
+							{
+								posts.map((post) => (
+									<li>
+										<a href={`/blog/${post.slug}/`}>
+											<img
+												width={720}
+												height={360}
+												src={post.data.heroImage}
+												alt=""
+											/>
+											<h4 class="title">{post.data.title}</h4>
+											<p class="date">
+												<FormattedDate date={post.data.pubDate} />
+											</p>
+										</a>
+									</li>
+								))
+							}
+						</ul>
+					</section>
+				</main>
+			</div>
+		</div>
 		<Footer />
 	</body>
 </html>
