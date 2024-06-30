@@ -329,36 +329,47 @@ main.index {
 	margin-right: 3%;
 }
 
-/* Media Queries */
 @media print, screen and (max-width: 960px) {
-	header,
-	body,
-	footer {
+	header {
 		float: none;
-		position: static;
-		width: auto;
-		clear: both;
+		position: static !important; /* Ensure the header is not sticky */
+		width: 100% !important; /* Ensure the header takes the full width */
+		height: auto;
+		top: auto !important; /* Remove the top positioning */
+		left: auto !important; /* Remove the left positioning */
+		z-index: auto !important; /* Ensure it does not interfere with other elements */
+		background: var(
+			--bg
+		) !important; /* Ensure the background covers content behind */
 	}
-}
 
-@media (max-width: 720px) {
 	body {
 		font-size: 18px;
+		padding-top: 0; /* Remove padding added for fixed header height */
 	}
+
 	main {
 		padding: 1em;
 	}
+
 	.index ul {
 		gap: 0.5em;
 	}
+
 	.index ul li {
 		width: 100%;
 		text-align: center;
 	}
+
 	.index ul li:first-child {
 		margin-bottom: 0;
 	}
+
 	.index ul li:first-child .title {
 		font-size: 1.563em;
+	}
+
+	.container {
+		flex-direction: column;
 	}
 }
