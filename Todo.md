@@ -1,0 +1,3 @@
+-[] Fix header orange accent line spacing on highlighted link
+-[] Fix header name + logo spacing
+-[] When resolution less than 720 width, header breaks ontop of content
