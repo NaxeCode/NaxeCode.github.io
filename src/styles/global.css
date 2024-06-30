@@ -170,6 +170,7 @@ header nav {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	width: 300px;
 }
 header nav a {
 	color: var(--black);
@@ -327,6 +328,7 @@ main.index {
 }
 .container .content {
 	flex-direction: column;
+	width: 130%;
 }
 
 @media print, screen and (max-width: 960px) {
@@ -374,5 +376,8 @@ main.index {
 
 	.container {
 		flex-direction: column;
+	}
+	.container .content {
+		width: 100%;
 	}
 }
