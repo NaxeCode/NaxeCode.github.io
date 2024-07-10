@@ -2,7 +2,6 @@
 title: 'Game Devlog #0 Ahmar 🎈'
 description: 'Logging the start of the development of Ahmar.'
 pubDate: 'April 11 2024'
-heroImage: '/ahmar-devlog-0-pic.png'
 ---
 
 ### Intro
