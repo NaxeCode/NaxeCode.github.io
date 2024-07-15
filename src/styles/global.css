@@ -7,6 +7,15 @@
 		@apply bg-bg text-text;
 	}
 
+	p {
+		@apply text-lg leading-7 mb-8;
+	}
+
+	h2,
+	h1 {
+		@apply text-4xl mb-2 pb-3;
+	}
+
 	a {
 		@apply text-blue-500 hover:text-blue-700;
 	}

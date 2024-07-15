@@ -16,35 +16,35 @@ const { title, description, pubDate, updatedDate } = Astro.props;
 	</head>
 
 	<body>
-		<div class="flex items-center justify-center w-full">
-			<header class="flex justify-center items-center">
-				<Header />
-			</header>
+		<header class="sticky top-12 h-[100px] w-1/4 ml-32 mt-16">
+			<Header />
+		</header>
+		<div>
 			<main>
-				<article>
-					<div>
+				<article class="flex flex-col items-center">
+					<div class="max-w-lg ml-32 prose">
 						<div>
-							<div>
-								<FormattedDate date={pubDate} />
-								{
-									updatedDate && (
-										<div>
-											Last updated on <FormattedDate date={updatedDate} />
-										</div>
-									)
-								}
-							</div>
-							<h1>
-								{title}
-							</h1>
-							<hr />
+							<FormattedDate date={pubDate} />
+							{
+								updatedDate && (
+									<div>
+										Last updated on <FormattedDate date={updatedDate} />
+									</div>
+								)
+							}
 						</div>
+						<h1>
+							{title}
+						</h1>
+						<hr />
+
 						<slot />
 					</div>
 				</article>
 			</main>
 		</div>
-		<footer class="flex justify-center items-center">
+
+		<footer class="flex flex-col items-center">
 			<Footer />
 		</footer>
 	</body>
