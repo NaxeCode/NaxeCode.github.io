@@ -3,6 +3,7 @@ import BaseHead from '../../components/BaseHead.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+import Header from '../../components/NewHeader.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -15,9 +16,12 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<div>
-			<div>
-				<main>
+		<header class="sticky top-12 h-[100px] w-1/4 ml-32 mt-16">
+			<Header />
+		</header>
+		<main>
+			<article class="flex flex-col items-center">
+				<div class="max-w-lg ml-32 prose">
 					<section>
 						<ul>
 							{
@@ -34,8 +38,8 @@ const posts = (await getCollection('blog')).sort(
 							}
 						</ul>
 					</section>
-				</main>
-			</div>
-		</div>
+				</div>
+			</article>
+		</main>
 	</body>
 </html>
