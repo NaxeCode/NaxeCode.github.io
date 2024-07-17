@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'CascadiaCode';
+	src: url('/fonts/CascadiaCode.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
 @layer base {
 	body {
-		@apply bg-bg text-text;
+		@apply bg-bg text-text font-cascadia;
 	}
 
 	p {
@@ -13,10 +20,13 @@
 
 	h2,
 	h1 {
-		@apply text-4xl mb-2 pb-3;
+		@apply text-4xl pb-3 pt-4;
+	}
+	h3 {
+		@apply text-3xl pb-3 pt-4;
 	}
 
 	a {
-		@apply text-blue-500 hover:text-blue-700;
+		@apply hover:text-accent;
 	}
 }

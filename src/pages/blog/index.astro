@@ -22,14 +22,15 @@ const posts = (await getCollection('blog')).sort(
 		<main>
 			<article class="flex flex-col items-center">
 				<div class="max-w-lg ml-32 prose">
-					<section>
+					<h1>Articles</h1>
+					<section class="border-accent border-y py-4">
 						<ul>
 							{
 								posts.map((post) => (
 									<li>
 										<a href={`/blog/${post.slug}/`}>
 											<h4>{post.data.title}</h4>
-											<p>
+											<p class="text-gray-light">
 												<FormattedDate date={post.data.pubDate} />
 											</p>
 										</a>

@@ -3,6 +3,9 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			fontFamily: {
+				cascadia: ['CascadiaCode', 'monospace'],
+			},
 			colors: {
 				bg: '#020a17',
 				text: '#d9e7fc',
