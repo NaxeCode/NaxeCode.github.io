@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BlogPost from '../layouts/BlogPost.astro';
 ---
 
-<Layout
+<BlogPost
 	title="About Me"
 	description="Info dump about myself."
 	pubDate={new Date('March 24 2024')}
-	heroImage="/Lone-Tree-in-Tall-Grass.jpeg"
+	updatedDate={new Date('July 17 2024')}
 >
 	<p>
 		Hello! I go by Naxe online, a passionate software engineer with a knack for
@@ -14,8 +14,8 @@ import Layout from '../layouts/BlogPost.astro';
 		mastering various programming languages and frameworks, always striving to
 		deliver high-quality software.
 	</p>
-	
-	<h2>My Journey From Game Development to Engineering</h2>
+
+	<h2>My Journey Engineering</h2>
 	<p>
 		My career began with a passion for creating immersive game experiences. I
 		worked as a Game Engine Programmer at Sandbox Networks Inc, where I
@@ -26,7 +26,7 @@ import Layout from '../layouts/BlogPost.astro';
 		feature-rich applications.
 	</p>
 
-	<h2>Scaling New Heights at Amazon</h2>
+	<h2>My Time @ Amazon</h2>
 	<p>
 		In 2018, I joined Amazon as a Fullstack Engineer. This role expanded my
 		expertise in developing scalable web and mobile applications using Java,
@@ -38,7 +38,7 @@ import Layout from '../layouts/BlogPost.astro';
 		applications delivered seamless user experiences.
 	</p>
 
-	<h2>Consulting and Engineering with .NET</h2>
+	<h2>Engineering with .NET</h2>
 	<p>
 		In 2020, I transitioned to Coppei in Seattle, WA, where I worked as a .NET
 		Engineer and Consultant. Over four years, I designed and developed over 15
@@ -51,7 +51,7 @@ import Layout from '../layouts/BlogPost.astro';
 		scalability.
 	</p>
 
-	<h2>Independent Development and Continuous Learning</h2>
+	<h2>Independent Development</h2>
 	<p>
 		Outside of my professional roles, I've been an independent developer since
 		2013, creating mobile and desktop applications with a variety of tech
@@ -67,11 +67,6 @@ import Layout from '../layouts/BlogPost.astro';
 		.NET Developer and Oracle Certified Professional, Java SE 8 Programmer. I
 		pride myself on strong problem-solving skills, excellent communication and
 		teamwork, and a commitment to continuous learning.
-	</p>
-
-	<p>
-		Thank you for visiting my site. Feel free to explore my projects, and check
-		out my <a href="https://github.com/naxecode">GitHub</a>!
 	</p>
 
 	<h2>Community Involvement</h2>
@@ -92,9 +87,14 @@ import Layout from '../layouts/BlogPost.astro';
 	<h2>Hobbies</h2>
 	<p>
 		Outside of technology, I love spending time outdoors hiking and exploring
-		nature trails in Florida. I’m an avid reader, especially of science fiction
+		nature trails in Florida. I'm an avid reader, especially of science fiction
 		and fantasy novels, which fuel my creativity. I also enjoy make art and
 		composing music as a way to relax and express myself. On weekends, I'll try
 		cooking new recipes or watching movies. (sometimes both!)
 	</p>
-</Layout>
+
+	<p>
+		Thank you for visiting my site. Feel free to explore my projects, and check
+		out my <a href="https://github.com/naxecode">GitHub</a>!
+	</p>
+</BlogPost>

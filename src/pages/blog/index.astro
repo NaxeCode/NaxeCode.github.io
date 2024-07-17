@@ -1,10 +1,9 @@
 ---
 import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/NewHeader.astro';
-import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+import Header from '../../components/NewHeader.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -17,24 +16,21 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<div class="container">
+		<header class="sticky top-12 h-[100px] w-1/4 ml-32 mt-16">
 			<Header />
-			<div class="content">
-				<main>
-					<section>
+		</header>
+		<main>
+			<article class="flex flex-col items-center">
+				<div class="max-w-lg ml-32 prose">
+					<h1>Articles</h1>
+					<section class="border-accent border-y py-4">
 						<ul>
 							{
 								posts.map((post) => (
 									<li>
 										<a href={`/blog/${post.slug}/`}>
-											<img
-												width={720}
-												height={360}
-												src={post.data.heroImage}
-												alt=""
-											/>
-											<h4 class="title">{post.data.title}</h4>
-											<p class="date">
+											<h4>{post.data.title}</h4>
+											<p class="text-gray-light">
 												<FormattedDate date={post.data.pubDate} />
 											</p>
 										</a>
@@ -43,9 +39,8 @@ const posts = (await getCollection('blog')).sort(
 							}
 						</ul>
 					</section>
-				</main>
-			</div>
-		</div>
-		<Footer />
+				</div>
+			</article>
+		</main>
 	</body>
 </html>
