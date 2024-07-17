@@ -27,6 +27,6 @@
 	}
 
 	a {
-		@apply hover:text-accent;
+		@apply hover:text-accent active:border-accent active:border-b;
 	}
 }
