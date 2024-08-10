@@ -21,6 +21,7 @@ export default {
 			},
 			fontFamily: {
 				cascadia: ['CascadiaCode', 'monospace'],
+				poppins: ['Poppins', 'sans-serif'],
 			},
 			colors: {
 				bg: '#020a17',
