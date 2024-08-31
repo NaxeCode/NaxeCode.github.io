@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: 'CascadiaCode';
-	src: url('/fonts/CascadiaCode.woff2') format('woff2');
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins-Regular.ttf') format('tff');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @layer base {
 	body {
-		@apply bg-bg text-text font-cascadia;
+		@apply bg-bg text-text font-poppins;
 	}
 
 	p {
-		@apply text-lg leading-7 mb-8;
+		@apply text-lg mb-8;
 	}
 
 	h2,

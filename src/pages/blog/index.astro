@@ -17,12 +17,14 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<header class="sticky top-12 h-[100px] w-1/4 ml-32 mt-16">
+		<header
+			class="static mb-5 flex flex-col items-center 2xl:sticky 2xl:top-12 2xl:h-0 2xl:w-1/4 2xl:ml-32 2xl:mt-16"
+		>
 			<Header />
 		</header>
 		<main>
 			<article class="flex flex-col items-center">
-				<div class="max-w-lg ml-32 prose">
+				<div class="max-w-xl prose p-2 lg:ml-32">
 					<h1>Articles</h1>
 					<section class="border-accent border-y py-4">
 						<ul>
