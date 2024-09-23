@@ -6,13 +6,6 @@ import { Linkedin, X } from 'lucide-react';
 
 export default function Landing() {
 	const username = 'naxecode';
-	if (true) {
-		return (
-			<div>
-				<FaBeer />
-			</div>
-		);
-	}
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 p-4">
 			<GiPoliceBadge />
