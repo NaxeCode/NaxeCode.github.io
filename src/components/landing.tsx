@@ -16,7 +16,7 @@ export default function Landing() {
 					height="150"
 					className="rounded-full mx-auto mb-4 border-4 border-white shadow-lg"
 				/>
-				<h1 className="text-4xl font-bold mb-2">Your Name</h1>
+				<h1 className="text-4xl font-bold mb-2">NaxeCode</h1>
 				<p className="text-xl text-gray-600 mb-6">Web Developer & Designer</p>
 
 				<div className="flex justify-center space-x-4 mb-8">
