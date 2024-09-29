@@ -5,13 +5,12 @@ import { GiPoliceBadge } from 'react-icons/gi';
 import { Linkedin, X } from 'lucide-react';
 
 export default function Landing() {
-	const username = 'naxecode';
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 p-4">
 			<GiPoliceBadge />
 			<div className="text-center">
 				<img
-					src={`https://github.com/${username}.png`}
+					src={`https://github.com/naxecode.png`}
 					alt="GitHub Profile Picture"
 					width="150"
 					height="150"
@@ -22,7 +21,7 @@ export default function Landing() {
 
 				<div className="flex justify-center space-x-4 mb-8">
 					<a
-						href={`https://github.com/${username}`}
+						href={`https://github.com/naxecode`}
 						className="text-gray-600 hover:text-gray-900 transition-colors"
 					>
 						<div className="w-6 h-6"></div>
@@ -30,13 +29,13 @@ export default function Landing() {
 						<span className="sr-only">GitHub</span>
 					</a>
 					<a
-						href={`https://twitter.com/${username}`}
+						href={`https://twitter.com/naxecode`}
 						className="text-gray-600 hover:text-gray-900 transition-colors"
 					>
 						<span className="sr-only">Twitter</span>
 					</a>
 					<a
-						href={`https://linkedin.com/in/${username}`}
+						href={`https://linkedin.com/in/siraj-ali`}
 						className="text-gray-600 hover:text-gray-900 transition-colors"
 					>
 						<span className="sr-only">LinkedIn</span>
