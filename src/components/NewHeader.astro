@@ -3,18 +3,20 @@ import HeaderLink from './HeaderLink.astro';
 import { NAME } from '../consts';
 ---
 
-<header class="text-center">
+<header
+	class="text-center p-7 border-solid border-4 rounded-md border-white bg-background shadow-lg"
+>
 	<nav>
 		<img
 			src=`https://github.com/naxecode.png`
 			alt="GitHub Profile Picture"
 			width="150"
 			height="150"
-			class="rounded-full mx-auto mb-4 border-4 border-white shadow-lg"
+			class="rounded-full mx-auto mb-4 border-4 border-white shadow-lg shadow-green-950"
 		/>
 		<div class="pb-0 pt-0">
 			<h2 class="font-bold">
-				<a href="/">{NAME}</a>
+				<a class="drop-shadow-lg" href="/">{NAME}</a>
 			</h2>
 			<p class="font-thin">Software Engineer</p>
 		</div>
