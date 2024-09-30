@@ -24,7 +24,9 @@ const { title, description, pubDate, updatedDate } = Astro.props;
 		<div>
 			<main>
 				<article class="flex flex-col items-center">
-					<div class="max-w-xl prose p-2 lg:ml-32">
+					<div
+						class="max-w-xl prose lg:ml-32 p-7 border-solid border-4 rounded-md border-white bg-background shadow-lg"
+					>
 						<div>
 							<div class="text-gray-light">
 								<FormattedDate date={pubDate} />
