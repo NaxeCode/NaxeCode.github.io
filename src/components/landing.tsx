@@ -8,7 +8,7 @@ export default function Landing() {
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 p-4">
 			<GiPoliceBadge />
-			<div className="text-center">
+			<div className="text-center p-7 border-solid border-4 rounded-xl border-white bg-background shadow-lg">
 				<img
 					src={`https://github.com/naxecode.png`}
 					alt="GitHub Profile Picture"

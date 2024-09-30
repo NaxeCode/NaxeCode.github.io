@@ -52,7 +52,7 @@
 		@apply border-border;
 	}
 	body {
-		@apply font-poppins;
+		@apply font-poppins bg-gray-100;
 	}
 	p {
 		@apply text-lg mb-8;
