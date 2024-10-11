@@ -35,7 +35,7 @@ export default function Landing() {
 						<span className="sr-only">Twitter</span>
 					</a>
 					<a
-						href={`https://linkedin.com/in/siraj-ali`}
+						href={`https://linkedin.com/in/aladdin-ali01`}
 						className="text-gray-600 hover:text-gray-900 transition-colors"
 					>
 						<span className="sr-only">LinkedIn</span>

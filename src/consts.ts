@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = 'NaxeCode';
 export const SITE_DESCRIPTION = 'The Underbelly!';
-export const NAME = 'Siraj Ali';
+export const NAME = 'Aladdin Ali';
