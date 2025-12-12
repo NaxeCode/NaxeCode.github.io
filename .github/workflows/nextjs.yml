@@ -9,6 +9,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  packages: read
 
 concurrency:
   group: "pages"
@@ -18,7 +19,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NPM_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN || secrets.NPM_AUTH_TOKEN || '' }}
+      NPM_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN || secrets.NPM_AUTH_TOKEN || github.token || '' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
