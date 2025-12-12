@@ -19,7 +19,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NPM_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN || secrets.NPM_AUTH_TOKEN || github.token || '' }}
+      NPM_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN || secrets.NPM_AUTH_TOKEN || '' }}
+      GITHUB_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN || secrets.NPM_AUTH_TOKEN || secrets.GITHUB_TOKEN || github.token }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,13 +38,14 @@ jobs:
 
       - name: Configure npm auth for GitHub Packages
         run: |
-          if [ -z "$NPM_AUTH_TOKEN" ]; then
-            echo "NPM_AUTH_TOKEN not set. Add GH_PACKAGES_TOKEN or NPM_AUTH_TOKEN secret with read:packages scope."
+          TOKEN="${NPM_AUTH_TOKEN:-$GITHUB_TOKEN}"
+          if [ -z "$TOKEN" ]; then
+            echo "No token available. Set GH_PACKAGES_TOKEN or NPM_AUTH_TOKEN secret with read:packages scope."
             echo "If this run came from a forked PR, secrets are not passed to workflows."
             exit 1
           fi
           # Ensure the token is available to npm (also picked up by .npmrc placeholder)
-          echo "//npm.pkg.github.com/:_authToken=${NPM_AUTH_TOKEN}" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${TOKEN}" >> ~/.npmrc
 
       - name: Install dependencies
         run: npm ci
