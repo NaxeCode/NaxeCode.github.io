@@ -18,9 +18,11 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: github-pages
     env:
-      NPM_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN || secrets.NPM_AUTH_TOKEN || '' }}
-      GITHUB_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN || secrets.NPM_AUTH_TOKEN || secrets.GITHUB_TOKEN || github.token }}
+      NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN || secrets.GH_PACKAGES_TOKEN || secrets.GITHUB_TOKEN || github.token }}
+      GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN || secrets.GITHUB_TOKEN || github.token }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || github.token }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,9 +40,9 @@ jobs:
 
       - name: Configure npm auth for GitHub Packages
         run: |
-          TOKEN="${NPM_AUTH_TOKEN:-$GITHUB_TOKEN}"
+          TOKEN="${NPM_AUTH_TOKEN:-$GH_PACKAGES_TOKEN}"
           if [ -z "$TOKEN" ]; then
-            echo "No token available. Set GH_PACKAGES_TOKEN or NPM_AUTH_TOKEN secret with read:packages scope."
+            echo "No token available. Ensure a GITHUB_TOKEN secret (with read:packages) is available to this job."
             echo "If this run came from a forked PR, secrets are not passed to workflows."
             exit 1
           fi
