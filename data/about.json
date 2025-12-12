@@ -1,0 +1,34 @@
+{
+  "name": "Aladdin Ali",
+  "nickname": "Naxe",
+  "title": "Full-Stack Developer",
+  "bio": "Shipping thoughtful web products with TypeScript, Next.js, and a little bit of space dust. Also tinkering in .NET, finance APIs, and reusable UI.",
+  "email": "naxecode@proton.me",
+  "social": {
+    "github": "https://github.com/naxecode",
+    "linkedin": "https://linkedin.com/in/aladdin-ali01",
+    "twitter": "https://twitter.com/naxecode"
+  },
+  "journey": [
+    {
+      "title": "Independent Developer",
+      "period": "2023 - Present",
+      "description": "Building personal projects focused on fintech, AI integration, and design systems. Creator of cosmic-ui component library."
+    },
+    {
+      "title": "Software Engineer at Coppei",
+      "period": "2022 - 2023",
+      "description": "Full-stack development with .NET, Blazor, and modern web technologies."
+    },
+    {
+      "title": "Game Developer at Sandbox Networks",
+      "period": "2016 - 2022",
+      "description": "Game development with Haxe and HaxeFlixel. Active community contributor and maintainer."
+    }
+  ],
+  "highlights": [
+    "💳 Plaid + Neon - Secure linking, encrypted tokens, server actions",
+    "🤖 AI categorization - OpenAI-powered tagging with validation + backoff",
+    "🪐 Design systems - cosmic-ui primitives themed via CSS variables"
+  ]
+}

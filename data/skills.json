@@ -1,0 +1,155 @@
+[
+  {
+    "category": "Languages",
+    "skills": [
+      {
+        "name": "TypeScript",
+        "category": "language",
+        "proficiency": 5,
+        "yearsExperience": 4,
+        "icon": "⚡",
+        "description": "Primary language for full-stack development"
+      },
+      {
+        "name": "C#",
+        "category": "language",
+        "proficiency": 5,
+        "yearsExperience": 3,
+        "icon": "🔷",
+        "description": ".NET development and backend services"
+      },
+      {
+        "name": "Haxe",
+        "category": "language",
+        "proficiency": 4,
+        "yearsExperience": 8,
+        "icon": "🎮",
+        "description": "Game development with HaxeFlixel"
+      },
+      {
+        "name": "Java",
+        "category": "language",
+        "proficiency": 3,
+        "icon": "☕"
+      },
+      {
+        "name": "SQL",
+        "category": "language",
+        "proficiency": 4,
+        "icon": "🗄️",
+        "description": "PostgreSQL, complex queries, optimization"
+      }
+    ]
+  },
+  {
+    "category": "Frameworks & Libraries",
+    "skills": [
+      {
+        "name": "Next.js",
+        "category": "framework",
+        "proficiency": 5,
+        "yearsExperience": 3,
+        "icon": "▲",
+        "description": "App Router, Server Components, Server Actions"
+      },
+      {
+        "name": "React",
+        "category": "framework",
+        "proficiency": 5,
+        "yearsExperience": 4,
+        "icon": "⚛️"
+      },
+      {
+        "name": ".NET",
+        "category": "framework",
+        "proficiency": 4,
+        "yearsExperience": 3,
+        "icon": "🔷",
+        "description": "ASP.NET Core, Blazor, Entity Framework"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "framework",
+        "proficiency": 5,
+        "icon": "🎨"
+      },
+      {
+        "name": "Astro",
+        "category": "framework",
+        "proficiency": 4,
+        "icon": "🚀"
+      }
+    ]
+  },
+  {
+    "category": "Tools & Technologies",
+    "skills": [
+      {
+        "name": "Plaid API",
+        "category": "tool",
+        "proficiency": 4,
+        "icon": "💳",
+        "description": "Financial data integration"
+      },
+      {
+        "name": "OpenAI API",
+        "category": "tool",
+        "proficiency": 4,
+        "icon": "🤖",
+        "description": "AI-powered features and automation"
+      },
+      {
+        "name": "Docker",
+        "category": "tool",
+        "proficiency": 4,
+        "icon": "🐳"
+      },
+      {
+        "name": "Git",
+        "category": "tool",
+        "proficiency": 5,
+        "icon": "📦"
+      },
+      {
+        "name": "PostgreSQL",
+        "category": "tool",
+        "proficiency": 4,
+        "icon": "🐘",
+        "description": "Drizzle ORM, Neon, complex schemas"
+      }
+    ]
+  },
+  {
+    "category": "Specialties",
+    "skills": [
+      {
+        "name": "Fintech APIs",
+        "category": "specialty",
+        "proficiency": 5,
+        "icon": "💰",
+        "description": "Plaid integration, secure financial data handling"
+      },
+      {
+        "name": "AI-assisted UX",
+        "category": "specialty",
+        "proficiency": 4,
+        "icon": "✨",
+        "description": "OpenAI integration for enhanced user experiences"
+      },
+      {
+        "name": "Design Systems",
+        "category": "specialty",
+        "proficiency": 5,
+        "icon": "🎨",
+        "description": "Building reusable component libraries"
+      },
+      {
+        "name": "Game Development",
+        "category": "specialty",
+        "proficiency": 4,
+        "icon": "🎮",
+        "description": "HaxeFlixel community contributor since 2016"
+      }
+    ]
+  }
+]
