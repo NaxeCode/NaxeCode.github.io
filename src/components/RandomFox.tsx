@@ -1,5 +1,4 @@
-import { h } from 'preact';
-import { useState, useEffect } from 'preact/hooks';
+import { useEffect, useState } from 'react';
 
 const RandomFox = () => {
 	const [randomFoxPic, setRandomFoxPic] = useState('');
@@ -15,7 +14,7 @@ const RandomFox = () => {
 		borderRadius: '2%',
 		width: '60%',
 		display: 'block',
-		margin: '0 auto', // Center the image
+		margin: '0 auto',
 	};
 
 	return (

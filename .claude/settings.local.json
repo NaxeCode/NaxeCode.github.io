@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(cat:*)",
+      "Bash(git checkout:*)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src --import-alias \"@/*\" --eslint)",
+      "Bash(npm install:*)",
+      "Bash(npm run clean:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm link)",
+      "Bash(npm link:*)"
+    ]
+  }
+}

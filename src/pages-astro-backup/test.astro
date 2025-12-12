@@ -1,0 +1,68 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/NewHeader.astro';
+import Footer from '../components/Footer.astro';
+import '@/styles/global.css';
+
+const posts = (await getCollection('blog'))
+	.map((post) => ({
+		...post,
+		data: { ...post.data, pubDate: new Date(post.data.pubDate) },
+	}))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<header
+			class="static mb-5 flex flex-col items-center 2xl:sticky 2xl:top-12 2xl:h-0 2xl:w-1/4 2xl:ml-32 2xl:mt-16"
+		>
+			<Header />
+		</header>
+		<main>
+			<article class="flex flex-col items-center px-4">
+				<!-- Cosmic-UI Card pattern -->
+				<div class="max-w-3xl w-full lg:ml-32 rounded-2xl border border-border/70 bg-card/80 shadow-card backdrop-blur-xl">
+					<!-- CardHeader -->
+					<div class="space-y-1.5 p-6">
+						<h1 class="text-3xl font-semibold text-foreground">Articles</h1>
+						<p class="text-sm text-muted-foreground">Thoughts, guides, and explorations</p>
+					</div>
+
+					<!-- CardContent -->
+					<div class="p-6 pt-0">
+						<ul class="space-y-6">
+							{
+								posts.map((post) => (
+									<li class="group">
+										<a
+											href={`/blog/${post.slug}/`}
+											class="block p-4 rounded-lg hover:bg-surface-muted/50 transition-colors"
+										>
+											<h3 class="text-xl font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
+												{post.data.title}
+											</h3>
+											<p class="text-sm text-muted-foreground">
+												<FormattedDate date={post.data.pubDate} />
+											</p>
+										</a>
+									</li>
+								))
+							}
+						</ul>
+					</div>
+				</div>
+			</article>
+		</main>
+		<footer class="flex flex-col items-center">
+			<Footer />
+		</footer>
+	</body>
+</html>

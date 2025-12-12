@@ -1,3 +1,5 @@
+import animate from 'tailwindcss-animate';
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	darkMode: ['class'],
@@ -65,7 +67,11 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)',
 			},
+			boxShadow: {
+				card: '0 30px 120px -50px rgba(0,0,0,0.5)',
+				glow: '0 15px 70px -25px rgba(94, 234, 212, 0.45)',
+			},
 		},
 	},
-	plugins: [require('tailwindcss-animate')],
+	plugins: [animate],
 };

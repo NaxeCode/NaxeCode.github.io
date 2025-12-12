@@ -1,4 +1,5 @@
 ---
+import '@/styles/global.css';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/NewHeader.astro';
@@ -23,12 +24,14 @@ const { title, description, pubDate, updatedDate } = Astro.props;
 		</header>
 		<div>
 			<main>
-				<article class="flex flex-col items-center">
+				<article class="flex flex-col items-center px-4">
+					<!-- Cosmic-UI Card pattern: rounded-2xl, border, bg-card/80, shadow-card, backdrop-blur-xl -->
 					<div
-						class="max-w-xl prose lg:ml-32 p-7 border-solid border-4 rounded-md border-white bg-background shadow-lg"
+						class="max-w-3xl w-full lg:ml-32 rounded-2xl border border-border/70 bg-card/80 shadow-card backdrop-blur-xl"
 					>
-						<div>
-							<div class="text-gray-light">
+						<!-- CardHeader equivalent: space-y-1.5 p-6 -->
+						<div class="space-y-1.5 p-6">
+							<div class="text-sm text-muted-foreground">
 								<FormattedDate date={pubDate} />
 								{
 									updatedDate && (
@@ -38,13 +41,15 @@ const { title, description, pubDate, updatedDate } = Astro.props;
 									)
 								}
 							</div>
-
-							<h1 class="border-accent border-b mb-2">
+							<h1 class="text-3xl font-semibold text-foreground border-b border-border/50 pb-4">
 								{title}
 							</h1>
 						</div>
 
-						<slot />
+						<!-- CardContent equivalent: p-6 pt-0 -->
+						<div class="p-6 pt-0 prose prose-invert prose-lg max-w-none">
+							<slot />
+						</div>
 					</div>
 				</article>
 			</main>
