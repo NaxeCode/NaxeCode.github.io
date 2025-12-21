@@ -1,6 +1,13 @@
-'use client';
+"use client";
 
-import { ArrowRight, Mail, Github, Linkedin, Sparkles, Waypoints } from 'lucide-react';
+import {
+  ArrowRight,
+  Mail,
+  Github,
+  Linkedin,
+  Sparkles,
+  Waypoints,
+} from "lucide-react";
 import {
   Badge,
   Button,
@@ -10,9 +17,9 @@ import {
   CardHeader,
   CardTitle,
   buttonVariants,
-} from '@stargazers-stella/cosmic-ui';
-import { getFeaturedProjects } from '@/lib/data-loader';
-import Link from 'next/link';
+} from "@stargazers-stella/cosmic-ui";
+import { getFeaturedProjects } from "@/lib/data-loader";
+import Link from "next/link";
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
@@ -26,11 +33,13 @@ export default function Home() {
             <Sparkles className="h-3.5 w-3.5 mr-1" />
             cosmic-ui powered
           </Badge>
-          <span className="text-xs text-muted-foreground">naxe.dev · portfolio + playground</span>
+          <span className="text-xs text-muted-foreground">
+            naxe.dev · portfolio + playground
+          </span>
         </div>
 
         {/* Hero Section */}
-        <div className="grid gap-8 lg:gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start">
+        <div className="grid gap-8 md:gap-10 md:grid-cols-[1.2fr_0.8fr] items-start">
           {/* Main Profile Card */}
           <Card className="cosmic-card surface border-border backdrop-blur-xl">
             <CardHeader className="flex flex-row items-start gap-4 p-6 sm:p-8 lg:p-10">
@@ -40,21 +49,33 @@ export default function Home() {
                 className="h-16 w-16 rounded-full border-2 border-border shadow-lg"
               />
               <div className="space-y-2">
-                <CardTitle className="text-3xl text-foreground">Aladdin · NaxeCode</CardTitle>
+                <CardTitle className="text-3xl text-foreground">
+                  Aladdin · NaxeCode
+                </CardTitle>
                 <CardDescription className="text-base text-muted-foreground">
-                  Shipping thoughtful web products with TypeScript, Next.js, and a little bit of space dust.
-                  Also tinkering in .NET, finance APIs, and reusable UI.
+                  Shipping thoughtful web products with TypeScript, Next.js, and
+                  a little bit of space dust. Also tinkering in .NET, finance
+                  APIs, and reusable UI.
                 </CardDescription>
                 <div className="flex flex-wrap gap-2 pt-1">
-                  <Badge className="bg-primary/20 text-primary border-primary/30">Full-stack</Badge>
-                  <Badge className="surface-muted text-foreground border-border">Finance APIs</Badge>
-                  <Badge className="surface-muted text-foreground border-border">AI-assisted UX</Badge>
-                  <Badge className="surface-muted text-foreground border-border">Design systems</Badge>
+                  <Badge className="bg-primary/20 text-primary border-primary/30">
+                    Full-stack
+                  </Badge>
+                  <Badge className="surface-muted text-foreground border-border">
+                    Finance APIs
+                  </Badge>
+                  <Badge className="surface-muted text-foreground border-border">
+                    AI-assisted UX
+                  </Badge>
+                  <Badge className="surface-muted text-foreground border-border">
+                    Design systems
+                  </Badge>
                 </div>
                 <div className="flex flex-wrap gap-3 pt-2">
                   <a
                     className={buttonVariants({
-                      className: 'bg-primary text-primary-foreground hover:bg-primary/90',
+                      className:
+                        "bg-primary text-primary-foreground hover:bg-primary/90",
                     })}
                     href="mailto:naxecode@proton.me"
                   >
@@ -63,8 +84,9 @@ export default function Home() {
                   </a>
                   <a
                     className={buttonVariants({
-                      variant: 'outline',
-                      className: 'border-border text-foreground hover:surface-muted',
+                      variant: "outline",
+                      className:
+                        "border-border text-foreground hover:surface-muted",
                     })}
                     href="https://github.com/naxecode"
                     target="_blank"
@@ -75,8 +97,8 @@ export default function Home() {
                   </a>
                   <a
                     className={buttonVariants({
-                      variant: 'ghost',
-                      className: 'text-foreground hover:surface-muted',
+                      variant: "ghost",
+                      className: "text-foreground hover:surface-muted",
                     })}
                     href="https://linkedin.com/in/aladdin-ali01"
                     target="_blank"
@@ -91,37 +113,38 @@ export default function Home() {
           </Card>
 
           {/* What I Build Card */}
-          <Card className="cosmic-card surface-strong border-border bg-gradient-to-br from-surface via-surface-strong to-primary/10 backdrop-blur-xl">
-            <CardHeader className="p-6 sm:p-8 lg:p-10">
+          <Card className="cosmic-card surface-strong border-border bg-gradient-to-br from-surface via-surface-strong to-primary/10 backdrop-blur-xl mb-4">
+            <CardHeader className="p-6 sm:p-8 lg:p-10 pb-4">
               <CardTitle className="text-foreground flex items-center gap-2">
                 <Waypoints className="h-5 w-5 text-primary" />
                 What I build
               </CardTitle>
-              <CardDescription className="text-muted-foreground">
-                Fintech dashboards, AI-assisted flows, and reusable UI that travels across products.
+              <CardDescription className="text-sm text-muted-foreground leading-snug">
+                Fintech dashboards, AI-assisted flows, and reusable UI that
+                travels across products.
               </CardDescription>
             </CardHeader>
-            <CardContent className="grid gap-4 px-6 sm:px-8 lg:px-10 pb-6 sm:pb-8 lg:pb-10">
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <div className="h-9 w-9 rounded-full surface-muted flex items-center justify-center">💳</div>
-                <div>
-                  <p className="font-semibold text-foreground">Plaid + Neon</p>
-                  <p className="text-sm text-muted-foreground">Secure linking, encrypted tokens, server actions.</p>
-                </div>
+            <CardContent className="flex flex-wrap gap-2 px-6 sm:px-8 lg:px-10 pb-6 sm:pb-8 lg:pb-10">
+              <div className="inline-flex items-center gap-2 rounded-full surface-muted px-3 py-1.5 text-sm text-foreground ring-1 ring-border">
+                <span className="text-base leading-none">💳</span>
+                <span className="font-medium">Plaid + Neon</span>
+                <span className="text-muted-foreground">
+                  Secure linking + tokens
+                </span>
               </div>
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <div className="h-9 w-9 rounded-full surface-muted flex items-center justify-center">🤖</div>
-                <div>
-                  <p className="font-semibold text-foreground">AI categorization</p>
-                  <p className="text-sm text-muted-foreground">OpenAI-powered tagging with validation + backoff.</p>
-                </div>
+              <div className="inline-flex items-center gap-2 rounded-full surface-muted px-3 py-1.5 text-sm text-foreground ring-1 ring-border">
+                <span className="text-base leading-none">🤖</span>
+                <span className="font-medium">AI categorization</span>
+                <span className="text-muted-foreground">
+                  Validation + backoff
+                </span>
               </div>
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <div className="h-9 w-9 rounded-full surface-muted flex items-center justify-center">🪐</div>
-                <div>
-                  <p className="font-semibold text-foreground">Design systems</p>
-                  <p className="text-sm text-muted-foreground">cosmic-ui primitives themed via CSS variables.</p>
-                </div>
+              <div className="inline-flex items-center gap-2 rounded-full surface-muted px-3 py-1.5 text-sm text-foreground ring-1 ring-border">
+                <span className="text-base leading-none">🪐</span>
+                <span className="font-medium">Design systems</span>
+                <span className="text-muted-foreground">
+                  cosmic-ui primitives
+                </span>
               </div>
             </CardContent>
           </Card>
@@ -130,14 +153,18 @@ export default function Home() {
         {/* Featured Projects */}
         <div className="flex items-center justify-between gap-4 flex-wrap pt-6">
           <div>
-            <h2 className="text-3xl font-semibold text-foreground">Featured projects</h2>
-            <p className="text-base text-muted-foreground mt-2">Select builds that show my recent work across web, AI, and UI.</p>
+            <h2 className="text-3xl font-semibold text-foreground">
+              Featured projects
+            </h2>
+            <p className="text-base text-muted-foreground mt-2">
+              Select builds that show my recent work across web, AI, and UI.
+            </p>
           </div>
           <Link
             href="/projects"
             className={buttonVariants({
-              variant: 'secondary',
-              className: 'surface-muted text-foreground border border-border',
+              variant: "secondary",
+              className: "surface-muted text-foreground border border-border",
             })}
           >
             View All Projects <ArrowRight className="h-4 w-4 ml-2" />
@@ -146,13 +173,20 @@ export default function Home() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:gap-10">
           {featuredProjects.map((project) => (
-            <Card key={project.slug} className="cosmic-card border-border surface backdrop-blur-xl">
+            <Card
+              key={project.slug}
+              className="cosmic-card border-border surface backdrop-blur-xl"
+            >
               <CardHeader className="pb-4 p-6 sm:p-8 lg:p-10">
                 <CardTitle className="text-foreground flex items-start justify-between gap-3">
                   <span>{project.title}</span>
-                  <Badge className="bg-primary/20 text-primary border-primary/30">{project.year}</Badge>
+                  <Badge className="bg-primary/20 text-primary border-primary/30">
+                    {project.year}
+                  </Badge>
                 </CardTitle>
-                <CardDescription className="text-muted-foreground">{project.summary}</CardDescription>
+                <CardDescription className="text-muted-foreground">
+                  {project.summary}
+                </CardDescription>
               </CardHeader>
               <CardContent className="pt-0 px-6 sm:px-8 lg:px-10 pb-6 sm:pb-8 lg:pb-10">
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -173,9 +207,9 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={buttonVariants({
-                        variant: 'outline',
-                        size: 'sm',
-                        className: 'border-border text-foreground',
+                        variant: "outline",
+                        size: "sm",
+                        className: "border-border text-foreground",
                       })}
                     >
                       <Github className="h-4 w-4 mr-2" />
@@ -185,9 +219,9 @@ export default function Home() {
                   <Link
                     href={`/projects/${project.slug}`}
                     className={buttonVariants({
-                      variant: 'ghost',
-                      size: 'sm',
-                      className: 'text-foreground',
+                      variant: "ghost",
+                      size: "sm",
+                      className: "text-foreground",
                     })}
                   >
                     View Details <ArrowRight className="h-4 w-4 ml-2" />
@@ -201,22 +235,35 @@ export default function Home() {
         {/* cosmic-ui Showcase */}
         <Card className="cosmic-card border-border surface backdrop-blur-xl mt-12 md:mt-16 lg:mt-20 mb-12 md:mb-16 lg:mb-20">
           <CardHeader className="p-6 sm:p-8 lg:p-10">
-            <CardTitle className="text-foreground text-2xl">cosmic-ui → shared design DNA</CardTitle>
+            <CardTitle className="text-foreground text-2xl">
+              cosmic-ui → shared design DNA
+            </CardTitle>
             <CardDescription className="text-muted-foreground text-base mt-2">
-              The UI kit I built powers my projects. Token-driven, Radix under the hood,
-              CSS variable theming so it drops into Tailwind projects.
+              The UI kit I built powers my projects. Token-driven, Radix under
+              the hood, CSS variable theming so it drops into Tailwind projects.
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-3 px-6 sm:px-8 lg:px-10 pb-6 sm:pb-8 lg:pb-10">
-            <Badge className="bg-primary/20 text-primary border-primary/30">Buttons</Badge>
-            <Badge className="surface-muted text-foreground border-border">Cards</Badge>
-            <Badge className="surface-muted text-foreground border-border">Command palette</Badge>
-            <Badge className="surface-muted text-foreground border-border">Selects</Badge>
-            <Badge className="surface-muted text-foreground border-border">Tables</Badge>
+            <Badge className="bg-primary/20 text-primary border-primary/30">
+              Buttons
+            </Badge>
+            <Badge className="surface-muted text-foreground border-border">
+              Cards
+            </Badge>
+            <Badge className="surface-muted text-foreground border-border">
+              Command palette
+            </Badge>
+            <Badge className="surface-muted text-foreground border-border">
+              Selects
+            </Badge>
+            <Badge className="surface-muted text-foreground border-border">
+              Tables
+            </Badge>
             <a
               className={buttonVariants({
-                variant: 'outline',
-                className: 'border-border text-foreground mt-1 inline-flex w-fit',
+                variant: "outline",
+                className:
+                  "border-border text-foreground mt-1 inline-flex w-fit",
               })}
               href="https://github.com/stargazers-stella/cosmic-ui"
               target="_blank"
