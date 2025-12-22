@@ -137,7 +137,7 @@ export default function AboutPage() {
             <div className="absolute bottom-0 right-0 w-10 h-10 border-r border-b border-primary/30 rounded-br-2xl" />
             <CardHeader className="p-6 sm:p-7 lg:p-8">
               <div className="flex items-start justify-between gap-3">
-                <div>
+                <div className="space-y-0.5">
                   <CardTitle className="text-2xl text-foreground">Skills & Expertise</CardTitle>
                   <CardDescription className="text-base mt-1">C#/.NET backend focus plus full-stack delivery</CardDescription>
                 </div>
@@ -146,16 +146,19 @@ export default function AboutPage() {
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="space-y-4 px-6 sm:px-7 lg:px-8 pb-6 sm:pb-7 lg:pb-8">
-              <div className="grid gap-3 sm:gap-4 lg:gap-5">
+            <CardContent className="space-y-2 px-6 sm:px-7 lg:px-8 pb-6 sm:pb-7 lg:pb-8">
+              <div className="grid gap-2 sm:gap-3 lg:gap-4">
                 <div className="rounded-xl surface-muted border border-border/50 px-3 py-2 text-sm text-muted-foreground">
-                  Full-stack shipping with C#/.NET APIs, background workers, and React/Next.js frontends.
+                  C#/.NET backend for regulated platforms: production APIs, stateful services, math/RTP pipelines, and auditable plugin architectures.
                 </div>
                 <div className="rounded-xl surface-muted border border-border/50 px-3 py-2 text-sm text-muted-foreground">
-                  Design systems, dashboards, finance/AI flows, and desktop UI (WPF, MVVM).
+                  Cross-platform delivery: Dockerized simulations, Linux containers, Avalonia/WPF desktop apps, and React/Next.js frontends.
+                </div>
+                <div className="rounded-xl surface-muted border border-border/50 px-3 py-2 text-sm text-muted-foreground">
+                  Tooling and quality: SQL performance tuning, CI/validation guardrails, and observability-first debugging.
                 </div>
               </div>
-              <div className="mt-2">
+              <div className="mt-1">
                 <SkillsVisualization categories={skills} />
               </div>
             </CardContent>

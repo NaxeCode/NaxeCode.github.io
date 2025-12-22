@@ -1,19 +1,70 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Menu, X, FolderGit, User, Phone } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const stars = useMemo(
+    () => [
+      { x: 12, y: 8, d: 6, delay: 0 },
+      { x: 28, y: 18, d: 5, delay: 0.25 },
+      { x: 46, y: 10, d: 5, delay: 0.15 },
+      { x: 62, y: 22, d: 6, delay: 0.4 },
+      { x: 78, y: 14, d: 5, delay: 0.3 },
+      { x: 92, y: 6, d: 7, delay: 0.5 },
+    ],
+    []
+  );
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/60 backdrop-blur-xl shadow-lg shadow-primary/5">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="pointer-events-none absolute inset-0 overflow-hidden z-0 mix-blend-screen"
+          initial={{ x: 0 }}
+          animate={{ x: [0, 6, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div className="relative h-full w-full">
+            {stars.map((star, idx) => (
+              <motion.span
+                key={idx}
+                className="absolute rounded-full bg-primary/60"
+                style={{
+                  width: star.d,
+                  height: star.d,
+                  top: star.y,
+                  left: `${star.x}%`,
+                  boxShadow: "0 0 10px rgba(139, 92, 246, 0.35)",
+                  opacity: 0.28,
+                }}
+                initial={{ opacity: 0.2, scale: 0.9, y: 0, x: 0 }}
+                animate={{
+                  opacity: [0.2, 0.5, 0.2],
+                  scale: [0.9, 1.05, 0.9],
+                  y: [0, -4, 0],
+                  x: [0, 2, 0],
+                }}
+                transition={{
+                  duration: 5.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: star.delay,
+                }}
+              />
+            ))}
+          </div>
+        </motion.div>
+        <div className="relative z-10 flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold text-foreground flex items-center gap-2 transition-colors hover:text-primary">
+            <Link
+              href="/"
+              onClick={() => setIsOpen(false)}
+              className="text-xl font-bold text-foreground flex items-center gap-2 transition-colors hover:text-primary"
+            >
               <span className="text-2xl">✦</span>
               NaxeCode
             </Link>
@@ -23,21 +74,24 @@ export default function Header() {
           <div className="hidden md:flex space-x-2">
             <Link
               href="/projects"
-              className="px-4 py-2 rounded-lg text-foreground hover:text-primary hover:bg-surface-muted transition-all duration-200"
+              className="px-4 py-2 rounded-lg text-foreground hover:text-primary hover:bg-surface-muted transition-all duration-200 inline-flex items-center gap-2"
             >
-              Projects
+              <FolderGit className="h-4 w-4" />
+              <span>Projects</span>
             </Link>
             <Link
               href="/about"
-              className="px-4 py-2 rounded-lg text-foreground hover:text-primary hover:bg-surface-muted transition-all duration-200"
+              className="px-4 py-2 rounded-lg text-foreground hover:text-primary hover:bg-surface-muted transition-all duration-200 inline-flex items-center gap-2"
             >
-              About
+              <User className="h-4 w-4" />
+              <span>About</span>
             </Link>
             <Link
               href="/contact"
-              className="px-4 py-2 rounded-lg text-foreground hover:text-primary hover:bg-surface-muted transition-all duration-200"
+              className="px-4 py-2 rounded-lg text-foreground hover:text-primary hover:bg-surface-muted transition-all duration-200 inline-flex items-center gap-2"
             >
-              Contact
+              <Phone className="h-4 w-4" />
+              <span>Contact</span>
             </Link>
           </div>
 
@@ -92,24 +146,27 @@ export default function Header() {
               >
                 <Link
                   href="/projects"
-                  className="px-4 py-2 text-foreground hover:text-primary hover:bg-surface-muted rounded-lg transition-all duration-200"
+                  className="pl-1 pr-4 py-2 text-foreground hover:text-primary hover:bg-surface-muted rounded-lg transition-all duration-200 inline-flex items-center gap-2"
                   onClick={() => setIsOpen(false)}
                 >
-                  Projects
+                  <FolderGit className="h-4 w-4" />
+                  <span>&nbsp;Projects</span>
                 </Link>
                 <Link
                   href="/about"
-                  className="px-4 py-2 text-foreground hover:text-primary hover:bg-surface-muted rounded-lg transition-all duration-200"
+                  className="pl-1 pr-4 py-2 text-foreground hover:text-primary hover:bg-surface-muted rounded-lg transition-all duration-200 inline-flex items-center gap-2"
                   onClick={() => setIsOpen(false)}
                 >
-                  About
+                  <User className="h-4 w-4" />
+                  <span>&nbsp;About</span>
                 </Link>
                 <Link
                   href="/contact"
-                  className="px-4 py-2 text-foreground hover:text-primary hover:bg-surface-muted rounded-lg transition-all duration-200"
+                  className="pl-1 pr-4 py-2 text-foreground hover:text-primary hover:bg-surface-muted rounded-lg transition-all duration-200 inline-flex items-center gap-2"
                   onClick={() => setIsOpen(false)}
                 >
-                  Contact
+                  <Phone className="h-4 w-4" />
+                  <span>&nbsp;Contact</span>
                 </Link>
               </motion.div>
             </motion.div>
