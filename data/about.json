@@ -1,8 +1,8 @@
 {
   "name": "Aladdin Ali",
   "nickname": "Naxe",
-  "title": "Full-Stack Developer",
-  "bio": "Shipping thoughtful web products with TypeScript, Next.js, and a little bit of space dust. Also tinkering in .NET, finance APIs, and reusable UI.",
+  "title": "Backend Engineer",
+  "bio": "Backend engineer specializing in C#/.NET systems, casino gaming platforms, math/RTP simulation pipelines, and cross-platform engine modernization. Experienced with regulated RGS environments, Avalonia/WPF migrations, Dockerized workloads, and plugin-based architecture.",
   "email": "naxecode@proton.me",
   "social": {
     "github": "https://github.com/naxecode",
@@ -11,19 +11,34 @@
   },
   "journey": [
     {
-      "title": "Independent Developer",
-      "period": "2023 - Present",
-      "description": "Building personal projects focused on fintech, AI integration, and design systems. Creator of cosmic-ui component library."
+      "title": "Senior Backend Engineer · MahiGaming",
+      "period": "Jan 2025 – Jan 2026 · Deerfield Beach, FL",
+      "description": "C#/.NET backend for regulated casino platform: math/RTP pipelines, state + RGS services, plugin-based auditing, Dockerized simulations, and WPF→Avalonia migrations with CI/validation guardrails."
     },
     {
-      "title": "Software Engineer at Coppei",
-      "period": "2022 - 2023",
-      "description": "Full-stack development with .NET, Blazor, and modern web technologies."
+      "title": "Integration Developer · Lawn Basics",
+      "period": "Jul 2024 – Jan 2025 · Portland, OR",
+      "description": "Scheduling, invoicing, CRM/payments routing, and automation tools for ops consistency."
     },
     {
-      "title": "Game Developer at Sandbox Networks",
-      "period": "2016 - 2022",
-      "description": "Game development with Haxe and HaxeFlixel. Active community contributor and maintainer."
+      "title": "Full Stack Engineer · Coppei",
+      "period": "2023 – 2024 · Remote",
+      "description": "ASP.NET Core REST APIs, admin tools, SQL Server tuning, onboarding pipelines, and JWT auth migrations."
+    },
+    {
+      "title": "Backend Engineer · Affordable Lock & Security",
+      "period": "2022 – 2023 · Orlando, FL",
+      "description": "Routing, scheduling, quoting services; normalized databases and reduced dispatch latency via API optimizations."
+    },
+    {
+      "title": "Haxe / Graphics Engineer · Sandbox Network",
+      "period": "2021 – 2022 · Remote",
+      "description": "Rendering/threading/shader improvements across Haxe/C#/Java/C++; engine diagnostics across platforms."
+    },
+    {
+      "title": "Earlier Roles · Unity/Support Engineering",
+      "period": "2019 – 2021 · Remote",
+      "description": "Unity engineering (Kyuppin Games) and support development (Your Idea Here)."
     }
   ],
   "highlights": [
