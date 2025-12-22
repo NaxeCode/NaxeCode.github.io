@@ -12,7 +12,8 @@
       "Bash(npm link)",
       "Bash(npm link:*)",
       "Bash(ls:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Skill(frontend-design:frontend-design)"
     ]
   }
 }
