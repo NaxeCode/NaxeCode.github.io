@@ -47,7 +47,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${cascadia.variable} font-sans`}>
         <div id="app-root">
           <Header />
-          {children}
+          <main className="pt-16">{children}</main>
           <Footer />
         </div>
         <div
