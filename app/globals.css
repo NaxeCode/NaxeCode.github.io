@@ -37,17 +37,30 @@
 	* {
 		@apply border-border;
 	}
+	html {
+		/* Prevent text size adjustment on iOS */
+		-webkit-text-size-adjust: 100%;
+		/* Enable smooth scrolling */
+		scroll-behavior: smooth;
+	}
 	body {
 		@apply font-poppins bg-background text-foreground antialiased;
 		min-height: 100vh;
 		position: relative;
 		overflow-x: hidden;
+		/* Better tap highlight for mobile */
+		-webkit-tap-highlight-color: rgba(139, 92, 246, 0.1);
 	}
 	p {
-		@apply text-lg mb-8 text-muted-foreground;
+		@apply text-base sm:text-lg mb-6 sm:mb-8 text-muted-foreground leading-relaxed;
 	}
 	a {
 		@apply text-primary transition-colors hover:text-primary/80;
+	}
+
+	/* Better line height for readability on all screens */
+	h1, h2, h3, h4, h5, h6 {
+		@apply leading-tight;
 	}
 }
 
@@ -127,8 +140,111 @@ body::after {
 	transition: transform 200ms ease, box-shadow 300ms ease, border-color 200ms ease;
 }
 
-.cosmic-card:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2), 0 0 16px rgba(236, 72, 153, 0.15);
-	border-color: rgba(139, 92, 246, 0.3);
+/* Only apply hover effects on devices that support hover */
+@media (hover: hover) and (pointer: fine) {
+	.cosmic-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2), 0 0 16px rgba(236, 72, 153, 0.15);
+		border-color: rgba(139, 92, 246, 0.3);
+	}
+}
+
+/* Mobile touch feedback */
+@media (hover: none) and (pointer: coarse) {
+	.cosmic-card:active {
+		transform: scale(0.98);
+		transition: transform 100ms ease;
+	}
+}
+
+/* Glassmorphism support */
+@supports (backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px)) {
+	.backdrop-blur-md {
+		-webkit-backdrop-filter: blur(12px);
+		backdrop-filter: blur(12px);
+	}
+	.backdrop-blur-2xl {
+		-webkit-backdrop-filter: blur(40px);
+		backdrop-filter: blur(40px);
+	}
+}
+
+/* Stellar Navigation Animations */
+@keyframes slideInFromRight {
+	from {
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes stellarFloat {
+	0%,
+	100% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 0.3;
+	}
+	50% {
+		transform: translateY(-20px) rotate(180deg);
+		opacity: 0.6;
+	}
+}
+
+@keyframes stellarPulse {
+	0%,
+	100% {
+		opacity: 0.2;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.5;
+		transform: scale(1.5);
+	}
+}
+
+/* Stellar particles effect */
+.stellar-particles {
+	background-image: radial-gradient(
+			2px 2px at 20px 30px,
+			rgba(139, 92, 246, 0.4),
+			transparent
+		),
+		radial-gradient(2px 2px at 60px 70px, rgba(236, 72, 153, 0.3), transparent),
+		radial-gradient(1px 1px at 50px 50px, rgba(255, 255, 255, 0.3), transparent),
+		radial-gradient(1px 1px at 130px 80px, rgba(139, 92, 246, 0.3), transparent),
+		radial-gradient(2px 2px at 90px 10px, rgba(255, 255, 255, 0.2), transparent);
+	background-repeat: repeat;
+	background-size: 200px 200px;
+	animation: stellarFloat 20s ease-in-out infinite;
+}
+
+/* Enhanced stellar header */
+.stellar-header {
+	position: relative;
+}
+
+.stellar-header::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(139, 92, 246, 0.03),
+		transparent
+	);
+	pointer-events: none;
+}
+
+/* Smooth slide-in animations for Tailwind */
+@keyframes slideIn {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
+	}
 }

@@ -1,10 +1,7 @@
 # build output
-dist/
 # next.js
 .next/
 out/
-# generated types
-.astro/
 
 # dependencies
 node_modules/

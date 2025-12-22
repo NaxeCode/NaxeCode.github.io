@@ -4,8 +4,8 @@
   "rsc": false,
   "tsx": true,
   "tailwind": {
-    "config": "tailwind.config.mjs",
-    "css": "src/styles/global.css",
+    "config": "tailwind.config.ts",
+    "css": "app/globals.css",
     "baseColor": "stone",
     "cssVariables": true,
     "prefix": ""
@@ -14,7 +14,6 @@
     "components": "@/components",
     "utils": "@/lib/utils",
     "ui": "@/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
+    "lib": "@/lib"
   }
 }

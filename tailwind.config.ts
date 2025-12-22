@@ -2,9 +2,11 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   darkMode: ['class'],
+  important: true,
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@stargazers-stella/cosmic-ui/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {

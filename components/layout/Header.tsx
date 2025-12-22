@@ -1,61 +1,95 @@
-'use client';
+"use client";
+import Link from "next/link";
+import { useState } from "react";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { buttonVariants } from '@stargazers-stella/cosmic-ui';
-import { Github, Linkedin } from 'lucide-react';
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/contact', label: 'Contact' },
-];
-
-export function Header() {
-  const pathname = usePathname();
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-xl">
-      <nav className="container mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="text-xl font-semibold text-foreground">
-          Naxe<span className="text-primary">Code</span>
-        </Link>
-
-        <div className="flex gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-sm transition ${
-                pathname === link.href
-                  ? 'text-primary font-semibold'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              {link.label}
+    <header className="bg-white shadow-sm">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Link href="/" className="text-xl font-bold text-gray-900">
+              NaxeCode
             </Link>
-          ))}
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-8">
+            <Link
+              href="/projects"
+              className="px-4 text-gray-700 hover:text-gray-900"
+            >
+              Projects
+            </Link>
+            <Link
+              href="/about"
+              className="px-4 text-gray-700 hover:text-gray-900"
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className="px-4 text-gray-700 hover:text-gray-900"
+            >
+              Contact
+            </Link>
+          </div>
+
+          {/* Hamburger Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {isOpen ? (
+                <path d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
 
-        <div className="flex gap-2">
-          <a
-            href="https://github.com/naxecode"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={buttonVariants({ variant: 'ghost', size: 'sm' })}
-          >
-            <Github className="h-4 w-4" />
-          </a>
-          <a
-            href="https://linkedin.com/in/aladdin-ali01"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={buttonVariants({ variant: 'ghost', size: 'sm' })}
-          >
-            <Linkedin className="h-4 w-4" />
-          </a>
-        </div>
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="md:hidden pb-4">
+            <div className="flex flex-col space-y-2">
+              <Link
+                href="/projects"
+                className="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md"
+                onClick={() => setIsOpen(false)}
+              >
+                Projects
+              </Link>
+              <Link
+                href="/about"
+                className="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md"
+                onClick={() => setIsOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                href="/contact"
+                className="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );
