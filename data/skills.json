@@ -5,7 +5,7 @@
       {
         "name": "TypeScript",
         "category": "language",
-        "proficiency": 5,
+        "proficiency": 4,
         "yearsExperience": 4,
         "icon": "⚡",
         "description": "Primary language for full-stack development"
@@ -29,15 +29,62 @@
       {
         "name": "Java",
         "category": "language",
-        "proficiency": 3,
+        "proficiency": 2,
         "icon": "☕"
       },
       {
         "name": "SQL",
         "category": "language",
-        "proficiency": 4,
+        "proficiency": 3,
         "icon": "🗄️",
         "description": "PostgreSQL, complex queries, optimization"
+      }
+    ]
+  },
+  {
+    "category": "Backend & .NET",
+    "skills": [
+      {
+        "name": "ASP.NET Core",
+        "category": "framework",
+        "proficiency": 5,
+        "icon": "🌐",
+        "description": "APIs, minimal APIs, auth, background services"
+      },
+      {
+        "name": "Entity Framework Core",
+        "category": "framework",
+        "proficiency": 4,
+        "icon": "🗄️",
+        "description": "Migrations, LINQ, performance tuning"
+      },
+      {
+        "name": "WPF",
+        "category": "framework",
+        "proficiency": 4,
+        "icon": "🖥️",
+        "description": "Desktop UI, MVVM, modern theming"
+      },
+      {
+        "name": "Avalonia",
+        "category": "framework",
+        "proficiency": 4,
+        "icon": "🪟",
+        "description": "Cross-platform desktop apps with XAML + MVVM"
+      },
+      {
+        "name": "gRPC / REST",
+        "category": "framework",
+        "proficiency": 4,
+        "icon": "📡",
+        "description": "Service contracts, streaming, interop"
+      },
+      {
+        "name": "Background Jobs",
+        "category": "framework",
+        "proficiency": 4,
+        "icon": "⏱️",
+        "description": "Workers, queues, schedulers (Hangfire/Quartz)"
       }
     ]
   },
@@ -116,6 +163,29 @@
         "proficiency": 4,
         "icon": "🐘",
         "description": "Drizzle ORM, Neon, complex schemas"
+      }
+    ]
+  },
+  {
+    "category": "Platforms",
+    "skills": [
+      {
+        "name": "Linux",
+        "category": "tool",
+        "proficiency": 4,
+        "icon": "🐧"
+      },
+      {
+        "name": "macOS",
+        "category": "tool",
+        "proficiency": 4,
+        "icon": "🍎"
+      },
+      {
+        "name": "Windows",
+        "category": "tool",
+        "proficiency": 5,
+        "icon": "🪟"
       }
     ]
   },
