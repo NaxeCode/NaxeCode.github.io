@@ -41,8 +41,8 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen pb-24 md:pb-32">
-      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 lg:pt-24 space-y-12 lg:space-y-16 overflow-hidden">
+    <main className="min-h-screen pb-4">
+      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8 pt-3 sm:pt-4 lg:pt-6 space-y-0 overflow-hidden">
         <div className="pointer-events-none absolute inset-0 opacity-50">
           <div className="absolute -left-10 top-10 w-72 h-72 bg-primary/15 blur-3xl" />
           <div className="absolute right-0 bottom-0 w-80 h-80 bg-pink-500/10 blur-3xl" />
@@ -52,7 +52,7 @@ export default function ContactPage() {
             <span className="text-xs uppercase tracking-[0.08em] text-primary">Contact</span>
             <span className="text-xs text-muted-foreground">Collaboration and new projects</span>
           </div>
-          <div className="space-y-3">
+          <div className="space-y-4 pb-4">
             <h1 className="text-5xl font-bold text-foreground">Contact</h1>
             <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
               Let&apos;s connect! Whether you have a project in mind, want to collaborate, or just want to say hi.

@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   const featuredCount = projects.filter((p: any) => p.featured).length;
 
   return (
-    <main className="min-h-screen pb-24 md:pb-32">
+    <main className="min-h-screen pb-4">
       <section className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8 pt-3 sm:pt-4 lg:pt-6 space-y-0 overflow-hidden">
         <div className="pointer-events-none absolute inset-0 opacity-40">
           <div className="absolute -left-10 top-10 w-72 h-72 bg-primary/12 blur-3xl" />
@@ -30,7 +30,7 @@ export default function ProjectsPage() {
               A collection of full-stack applications, games, tools, and design systems showcasing my work across web development, AI integration, and fintech.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3 pt-1">
+          <div className="flex flex-wrap gap-3 pt-1 pb-4">
             <span className="inline-flex items-center gap-2 rounded-full surface-muted px-3 py-1 text-sm text-foreground/90 border border-border">
               <span className="h-2 w-2 rounded-full bg-primary/70" />
               {projects.length} projects
