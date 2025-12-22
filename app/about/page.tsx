@@ -45,8 +45,8 @@ export default function AboutPage() {
   };
 
   return (
-    <main className="min-h-screen pb-24 md:pb-32">
-      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 lg:pt-24 space-y-14 lg:space-y-16 overflow-hidden">
+    <main className="min-h-screen pb-4">
+      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-8 pt-3 sm:pt-4 lg:pt-6 space-y-0 overflow-hidden">
         <div className="pointer-events-none absolute inset-0 opacity-50">
           <div className="absolute -left-10 top-10 w-72 h-72 bg-primary/15 blur-3xl" />
           <div className="absolute right-0 bottom-0 w-80 h-80 bg-pink-500/10 blur-3xl" />
@@ -59,7 +59,7 @@ export default function AboutPage() {
           <div className="space-y-3">
             <h1 className="text-5xl font-bold text-foreground">About Me</h1>
             <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">{about.bio}</p>
-            <div className="flex flex-wrap gap-2 pt-1">
+            <div className="flex flex-wrap gap-2 pt-1 pb-6">
               <span className="rounded-full surface-muted px-3 py-1 text-xs text-muted-foreground border border-border/60">
                 Product-minded engineer
               </span>
@@ -110,10 +110,10 @@ export default function AboutPage() {
                   <p className="text-muted-foreground leading-relaxed">{experience.description}</p>
                 </div>
               ))}
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
 
-          {/* What I Build */}
+          {/* Skills & Expertise */}
           <Card
             className="group relative tilt-card cosmic-card border border-border/50 bg-gradient-to-br from-surface/95 via-surface-strong/98 to-surface/95 backdrop-blur-2xl overflow-hidden h-full"
             onMouseMove={handleInteractiveHover}
@@ -136,28 +136,30 @@ export default function AboutPage() {
             <div className="absolute top-0 left-0 w-10 h-10 border-l border-t border-primary/30 rounded-tl-2xl" />
             <div className="absolute bottom-0 right-0 w-10 h-10 border-r border-b border-primary/30 rounded-br-2xl" />
             <CardHeader className="p-6 sm:p-7 lg:p-8">
-              <CardTitle className="text-2xl text-foreground">What I build</CardTitle>
-              <CardDescription className="text-base mt-1">Where I focus my energy</CardDescription>
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <CardTitle className="text-2xl text-foreground">Skills & Expertise</CardTitle>
+                  <CardDescription className="text-base mt-1">C#/.NET backend focus plus full-stack delivery</CardDescription>
+                </div>
+                <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/30 px-3 py-1 text-xs text-primary font-semibold">
+                  ✦ curated
+                </div>
+              </div>
             </CardHeader>
             <CardContent className="space-y-4 px-6 sm:px-7 lg:px-8 pb-6 sm:pb-7 lg:pb-8">
-              {about.highlights.map((highlight: string, index: number) => (
-                <p key={index} className="text-muted-foreground leading-relaxed">
-                  {highlight}
-                </p>
-              ))}
+              <div className="grid gap-3 sm:gap-4 lg:gap-5">
+                <div className="rounded-xl surface-muted border border-border/50 px-3 py-2 text-sm text-muted-foreground">
+                  Full-stack shipping with C#/.NET APIs, background workers, and React/Next.js frontends.
+                </div>
+                <div className="rounded-xl surface-muted border border-border/50 px-3 py-2 text-sm text-muted-foreground">
+                  Design systems, dashboards, finance/AI flows, and desktop UI (WPF, MVVM).
+                </div>
+              </div>
+              <div className="mt-2">
+                <SkillsVisualization categories={skills} />
+              </div>
             </CardContent>
           </Card>
-        </div>
-
-        {/* Skills */}
-        <div className="relative rounded-2xl border border-border/40 bg-gradient-to-br from-surface/70 via-surface-strong/80 to-surface/70 backdrop-blur-xl p-6 sm:p-8 lg:p-10 space-y-6 overflow-hidden">
-          <div className="cosmic-spotlight absolute inset-0 opacity-30 pointer-events-none" />
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/15 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-pink-500/15 rounded-full blur-3xl" />
-          </div>
-          <h2 className="text-4xl font-bold text-foreground">Skills & Expertise</h2>
-          <SkillsVisualization categories={skills} />
         </div>
       </section>
     </main>
