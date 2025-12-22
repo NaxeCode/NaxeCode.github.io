@@ -40,7 +40,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative mt-16 pb-6 sm:mt-20 sm:pb-8 lg:mt-24">
+    <footer className="relative mt-0 pb-6 sm:mt-4 sm:pb-8 lg:mt-6">
       <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
