@@ -25,10 +25,10 @@ export default function Home() {
   const featuredProjects = getFeaturedProjects();
 
   return (
-    <main className="min-h-screen pb-24 md:pb-32">
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 lg:pt-24 flex flex-col gap-16 md:gap-24 lg:gap-32">
+    <main className="min-h-screen pb-4">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 pt-3 sm:pt-4 lg:pt-6 flex flex-col gap-0">
         {/* Hero Section - Full Width Statement */}
-        <div className="grid gap-6 md:gap-8 items-start">
+        <div className="grid gap-6 md:gap-8 items-start pb-4">
           {/* Main Profile Card */}
           <div
             className="group relative perspective-1000"
@@ -324,7 +324,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+
+          <div className="h-6 md:h-8" />
 
         {/* Featured Projects */}
         <div className="space-y-6 sm:space-y-8">
@@ -403,7 +405,7 @@ export default function Home() {
               }}
             >
               {/* Main card */}
-              <Card className="tilt-card relative border border-border/50 bg-gradient-to-br from-surface/95 via-surface-strong/98 to-surface/95 backdrop-blur-2xl overflow-hidden transition-all duration-300 ease-out">
+              <Card className="tilt-card relative border border-border/50 bg-gradient-to-br from-surface/95 via-surface-strong/98 to-surface/95 backdrop-blur-2xl overflow-hidden transition-all duration-300 ease-out h-full flex flex-col">
                 {/* Purple/Pink spotlight layer */}
                 <div className="cosmic-spotlight absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none" />
                 {/* Green spotlight layer */}
@@ -467,7 +469,7 @@ export default function Home() {
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="relative px-8 lg:px-10 pb-8 lg:pb-10">
+                <CardContent className="relative px-8 lg:px-10 pb-8 lg:pb-10 flex-1 flex flex-col">
                   {/* Tech constellation - pyramid layout */}
                   <div className="flex flex-col gap-3 mb-6">
                     <div className="flex justify-center flex-wrap gap-2">
@@ -513,7 +515,7 @@ export default function Home() {
                   </div>
 
                   {/* Action buttons */}
-                  <div className="flex justify-center gap-3 pt-2">
+                  <div className="flex justify-center gap-3 pt-2 mt-auto">
                     {project.github && (
                       <a
                         href={project.github}
@@ -544,9 +546,8 @@ export default function Home() {
       </section>
 
       {/* cosmic-ui Showcase - Full Bleed Banner */}
-      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
+      <section className="relative pt-3 sm:pt-4 lg:pt-6 pb-0 sm:pb-1 lg:pb-2 mt-6 md:mt-8 overflow-hidden">
         {/* Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl" />
