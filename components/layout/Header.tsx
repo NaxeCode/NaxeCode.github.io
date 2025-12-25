@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Menu, X, FolderGit, User, Phone } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { trackNavigation } from "@/lib/analytics";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,7 +63,10 @@ export default function Header() {
           <div className="flex items-center">
             <Link
               href="/"
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false);
+                trackNavigation("Home (Logo)");
+              }}
               className="text-xl font-bold text-foreground flex items-center gap-2 transition-colors hover:text-primary"
             >
               <span className="text-2xl">✦</span>
@@ -74,6 +78,7 @@ export default function Header() {
           <div className="hidden md:flex space-x-2">
             <Link
               href="/projects"
+              onClick={() => trackNavigation("Projects")}
               className="px-4 py-2 rounded-lg text-foreground hover:text-primary hover:bg-surface-muted transition-all duration-200 inline-flex items-center gap-2"
             >
               <FolderGit className="h-4 w-4" />
@@ -81,6 +86,7 @@ export default function Header() {
             </Link>
             <Link
               href="/about"
+              onClick={() => trackNavigation("About")}
               className="px-4 py-2 rounded-lg text-foreground hover:text-primary hover:bg-surface-muted transition-all duration-200 inline-flex items-center gap-2"
             >
               <User className="h-4 w-4" />
@@ -88,6 +94,7 @@ export default function Header() {
             </Link>
             <Link
               href="/contact"
+              onClick={() => trackNavigation("Contact")}
               className="px-4 py-2 rounded-lg text-foreground hover:text-primary hover:bg-surface-muted transition-all duration-200 inline-flex items-center gap-2"
             >
               <Phone className="h-4 w-4" />
@@ -147,7 +154,10 @@ export default function Header() {
                 <Link
                   href="/projects"
                   className="pl-1 pr-4 py-2 text-foreground hover:text-primary hover:bg-surface-muted rounded-lg transition-all duration-200 inline-flex items-center gap-2"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    trackNavigation("Projects (Mobile)");
+                  }}
                 >
                   <FolderGit className="h-4 w-4" />
                   <span>&nbsp;Projects</span>
@@ -155,7 +165,10 @@ export default function Header() {
                 <Link
                   href="/about"
                   className="pl-1 pr-4 py-2 text-foreground hover:text-primary hover:bg-surface-muted rounded-lg transition-all duration-200 inline-flex items-center gap-2"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    trackNavigation("About (Mobile)");
+                  }}
                 >
                   <User className="h-4 w-4" />
                   <span>&nbsp;About</span>
@@ -163,7 +176,10 @@ export default function Header() {
                 <Link
                   href="/contact"
                   className="pl-1 pr-4 py-2 text-foreground hover:text-primary hover:bg-surface-muted rounded-lg transition-all duration-200 inline-flex items-center gap-2"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    trackNavigation("Contact (Mobile)");
+                  }}
                 >
                   <Phone className="h-4 w-4" />
                   <span>&nbsp;Contact</span>

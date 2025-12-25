@@ -2,6 +2,7 @@
 
 import type React from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { trackLinkClick } from '@/lib/analytics';
 
 export function Footer() {
   const handleHoverMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -84,6 +85,7 @@ export function Footer() {
                 href="https://github.com/naxecode"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackLinkClick('https://github.com/naxecode', 'GitHub (Footer)')}
                 className="group relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary transition-all hover:border-primary/50"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-primary/20 to-pink-500/20 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -94,6 +96,7 @@ export function Footer() {
                 href="https://linkedin.com/in/aladdin-ali01"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackLinkClick('https://linkedin.com/in/aladdin-ali01', 'LinkedIn (Footer)')}
                 className="group relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary transition-all hover:border-primary/50"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-primary/20 to-pink-500/20 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -102,6 +105,7 @@ export function Footer() {
 
               <a
                 href="mailto:naxecode@proton.me"
+                onClick={() => trackLinkClick('mailto:naxecode@proton.me', 'Email (Footer)')}
                 className="group relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary transition-all hover:border-primary/50"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-primary/20 to-pink-500/20 opacity-0 transition-opacity group-hover:opacity-100" />

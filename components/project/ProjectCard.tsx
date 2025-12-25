@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, Badge, buttonVariants } from '@stargazers-stella/cosmic-ui';
 import { Github, ArrowRight } from 'lucide-react';
 import type { Project } from '@/types/project';
+import { trackLinkClick, trackProjectView } from '@/lib/analytics';
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -108,6 +109,7 @@ export function ProjectCard({ project }: { project: Project }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackLinkClick(project.github!, `${project.title} - GitHub`)}
               className={buttonVariants({
                 variant: 'outline',
                 size: 'sm',
@@ -122,6 +124,7 @@ export function ProjectCard({ project }: { project: Project }) {
           )}
           <Link
             href={`/projects/${project.slug}`}
+            onClick={() => trackProjectView(project.slug, project.title)}
             className={buttonVariants({
               variant: 'ghost',
               size: 'sm',

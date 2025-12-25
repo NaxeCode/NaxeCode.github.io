@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Button, Card, CardHeader, CardTitle, CardDescription, CardContent } from '@stargazers-stella/cosmic-ui';
+import { trackFormSubmit } from '@/lib/analytics';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -65,12 +66,18 @@ export function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
 
-    // For now, just simulate submission since FormSpree ID isn't set up yet
-    // In production, you'd use: fetch(`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`, ...)
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      // For now, just simulate submission since FormSpree ID isn't set up yet
+      // In production, you'd use: fetch(`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`, ...)
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    setSubmitted(true);
-    setIsSubmitting(false);
+      setSubmitted(true);
+      trackFormSubmit('Contact Form', true);
+    } catch (error) {
+      trackFormSubmit('Contact Form', false);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
