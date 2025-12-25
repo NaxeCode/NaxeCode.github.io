@@ -1,4 +1,4 @@
-import Script from "next/script";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export function Analytics() {
   const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID;
@@ -7,23 +7,5 @@ export function Analytics() {
     return null;
   }
 
-  return (
-    <>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-      >
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_TRACKING_ID}');
-        `}
-      </Script>
-    </>
-  );
+  return <GoogleAnalytics gaId={GA_TRACKING_ID} />;
 }

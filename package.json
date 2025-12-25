@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
+    "@next/third-parties": "^16.1.1",
     "@stargazers-stella/cosmic-ui": "^0.1.4",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",
