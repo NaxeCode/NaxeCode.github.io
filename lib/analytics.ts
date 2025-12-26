@@ -1,5 +1,3 @@
-// Google Analytics event tracking utilities
-
 declare global {
   interface Window {
     gtag?: (
@@ -9,6 +7,9 @@ declare global {
     ) => void;
   }
 }
+
+export const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_ID || "G-BPXEKM7YBC";
 
 // Track custom events
 export const trackEvent = (
@@ -68,5 +69,17 @@ export const trackNavigation = (destination: string) => {
   trackEvent("navigation_click", {
     destination: destination,
     from: window.location.pathname,
+  });
+};
+
+// Track page views for client-side navigation
+export const trackPageView = (path: string, title?: string) => {
+  if (typeof window === "undefined" || !window.gtag) {
+    return;
+  }
+
+  window.gtag("config", GA_MEASUREMENT_ID, {
+    page_path: path,
+    page_title: title ?? document.title,
   });
 };
