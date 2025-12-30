@@ -1,10 +1,11 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { trackPageView } from '@/lib/analytics';
 
-export function AnalyticsClient() {
+function SearchParamsHandler() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -16,4 +17,12 @@ export function AnalyticsClient() {
   }, [pathname, searchParams]);
 
   return null;
+}
+
+export function AnalyticsClient() {
+  return (
+    <Suspense fallback={null}>
+      <SearchParamsHandler />
+    </Suspense>
+  );
 }

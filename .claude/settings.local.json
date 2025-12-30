@@ -14,7 +14,10 @@
       "Bash(ls:*)",
       "Bash(rm:*)",
       "Skill(frontend-design:frontend-design)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(git restore:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:developers.google.com)"
     ]
   }
 }
