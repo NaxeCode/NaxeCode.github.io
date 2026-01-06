@@ -1,5 +1,10 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import type { ExperienceItem } from '@/types/experience';
 import type { Copy } from '@/types/copy';
+import { useInView } from '@/hooks/useInView';
+import { staggerContainer, staggerItem } from '@/lib/motion';
 
 type Props = {
   experience: ExperienceItem[];
@@ -7,8 +12,10 @@ type Props = {
 };
 
 export function ExperienceSection({ experience, copy }: Props) {
+  const { ref, inView } = useInView({ threshold: 0.1 });
+
   return (
-    <section id="experience" className="scroll-mt-28 space-y-5 section-fade" tabIndex={-1}>
+    <section id="experience" className="scroll-mt-28 space-y-5" tabIndex={-1}>
       <div className="space-y-1">
         <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground">{copy.label}</p>
         <h2 className="text-3xl font-semibold text-foreground">{copy.heading}</h2>
@@ -16,9 +23,19 @@ export function ExperienceSection({ experience, copy }: Props) {
           {copy.description}
         </p>
       </div>
-      <div className="glass divide-y divide-border/60">
+      <motion.div
+        ref={ref}
+        variants={staggerContainer}
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+        className="glass divide-y divide-border/60"
+      >
         {experience.map((item) => (
-          <div key={`${item.role}-${item.company}-${item.period}`} className="p-5 sm:p-6 space-y-3">
+          <motion.div
+            key={`${item.role}-${item.company}-${item.period}`}
+            variants={staggerItem}
+            className="p-5 sm:p-6 space-y-3"
+          >
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <div className="space-y-1">
                 <p className="text-lg font-semibold text-foreground">
@@ -35,9 +52,9 @@ export function ExperienceSection({ experience, copy }: Props) {
                 <li key={bullet}>{bullet}</li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

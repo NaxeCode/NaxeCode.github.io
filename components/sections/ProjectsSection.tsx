@@ -1,7 +1,12 @@
+'use client';
+
 import { ArrowRight, Github } from 'lucide-react';
+import { motion } from 'framer-motion';
 import type { Project } from '@/types/project';
 import type { Copy } from '@/types/copy';
 import { ProjectLink, OutboundLink } from '@/components/TrackedLink';
+import { useInView } from '@/hooks/useInView';
+import { staggerContainer, staggerItem } from '@/lib/motion';
 
 type Props = {
   projects: Project[];
@@ -9,17 +14,26 @@ type Props = {
 };
 
 export function ProjectsSection({ projects, copy }: Props) {
+  const { ref, inView } = useInView({ threshold: 0.1 });
+
   return (
-    <section id="projects" className="scroll-mt-28 space-y-5 section-fade" tabIndex={-1}>
+    <section id="projects" className="scroll-mt-28 space-y-5" tabIndex={-1}>
       <div className="space-y-1">
         <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground">{copy.label}</p>
         <h2 className="text-3xl font-semibold text-foreground">{copy.heading}</h2>
         <p className="text-muted-foreground text-sm max-reading">{copy.description}</p>
       </div>
-      <div className="grid gap-4 md:gap-6 md:grid-cols-2">
+      <motion.div
+        ref={ref}
+        variants={staggerContainer}
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+        className="grid gap-4 md:gap-6 md:grid-cols-2"
+      >
         {projects.map((project) => (
-          <div
+          <motion.div
             key={project.slug}
+            variants={staggerItem}
             className="glass hover-rise relative overflow-hidden p-5 sm:p-6 space-y-3"
           >
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-primary/60 via-cyan-400/50 to-transparent" />
@@ -64,9 +78,9 @@ export function ProjectsSection({ projects, copy }: Props) {
                 {copy.actions.details} <ArrowRight className="h-3.5 w-3.5" />
               </ProjectLink>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

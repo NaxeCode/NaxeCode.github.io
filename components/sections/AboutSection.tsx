@@ -1,6 +1,11 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import type { Profile } from '@/types/profile';
 import type { Copy } from '@/types/copy';
 import { OutboundLink } from '@/components/TrackedLink';
+import { useInView } from '@/hooks/useInView';
+import { fadeInUp } from '@/lib/motion';
 
 type Props = {
   profile: Profile;
@@ -8,8 +13,18 @@ type Props = {
 };
 
 export function AboutSection({ profile, copy }: Props) {
+  const { ref, inView } = useInView({ threshold: 0.2 });
+
   return (
-    <section id="about" className="scroll-mt-28 section-fade" tabIndex={-1}>
+    <motion.section
+      id="about"
+      ref={ref}
+      variants={fadeInUp}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      className="scroll-mt-28"
+      tabIndex={-1}
+    >
       <div className="glass relative overflow-hidden p-6 sm:p-8 space-y-6 hover-rise">
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-primary/10 via-transparent to-cyan-400/5" />
         <div className="relative space-y-1">
@@ -63,6 +78,6 @@ export function AboutSection({ profile, copy }: Props) {
           </OutboundLink>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
