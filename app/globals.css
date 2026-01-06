@@ -129,6 +129,27 @@
     outline-offset: 3px;
     border-radius: 0.75rem;
   }
+
+  /* Skip to content link - appears on focus for keyboard users */
+  .skip-to-content {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 0.75rem 1.5rem;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  .skip-to-content:focus {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
 }
 
 @layer components {
