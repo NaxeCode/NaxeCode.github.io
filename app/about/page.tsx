@@ -7,6 +7,7 @@ export const metadata = {
   description: copyData.site.description,
 };
 
+// Server component - no client interactivity needed
 export default function AboutPage() {
   const copy = loadCopy();
   const stub = copy.stubs.about;
