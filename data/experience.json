@@ -5,10 +5,10 @@
     "period": "Jan 2025 – Present",
     "location": "Deerfield Beach, FL",
     "bullets": [
-      "Built C#/.NET modules for the Quantum engine: math orchestration, state flow, RTP validation, and RGS protocol handling.",
-      "Re-architected PlayCheck into a plugin-based auditing tool using dependency injection, cutting delivery time by ~40%.",
-      "Dockerized simulation workloads on Linux with GitLab guardrails, improving throughput and reducing compute cost by roughly 50%.",
-      "Modernized internal tooling from WPF to Avalonia/.NET 10 for cross-platform deployments and better observability."
+      "Built C#/.NET services that power core platform workflows, with an emphasis on correctness, auditability, and clear operational visibility.",
+      "Refactored an internal verification tool into a plugin-based system so new checks could be added quickly without rewriting the core.",
+      "Made simulation-style workloads reproducible with Docker + CI, improving throughput and cutting wasted compute.",
+      "Helped modernize internal desktop tooling from WPF to Avalonia for smoother cross-platform workflows and better observability."
     ]
   },
   {
@@ -17,10 +17,10 @@
     "period": "Feb 2024 – Dec 2024",
     "location": "Orlando, FL",
     "bullets": [
-      "Designed ASP.NET Core APIs for routing, scheduling, quoting, and operational workflows for field technicians.",
-      "Redesigned SQL Server schema with indexing and stored procedures, improving query performance and data reliability.",
-      "Optimized API response times with caching and retries, reducing dispatch latency and failures.",
-      "Automated CRM, scheduling, and billing integrations to remove manual entry."
+      "Built ASP.NET Core APIs that supported real-world operations—routing, scheduling, quoting, and the day-to-day tools field teams rely on.",
+      "Improved SQL Server performance and data consistency with schema cleanup, indexing, and targeted stored procedures.",
+      "Made key endpoints faster and more resilient with caching, retries, and better failure handling.",
+      "Reduced manual work by automating CRM, scheduling, and billing integrations."
     ]
   },
   {
@@ -29,10 +29,10 @@
     "period": "Jul 2022 – Jan 2024",
     "location": "Seattle, WA (Remote)",
     "bullets": [
-      "Built full-stack admin platform with ASP.NET Core MVC, React, and SQL Server for employee management.",
-      "Engineered REST API layer and normalized database schemas, accelerating reports with tuned stored procedures.",
-      "Automated onboarding workflows in Azure DevOps pipelines, shrinking setup time from 3 days to ~4 hours.",
-      "Migrated authentication to JWT/OAuth with role-based access control and security best practices."
+      "Shipped an internal admin product (ASP.NET Core + React + SQL Server) that streamlined employee and operations workflows.",
+      "Designed APIs and data models that made reporting faster and the system easier to evolve over time.",
+      "Automated onboarding and deployments with CI so new environments could be spun up in hours instead of days.",
+      "Upgraded authentication and authorization with modern token-based flows and role-based access control."
     ]
   },
   {
@@ -41,10 +41,10 @@
     "period": "Feb 2019 – Jul 2022",
     "location": "Seattle, WA (Remote)",
     "bullets": [
-      "Owned and extended rendering systems in a multi-platform Haxe/C++ engine for desktop and mobile.",
-      "Optimized graphics pipelines and shaders, profiling CPU/GPU bottlenecks to lift frame rates and stability.",
-      "Collaborated with artists to ship effects and materials while keeping performance consistent across platforms.",
-      "Contributed reusable engine tooling to speed debugging and developer iteration."
+      "Owned parts of a cross-platform rendering stack (Haxe/C++) used on desktop and mobile.",
+      "Profiled CPU/GPU bottlenecks and improved pipelines and shaders to raise performance and stability.",
+      "Worked closely with artists to ship visual effects that looked good without breaking performance budgets.",
+      "Built tooling that made debugging faster and iteration less painful for the whole team."
     ]
   }
 ]
