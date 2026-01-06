@@ -6,6 +6,7 @@ import type { Project } from '@/types/project';
 import type { Copy } from '@/types/copy';
 import { ProjectLink, OutboundLink } from '@/components/TrackedLink';
 import { useInView } from '@/hooks/useInView';
+import { useSectionTracking } from '@/hooks/useSectionTracking';
 import { staggerContainer, staggerItem } from '@/lib/motion';
 
 type Props = {
@@ -15,6 +16,7 @@ type Props = {
 
 export function ProjectsSection({ projects, copy }: Props) {
   const { ref, inView } = useInView({ threshold: 0.1 });
+  useSectionTracking({ sectionId: 'projects', threshold: 0.5 });
 
   return (
     <section id="projects" className="scroll-mt-28 space-y-5" tabIndex={-1}>
