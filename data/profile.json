@@ -1,0 +1,27 @@
+{
+  "name": "Aladdin Ali",
+  "alias": "NaxeCode",
+  "title": "Backend engineer specializing in C#/.NET systems and regulated platforms",
+  "about": [
+    "Backend engineer with math/RTP simulation experience, regulated RGS integrations, and a habit of keeping systems observable.",
+    "I build C#/.NET services, Dockerized pipelines, and plugin-first architectures that shorten delivery without losing rigor.",
+    "Equally comfortable designing APIs and SQL schemas as I am shaping a clear Next.js surface for stakeholders."
+  ],
+  "buildingNow": "Plugin-based auditing for gaming services, AI-assisted debugging loops, and a lean nebula web shell.",
+  "skills": [
+    "C# / .NET",
+    "ASP.NET Core",
+    "Docker & GitLab CI",
+    "SQL optimization",
+    "Microservices",
+    "Plugin architecture",
+    "Avalonia/WPF migration",
+    "Next.js / TypeScript",
+    "RTP simulation"
+  ],
+  "contact": {
+    "email": "siraj.n.lee@gmail.com",
+    "github": "https://github.com/naxecode",
+    "linkedin": "https://linkedin.com/in/aladdin-ali01"
+  }
+}

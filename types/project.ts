@@ -15,6 +15,7 @@ export const projectSchema = z.object({
   demoUrl: z.string().optional(),
   images: z.array(z.string()).default([]),
   thumbnail: z.string().optional(),
+  highlights: z.array(z.string()).optional(),
   stack: z.object({
     frontend: z.array(z.string()).optional(),
     backend: z.array(z.string()).optional(),

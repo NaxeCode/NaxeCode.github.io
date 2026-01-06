@@ -44,6 +44,12 @@ const config: Config = {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
+        surface: {
+          DEFAULT: 'hsl(var(--surface))',
+          strong: 'hsl(var(--surface-strong))',
+          muted: 'hsl(var(--surface-muted))',
+          inset: 'hsl(var(--surface-inset))',
+        },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
