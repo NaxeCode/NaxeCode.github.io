@@ -1,9 +1,14 @@
 import { z } from 'zod';
 import { projectSchema, type Project } from '@/types/project';
-import { skillsCategorySchema, type SkillsCategory } from '@/types/skill';
+import { profileSchema, type Profile } from '@/types/profile';
+import { experienceSchema, type ExperienceItem } from '@/types/experience';
+import { journeySchema, type JourneyItem } from '@/types/journey';
+import { copySchema, type Copy } from '@/types/copy';
 import projectsData from '@/data/projects.json';
-import skillsData from '@/data/skills.json';
-import aboutData from '@/data/about.json';
+import profileData from '@/data/profile.json';
+import experienceData from '@/data/experience.json';
+import journeyData from '@/data/journey.json';
+import copyData from '@/data/copy.json';
 
 export function loadProjects(): Project[] {
   return z.array(projectSchema).parse(projectsData);
@@ -18,10 +23,18 @@ export function getFeaturedProjects(): Project[] {
   return loadProjects().filter((p) => p.featured);
 }
 
-export function loadSkills(): SkillsCategory[] {
-  return z.array(skillsCategorySchema).parse(skillsData);
+export function loadProfile(): Profile {
+  return profileSchema.parse(profileData);
 }
 
-export function loadAbout() {
-  return aboutData;
+export function loadExperience(): ExperienceItem[] {
+  return experienceSchema.parse(experienceData);
+}
+
+export function loadJourney(): JourneyItem[] {
+  return journeySchema.parse(journeyData);
+}
+
+export function loadCopy(): Copy {
+  return copySchema.parse(copyData);
 }

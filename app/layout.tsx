@@ -1,20 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Analytics } from "@/components/Analytics";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-poppins",
-});
+import copyData from "@/data/copy.json";
 
 const cascadia = localFont({
   src: "../public/fonts/CascadiaCode.woff2",
   variable: "--font-cascadia",
+});
+
+const poppins = localFont({
+  src: "../public/fonts/Poppins-Regular.ttf",
+  variable: "--font-poppins",
+  weight: "400",
 });
 
 export const viewport: Viewport = {
@@ -24,15 +24,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "NaxeCode - Full-Stack Developer Portfolio",
-  description:
-    "Shipping thoughtful web products with TypeScript, Next.js, and cosmic UI. Fintech, AI, and design systems.",
+  title: copyData.site.title,
+  description: copyData.site.description,
   openGraph: {
-    title: "NaxeCode - Full-Stack Developer Portfolio",
-    description:
-      "Full-stack developer specializing in Next.js, TypeScript, fintech APIs, and design systems",
+    title: copyData.site.ogTitle,
+    description: copyData.site.ogDescription,
     url: "https://naxecode.github.io",
-    siteName: "NaxeCode",
+    siteName: copyData.site.brand,
     locale: "en_US",
     type: "website",
   },

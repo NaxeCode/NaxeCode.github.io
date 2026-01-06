@@ -1,0 +1,50 @@
+[
+  {
+    "role": "Senior Backend Engineer",
+    "company": "MahiGaming",
+    "period": "Jan 2025 – Present",
+    "location": "Deerfield Beach, FL",
+    "bullets": [
+      "Built C#/.NET modules for the Quantum engine: math orchestration, state flow, RTP validation, and RGS protocol handling.",
+      "Re-architected PlayCheck into a plugin-based auditing tool using dependency injection, cutting delivery time by ~40%.",
+      "Dockerized simulation workloads on Linux with GitLab guardrails, improving throughput and reducing compute cost by roughly 50%.",
+      "Modernized internal tooling from WPF to Avalonia/.NET 10 for cross-platform deployments and better observability."
+    ]
+  },
+  {
+    "role": "Backend Engineer",
+    "company": "Affordable Lock & Security",
+    "period": "Feb 2024 – Dec 2024",
+    "location": "Orlando, FL",
+    "bullets": [
+      "Designed ASP.NET Core APIs for routing, scheduling, quoting, and operational workflows for field technicians.",
+      "Redesigned SQL Server schema with indexing and stored procedures, improving query performance and data reliability.",
+      "Optimized API response times with caching and retries, reducing dispatch latency and failures.",
+      "Automated CRM, scheduling, and billing integrations to remove manual entry."
+    ]
+  },
+  {
+    "role": "Full Stack Engineer",
+    "company": "Coppei",
+    "period": "Jul 2022 – Jan 2024",
+    "location": "Seattle, WA (Remote)",
+    "bullets": [
+      "Built full-stack admin platform with ASP.NET Core MVC, React, and SQL Server for employee management.",
+      "Engineered REST API layer and normalized database schemas, accelerating reports with tuned stored procedures.",
+      "Automated onboarding workflows in Azure DevOps pipelines, shrinking setup time from 3 days to ~4 hours.",
+      "Migrated authentication to JWT/OAuth with role-based access control and security best practices."
+    ]
+  },
+  {
+    "role": "Haxe / Graphics Engineer",
+    "company": "Sandbox Network",
+    "period": "Feb 2019 – Jul 2022",
+    "location": "Seattle, WA (Remote)",
+    "bullets": [
+      "Owned and extended rendering systems in a multi-platform Haxe/C++ engine for desktop and mobile.",
+      "Optimized graphics pipelines and shaders, profiling CPU/GPU bottlenecks to lift frame rates and stability.",
+      "Collaborated with artists to ship effects and materials while keeping performance consistent across platforms.",
+      "Contributed reusable engine tooling to speed debugging and developer iteration."
+    ]
+  }
+]

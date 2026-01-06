@@ -2,69 +2,89 @@
   {
     "slug": "stargazers-cosmic-watchlist",
     "title": "Stargazers Cosmic Watchlist",
-    "summary": "Premium watchlist for anime, movies, TV, and games with smart stats, TMDB enrichment, and server-first architecture.",
-    "description": "A server-first CRUD watchlist application featuring Google OAuth, AI-powered recommendations via TMDB, comprehensive statistics (runtime totals, completion rates, heatmaps), and beautiful glassy UI. Built with cosmic-ui design system, Drizzle ORM for type-safe database operations, and Next.js Server Actions for mutations.",
-    "tags": ["Next.js", "TypeScript", "cosmic-ui", "Drizzle", "Postgres"],
+    "summary": "Server-first watchlist for anime, films, TV, and games with analytics, shareable filters, and TMDB/OMDb enrichment.",
+    "description": "A type-safe watchlist application built with Next.js Server Actions, Zod validation, and Google OAuth. TMDB/OMDb enrichment, shareable URL filters, and an analytics dashboard for completion rates, heatmaps, and genre trends keep it practical while staying server-first.",
+    "highlights": [
+      "Server-first CRUD with Zod validation and Google OAuth handled through Next.js server actions.",
+      "Shareable URL filters so watchlists stay bookmarkable and collaborative.",
+      "Analytics for completion rates, activity heatmaps, and genre breakdowns."
+    ],
+    "tags": ["Next.js", "TypeScript", "Drizzle", "PostgreSQL", "Auth.js"],
     "category": "full-stack",
     "year": "2024-2025",
     "featured": true,
     "github": "https://github.com/NaxeCode/Stargazers-Cosmic-Watchlist",
     "demoType": "none",
     "stack": {
-      "frontend": ["Next.js 16", "React 19", "TypeScript", "cosmic-ui", "Tailwind CSS", "Framer Motion"],
-      "backend": ["Next.js Server Actions", "Drizzle ORM", "NextAuth (Google OAuth)", "TMDB API"],
-      "database": ["PostgreSQL", "Neon"],
-      "tools": ["Vercel", "Zod", "Vitest"]
+      "frontend": ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS"],
+      "backend": ["Next.js Server Actions", "Zod validation", "Auth.js (Google OAuth)", "TMDB / OMDb APIs"],
+      "database": ["PostgreSQL", "Drizzle ORM"],
+      "tools": ["Vercel", "Vitest"]
     }
   },
   {
     "slug": "photon-trail",
     "title": "Photon Trail",
-    "summary": "AI-powered personal finance dashboard integrating Plaid for bank connections, OpenAI for smart categorization, and cosmic-ui for premium UX.",
-    "description": "Personal finance application with secure Plaid Link integration for connecting bank accounts, AI-powered transaction categorization using OpenAI, and beautiful dark-themed UI built with cosmic-ui. Features NextAuth authentication, Drizzle ORM with Neon serverless PostgreSQL, and real-time transaction syncing via SWR.",
-    "tags": ["Next.js", "Plaid", "OpenAI", "cosmic-ui", "Neon"],
+    "summary": "AI-assisted personal finance dashboard with Plaid bank connections, automated categorization, and spending analytics.",
+    "description": "Secure Plaid Link flows with NextAuth-protected routes, OpenAI-powered transaction categorization, and responsive dashboards powered by Drizzle/PostgreSQL. Chart.js visuals and guarded APIs keep insights clear without leaking data.",
+    "highlights": [
+      "Plaid Link integration with encrypted tokens and real-time bank sync.",
+      "OpenAI-powered categorization to auto-label transactions and surface patterns.",
+      "Spending dashboard with Chart.js visuals and protected NextAuth flows."
+    ],
+    "tags": ["Next.js", "Plaid", "OpenAI", "PostgreSQL", "NextAuth"],
     "category": "full-stack",
     "year": "2024-2025",
     "featured": true,
     "github": "https://github.com/NaxeCode/Photon-Trail",
     "demoType": "none",
     "stack": {
-      "frontend": ["Next.js 14", "React 18", "TypeScript", "cosmic-ui", "Tailwind CSS", "SWR"],
-      "backend": ["Plaid API", "OpenAI API", "NextAuth", "Drizzle ORM"],
-      "database": ["Neon (Serverless PostgreSQL)"],
-      "tools": ["Vercel", "Zod", "Vitest"]
+      "frontend": ["Next.js 14", "React 18", "TypeScript", "Tailwind CSS", "Chart.js"],
+      "backend": ["Plaid API", "OpenAI SDK", "NextAuth"],
+      "database": ["Neon (PostgreSQL)", "Drizzle ORM"],
+      "tools": ["Vercel", "Zod"]
     }
   },
   {
     "slug": "cosmic-digest",
     "title": "Cosmic Digest",
-    "summary": "Automated AI newsletter with personalized relevance scoring, trend detection, price tracking, and email delivery.",
-    "description": "AI-powered newsletter automation system that curates personalized news digests from RSS feeds. Features intelligent relevance scoring based on topics and keywords, trend detection by comparing article frequency across time periods, product price tracking with buy/hold recommendations, and automated email delivery via Mailgun. Built with .NET 10 and OpenAI for smart content curation.",
-    "tags": [".NET 10", "C#", "OpenAI", "Mailgun", "RSS"],
+    "summary": "Automated news aggregation with AI relevance scoring, trend detection, and scheduled email digests.",
+    "description": "A .NET 10 worker that parses RSS feeds, applies OpenAI relevance scoring and topic tagging, surfaces trend signals, and delivers scheduled digests via Mailgun. Dockerized to keep runs consistent across environments.",
+    "highlights": [
+      "OpenAI-driven relevance scoring and topic tagging to filter noisy feeds.",
+      "Trend detection and price tracking across sources with alerts.",
+      "Dockerized worker pipeline delivering scheduled Mailgun email digests."
+    ],
+    "tags": [".NET 10", "C#", "OpenAI", "Mailgun", "Docker"],
     "category": "tool",
     "year": "2024-2025",
     "featured": true,
     "github": "https://github.com/NaxeCode/Cosmic-Digest",
     "demoType": "none",
     "stack": {
-      "backend": [".NET 10 (C# 14.0)", "OpenAI API", "Mailgun API", "CodeHollow.FeedReader", "AngleSharp"],
-      "tools": ["Docker", "Fly.io", "DotNetEnv"]
+      "backend": [".NET 10 (C#)", "OpenAI API", "Mailgun API", "CodeHollow.FeedReader", "AngleSharp"],
+      "tools": ["Docker"]
     }
   },
   {
     "slug": "cosmic-ui",
-    "title": "cosmic-ui",
-    "summary": "Personal React component library with dark glassy aesthetic, CSS variable theming, and Next.js 15+ compatibility.",
-    "description": "A lightweight design system and React component library built on Radix UI primitives. Features a premium dark theme with glass morphism effects, CSS variable-based theming, command palette (cmdk) integration, and optimized for Next.js App Router with proper ESM/CJS exports. Published on GitHub Packages and used across all my projects for consistent cosmic-themed UI/UX.",
-    "tags": ["React", "TypeScript", "Radix UI", "Design System"],
+    "title": "Cosmic UI",
+    "summary": "React component library built on Radix primitives with variant-based styling and CSS variable theming.",
+    "description": "Lightweight, accessible component library published to npm/GitHub Packages. Uses Radix UI primitives, class-variance-authority variants, and CSS variables so teams can theme without rerender cost; built and packaged with tsup and CI automation.",
+    "highlights": [
+      "Radix-based primitives wrapped with variant-driven APIs via class-variance-authority.",
+      "CSS variable theming enabling dark/light swaps without recalculating styles.",
+      "Automated GitHub Actions publishing with typed, tree-shakeable builds and documentation."
+    ],
+    "tags": ["React", "TypeScript", "Radix UI", "Tailwind CSS", "Design System"],
     "category": "design-system",
     "year": "2024-2025",
     "featured": true,
     "github": "https://github.com/stargazers-stella/cosmic-ui",
     "demoType": "none",
     "stack": {
-      "frontend": ["React 18/19", "TypeScript", "Radix UI", "cmdk", "Tailwind CSS"],
-      "tools": ["tsup", "class-variance-authority", "CSS Variables", "GitHub Packages"]
+      "frontend": ["React 18/19", "TypeScript", "Radix UI", "Tailwind CSS"],
+      "tools": ["tsup", "class-variance-authority", "GitHub Actions", "GitHub Packages"]
     }
   }
 ]

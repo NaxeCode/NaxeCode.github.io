@@ -1,0 +1,98 @@
+{
+  "site": {
+    "brand": "NaxeCode",
+    "title": "Aladdin Ali | Full-Stack Engineer",
+    "description": "Full-stack engineer focused on backend systems, math/RTP pipelines, regulated services, and calm Next.js experiences.",
+    "ogTitle": "Aladdin Ali | Full-Stack Engineer",
+    "ogDescription": "C#/.NET services, Dockerized pipelines, plugin-first auditing, and polished web surfaces for regulated platforms.",
+    "locationLine": "Based in Florida, shipping C#/.NET services, Dockerized pipelines, and calm Next.js interfaces."
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "journey": "Journey"
+  },
+  "hero": {
+    "eyebrow": "Aladdin Ali · NaxeCode",
+    "title": "Full-stack engineer focused on backend systems",
+    "primaryCta": "Work together",
+    "secondaryCta": "View projects"
+  },
+  "sections": {
+    "about": {
+      "label": "About",
+      "heading": "Who I am",
+      "buildingLabel": "Currently building:",
+      "skillsLabel": "Skills snapshot",
+      "emailCta": "Email",
+      "githubCta": "GitHub",
+      "linkedinCta": "LinkedIn"
+    },
+    "projects": {
+      "label": "Projects",
+      "heading": "Selected work with outcomes",
+      "description": "Server-first builds, clear dashboards, and reusable systems that stay fast.",
+      "actions": {
+        "code": "Code",
+        "details": "Details"
+      }
+    },
+    "experience": {
+      "label": "Experience",
+      "heading": "Teams and impact",
+      "description": "Roles focused on regulated engines, API platforms, and UI that stays accountable."
+    },
+    "journey": {
+      "label": "Personal Journey",
+      "heading": "How I got here",
+      "description": "A throughline from graphics and engines to full-stack delivery and regulated systems."
+    }
+  },
+  "projectsDetail": {
+    "back": "Back to projects",
+    "tags": "Tags",
+    "description": "Description",
+    "stack": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "tools": "Tools"
+    },
+    "viewCode": "View on GitHub",
+    "liveDemo": "Live Demo"
+  },
+  "stubs": {
+    "about": {
+      "eyebrow": "Heads up",
+      "title": "The About section lives on one page now.",
+      "body": "Everything is consolidated into a single, fast page. Jump straight to the About section to see the summary, skills snapshot, and contact links.",
+      "cta": "Go to About"
+    },
+    "projects": {
+      "eyebrow": "Updated flow",
+      "title": "Projects now live on the home page.",
+      "body": "Navigation is anchor-based for instant jumps. Head to the Projects section to see selected work and links.",
+      "cta": "Go to Projects"
+    },
+    "contact": {
+      "eyebrow": "Quick note",
+      "title": "Contact is lightweight now.",
+      "body": "Email and socials sit inside the About section so navigation stays instant. Jump there to get in touch.",
+      "ctaEmail": "Email me",
+      "ctaAbout": "Go to About"
+    }
+  },
+  "footer": {
+    "copyrightName": "NaxeCode",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
+  },
+  "notFound": {
+    "title": "Lost in space?",
+    "description": "The page you're looking for doesn't exist in this universe.",
+    "primaryCta": "Back to Home",
+    "secondaryCta": "View Projects"
+  }
+}
