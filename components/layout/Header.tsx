@@ -25,6 +25,10 @@ export default function Header() {
     return `${baseClass} text-foreground/90 hover:text-primary hover:bg-surface-muted/80`;
   };
 
+  // If on homepage, use AnchorLink for smooth scrolling
+  // If on other pages, use regular Link to navigate to homepage first
+  const NavLink = isHomepage ? AnchorLink : Link;
+
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl shadow-[0_10px_60px_-45px_rgba(59,130,246,0.6)]">
       <nav className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 h-14 flex items-center justify-between">
@@ -32,30 +36,30 @@ export default function Header() {
           {copy.site.brand}
         </Link>
         <div className="flex items-center gap-2">
-          <AnchorLink
-            href="#about"
+          <NavLink
+            href={isHomepage ? "#about" : "/#about"}
             className={getLinkClass('about')}
           >
             {copy.nav.about}
-          </AnchorLink>
-          <AnchorLink
-            href="#projects"
+          </NavLink>
+          <NavLink
+            href={isHomepage ? "#projects" : "/#projects"}
             className={getLinkClass('projects')}
           >
             {copy.nav.projects}
-          </AnchorLink>
-          <AnchorLink
-            href="#experience"
+          </NavLink>
+          <NavLink
+            href={isHomepage ? "#experience" : "/#experience"}
             className={getLinkClass('experience')}
           >
             {copy.nav.experience}
-          </AnchorLink>
-          <AnchorLink
-            href="#journey"
+          </NavLink>
+          <NavLink
+            href={isHomepage ? "#journey" : "/#journey"}
             className={getLinkClass('journey')}
           >
             {copy.nav.journey}
-          </AnchorLink>
+          </NavLink>
         </div>
       </nav>
     </header>
