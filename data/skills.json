@@ -8,7 +8,7 @@
         "proficiency": 4,
         "yearsExperience": 4,
         "icon": "⚡",
-        "description": "Primary language for full-stack development"
+        "description": "My go-to for web apps and full-stack projects"
       },
       {
         "name": "C#",
@@ -16,7 +16,7 @@
         "proficiency": 5,
         "yearsExperience": 3,
         "icon": "🔷",
-        "description": ".NET development and backend services"
+        "description": "Backend services, tooling, and long-lived systems in .NET"
       },
       {
         "name": "Haxe",
@@ -24,7 +24,7 @@
         "proficiency": 4,
         "yearsExperience": 8,
         "icon": "🎮",
-        "description": "Game development with HaxeFlixel"
+        "description": "Engine and game work; strong performance and tooling background"
       },
       {
         "name": "Java",
@@ -37,7 +37,7 @@
         "category": "language",
         "proficiency": 3,
         "icon": "🗄️",
-        "description": "PostgreSQL, complex queries, optimization"
+        "description": "Schema design, complex queries, and performance tuning"
       }
     ]
   },
@@ -49,21 +49,21 @@
         "category": "framework",
         "proficiency": 5,
         "icon": "🌐",
-        "description": "APIs, minimal APIs, auth, background services"
+        "description": "APIs, auth, background services, and integration-heavy systems"
       },
       {
         "name": "Entity Framework Core",
         "category": "framework",
         "proficiency": 4,
         "icon": "🗄️",
-        "description": "Migrations, LINQ, performance tuning"
+        "description": "Migrations, data modeling, and performance tuning"
       },
       {
         "name": "WPF",
         "category": "framework",
         "proficiency": 4,
         "icon": "🖥️",
-        "description": "Desktop UI, MVVM, modern theming"
+        "description": "Desktop apps, MVVM, and practical UI refactors"
       },
       {
         "name": "Avalonia",
@@ -77,7 +77,7 @@
         "category": "framework",
         "proficiency": 4,
         "icon": "📡",
-        "description": "Service contracts, streaming, interop"
+        "description": "Service contracts, streaming, and integrations"
       },
       {
         "name": "Background Jobs",
@@ -97,7 +97,7 @@
         "proficiency": 5,
         "yearsExperience": 3,
         "icon": "▲",
-        "description": "App Router, Server Components, Server Actions"
+        "description": "App Router, Server Components, and server-first patterns"
       },
       {
         "name": "React",
@@ -112,7 +112,7 @@
         "proficiency": 4,
         "yearsExperience": 3,
         "icon": "🔷",
-        "description": "ASP.NET Core, Blazor, Entity Framework"
+        "description": "ASP.NET Core, Blazor, and Entity Framework"
       },
       {
         "name": "Tailwind CSS",
@@ -136,14 +136,14 @@
         "category": "tool",
         "proficiency": 4,
         "icon": "💳",
-        "description": "Financial data integration"
+        "description": "Secure financial data integrations"
       },
       {
         "name": "OpenAI API",
         "category": "tool",
         "proficiency": 4,
         "icon": "🤖",
-        "description": "AI-powered features and automation"
+        "description": "AI-powered features with guardrails and validation"
       },
       {
         "name": "Docker",
@@ -162,7 +162,7 @@
         "category": "tool",
         "proficiency": 4,
         "icon": "🐘",
-        "description": "Drizzle ORM, Neon, complex schemas"
+        "description": "Schema design, migrations, and performance work"
       }
     ]
   },
@@ -193,25 +193,25 @@
     "category": "Specialties",
     "skills": [
       {
-        "name": "Fintech APIs",
+        "name": "Integration Work",
         "category": "specialty",
         "proficiency": 5,
         "icon": "💰",
-        "description": "Plaid integration, secure financial data handling"
+        "description": "Building reliable integrations with careful data handling"
       },
       {
-        "name": "AI-assisted UX",
+        "name": "Practical AI",
         "category": "specialty",
         "proficiency": 4,
         "icon": "✨",
-        "description": "OpenAI integration for enhanced user experiences"
+        "description": "Using AI where it helps: automation, triage, and smarter defaults"
       },
       {
         "name": "Design Systems",
         "category": "specialty",
         "proficiency": 5,
         "icon": "🎨",
-        "description": "Building reusable component libraries"
+        "description": "Reusable components and patterns teams can stick with"
       },
       {
         "name": "Game Development",

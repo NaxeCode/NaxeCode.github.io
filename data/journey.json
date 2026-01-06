@@ -2,16 +2,16 @@
   {
     "title": "Rendering roots, performance discipline",
     "period": "2019 – 2022",
-    "summary": "Owned core rendering in a Haxe/C++ engine, shipping shaders and batching for desktop and mobile. Learned to profile GPU/CPU bottlenecks and keep visuals fast across platforms."
+    "summary": "I started in graphics and engine work, where performance is non‑negotiable. It taught me how to profile, measure, and make improvements that actually show up on screen."
   },
   {
     "title": "Full-stack delivery with guardrails",
     "period": "2022 – 2024",
-    "summary": "Built ASP.NET Core + React admin systems with tuned SQL and JWT auth. Automated onboarding and CI in Azure DevOps so releases stayed predictable and onboarding dropped to hours."
+    "summary": "From there I moved into product delivery—building admin tools and APIs, tightening up databases, and putting CI in place so releases felt routine instead of risky."
   },
   {
     "title": "Regulated systems and AI-assisted tooling",
     "period": "2024 – Present",
-    "summary": "Now in regulated gaming: math/RTP services, plugin-based auditing, Dockerized simulations, and GitLab CI guardrails. Using AI-assisted debugging and design iteration without compromising control."
+    "summary": "These days I work in regulated, reliability-heavy systems. I care a lot about clarity: good logging, good tests, reproducible runs, and tools that help teams move fast without guessing."
   }
 ]

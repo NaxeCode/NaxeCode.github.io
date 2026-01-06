@@ -1,11 +1,11 @@
 {
   "site": {
     "brand": "NaxeCode",
-    "title": "Aladdin Ali | Full-Stack Engineer",
-    "description": "Full-stack engineer focused on backend systems, math/RTP pipelines, regulated services, and calm Next.js experiences.",
-    "ogTitle": "Aladdin Ali | Full-Stack Engineer",
-    "ogDescription": "C#/.NET services, Dockerized pipelines, plugin-first auditing, and polished web surfaces for regulated platforms.",
-    "locationLine": "Based in Florida, shipping C#/.NET services, Dockerized pipelines, and calm Next.js interfaces."
+    "title": "Aladdin Ali | Software Engineer",
+    "description": "Backend-first software engineer building dependable services, smooth integrations, and thoughtful web experiences.",
+    "ogTitle": "Aladdin Ali | Software Engineer",
+    "ogDescription": "I build C#/.NET systems, automation pipelines, and clean web surfaces—especially where reliability and clarity matter.",
+    "locationLine": "Based in Florida — building dependable C#/.NET services and clean web interfaces."
   },
   "nav": {
     "about": "About",
@@ -15,7 +15,7 @@
   },
   "hero": {
     "eyebrow": "Aladdin Ali · NaxeCode",
-    "title": "Full-stack engineer focused on backend systems",
+    "title": "Backend-first engineer who ships end-to-end",
     "primaryCta": "Work together",
     "secondaryCta": "View projects"
   },
@@ -32,7 +32,7 @@
     "projects": {
       "label": "Projects",
       "heading": "Selected work with outcomes",
-      "description": "Server-first builds, clear dashboards, and reusable systems that stay fast.",
+      "description": "A mix of product work and infrastructure—built to be useful, fast, and maintainable.",
       "actions": {
         "code": "Code",
         "details": "Details"
@@ -41,12 +41,12 @@
     "experience": {
       "label": "Experience",
       "heading": "Teams and impact",
-      "description": "Roles focused on regulated engines, API platforms, and UI that stays accountable."
+      "description": "I’ve worked across product teams and platform work—shipping features, modernizing systems, and keeping things reliable."
     },
     "journey": {
       "label": "Personal Journey",
       "heading": "How I got here",
-      "description": "A throughline from graphics and engines to full-stack delivery and regulated systems."
+      "description": "From performance-heavy graphics work to backend systems and product delivery."
     }
   },
   "projectsDetail": {
