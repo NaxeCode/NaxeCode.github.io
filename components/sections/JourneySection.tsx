@@ -36,7 +36,7 @@ export function JourneySection({ journey, copy }: Props) {
           <motion.div
             key={item.title}
             variants={staggerItem}
-            className="glass hover-rise rounded-2xl p-4 md:p-5 space-y-2"
+            className="surface p-4 md:p-5 space-y-2"
           >
             <p className="text-xs uppercase tracking-[0.1em] text-muted-foreground">{item.period}</p>
             <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>

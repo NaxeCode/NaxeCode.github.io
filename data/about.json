@@ -1,8 +1,8 @@
 {
   "name": "Aladdin Ali",
   "nickname": "Naxe",
-  "title": "Software Engineer",
-  "bio": "I’m a backend-first software engineer who builds dependable systems in C#/.NET. I’ve worked on platforms with tight reliability requirements, modernized older codebases, and built tooling that helps teams move faster without losing control.",
+  "title": "Senior Backend / Full-Stack Engineer (.NET)",
+  "bio": "I build C#/.NET backends that teams can trust in production: APIs, integrations, and the tooling that keeps behavior easy to see. I like cleaning up legacy systems, automating the boring parts with CI, and making it simple to answer “what happened?” when something goes sideways.",
   "email": "naxecode@proton.me",
   "social": {
     "github": "https://github.com/naxecode",
@@ -12,38 +12,28 @@
   "journey": [
     {
       "title": "Senior Backend Engineer · MahiGaming",
-      "period": "Jan 2025 – Jan 2026 · Deerfield Beach, FL",
-      "description": "Built and improved backend services in a regulated environment, with a focus on correctness, auditability, and repeatable workflows (CI, tooling, and cross-platform modernization)."
-    },
-    {
-      "title": "Integration Developer · Lawn Basics",
-      "period": "Jul 2024 – Jan 2025 · Portland, OR",
-      "description": "Built integrations and automation around scheduling, invoicing, and payments to make day-to-day operations smoother and more consistent."
+      "period": "Jan 2025 – Present · Deerfield Beach, FL",
+      "description": "I build backend services in a regulated environment, where correctness and auditability decide what ships. I lean on repeatable workflows (CI and tooling) so changes are easy to review and easy to trust."
     },
     {
       "title": "Full Stack Engineer · Coppei",
-      "period": "2023 – 2024 · Remote",
-      "description": "Shipped internal tools and APIs, improved database performance, and put stronger onboarding/deployment workflows in place so releases stayed predictable."
+      "period": "Jul 2022 – Jan 2024 · Seattle, WA (Remote)",
+      "description": "I shipped internal tools and APIs, sped up reporting and data flows, and tightened onboarding and deployments so releases stayed routine."
     },
     {
       "title": "Backend Engineer · Affordable Lock & Security",
-      "period": "2022 – 2023 · Orlando, FL",
-      "description": "Built backend services for routing, scheduling, and quoting; improved performance and reliability in the systems teams used every day."
+      "period": "Feb 2024 – Dec 2024 · Orlando, FL",
+      "description": "I built backend services for routing, scheduling, and quoting, then focused on speed and reliability so dispatch could move without friction."
     },
     {
       "title": "Haxe / Graphics Engineer · Sandbox Network",
-      "period": "2021 – 2022 · Remote",
-      "description": "Worked on performance-heavy engine code—rendering, threading, and diagnostics—building a strong foundation in profiling and optimization."
-    },
-    {
-      "title": "Earlier Roles · Unity/Support Engineering",
-      "period": "2019 – 2021 · Remote",
-      "description": "Unity engineering (Kyuppin Games) and support development (Your Idea Here)."
+      "period": "Feb 2019 – Jul 2022 · Seattle, WA (Remote)",
+      "description": "I worked on performance-heavy engine code (rendering and diagnostics), where profiling and measurement mattered more than guessing."
     }
   ],
   "highlights": [
-    "Built secure, server-first integrations (finance, auth, and data-heavy workflows).",
-    "Used AI thoughtfully for automation—focused on guardrails, validation, and predictable behavior.",
-    "Enjoy building reusable UI foundations that keep products consistent as they grow."
+    "I build APIs and integrations in C#/.NET that hold up under real-world constraints.",
+    "I use AI to cut busywork, but I keep guardrails and validation in place so results don’t surprise anyone.",
+    "When a UI is needed, I keep it clean and consistent (React/Next.js), especially for internal tools."
   ]
 }

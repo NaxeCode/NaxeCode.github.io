@@ -27,7 +27,7 @@ export function AboutSection({ profile, copy }: Props) {
       className="scroll-mt-28"
       tabIndex={-1}
     >
-      <div className="glass relative overflow-hidden p-6 sm:p-8 space-y-6 hover-rise">
+      <div className="surface relative overflow-hidden p-6 sm:p-8 space-y-6">
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-primary/10 via-transparent to-cyan-400/5" />
         <div className="relative space-y-1">
           <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground">{copy.label}</p>

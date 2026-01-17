@@ -5,7 +5,7 @@
 
 ## EXECUTIVE SUMMARY
 
-Transform this Next.js static portfolio into a SPA-feeling experience with instant transitions, polished motion, excellent performance, and professional accessibility—all while maintaining GitHub Pages compatibility.
+Transform this Next.js static portfolio into a SPA-feeling experience with instant transitions, polished motion, excellent performance, and professional accessibility, while maintaining GitHub Pages compatibility.
 
 **Target:** Professional, fast, fluid, impressive portfolio with zero server dependencies.
 

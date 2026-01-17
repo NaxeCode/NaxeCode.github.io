@@ -5,10 +5,7 @@
     "period": "Jan 2025 – Present",
     "location": "Deerfield Beach, FL",
     "bullets": [
-      "Built C#/.NET services that power core platform workflows, with an emphasis on correctness, auditability, and clear operational visibility.",
-      "Refactored an internal verification tool into a plugin-based system so new checks could be added quickly without rewriting the core.",
-      "Made simulation-style workloads reproducible with Docker + CI, improving throughput and cutting wasted compute.",
-      "Helped modernize internal desktop tooling from WPF to Avalonia for smoother cross-platform workflows and better observability."
+      "This is regulated work, so “close enough” doesn’t ship. I build and extend the backend pieces that keep game behavior explainable under review: math/state flow, RTP validation, and the RGS messages that tie everything together. When audits and investigations needed to move faster, I rebuilt PlayCheck as a plugin-based system so we could add new checks without ripping up the core each time. I also moved our heaviest simulations into Linux containers and wired them into GitLab CI, which made runs repeatable and cut compute costs by about 50%. On the tooling side, I migrated older WPF/.NET Framework apps to Avalonia on .NET 10 so diagnostics were consistent across machines and debugging didn’t depend on who was running it."
     ]
   },
   {
@@ -17,10 +14,7 @@
     "period": "Feb 2024 – Dec 2024",
     "location": "Orlando, FL",
     "bullets": [
-      "Built ASP.NET Core APIs that supported real-world operations—routing, scheduling, quoting, and the day-to-day tools field teams rely on.",
-      "Improved SQL Server performance and data consistency with schema cleanup, indexing, and targeted stored procedures.",
-      "Made key endpoints faster and more resilient with caching, retries, and better failure handling.",
-      "Reduced manual work by automating CRM, scheduling, and billing integrations."
+      "The goal here was simple: keep dispatch moving and keep techs in the field, not waiting on software. I built the APIs behind routing, scheduling, and quoting, then went after the slow spots that showed up during busy days. By tightening up the SQL Server side (cleaner schemas, better queries, the right indexes and stored procedures), I sped up key workflows by roughly 45%. I also added caching and safer failure handling around the parts that tended to wobble, and stitched CRM, scheduling, and billing together so information didn’t have to be retyped. That automation cut manual entry by about 70% and reduced the “small mistakes” that turn into real delays."
     ]
   },
   {
@@ -29,10 +23,7 @@
     "period": "Jul 2022 – Jan 2024",
     "location": "Seattle, WA (Remote)",
     "bullets": [
-      "Shipped an internal admin product (ASP.NET Core + React + SQL Server) that streamlined employee and operations workflows.",
-      "Designed APIs and data models that made reporting faster and the system easier to evolve over time.",
-      "Automated onboarding and deployments with CI so new environments could be spun up in hours instead of days.",
-      "Upgraded authentication and authorization with modern token-based flows and role-based access control."
+      "I worked on an internal admin product that the business leaned on for day-to-day operations. My job was to keep the backend steady as requirements shifted: clear data contracts, boring reliability, and changes that didn’t surprise the UI. Reporting was a pain point, so I rebuilt the database path for it (schemas and stored procedures) and got report generation about 55% faster, which meant less waiting and better visibility for decision-makers. I also cleaned up the “first week tax” by automating onboarding and deployments in Azure DevOps, taking setup from about three days down to a few hours. And I tightened up auth (JWT + roles) so access was sensible and safe without turning everything into a permissions fight."
     ]
   },
   {
@@ -41,10 +32,7 @@
     "period": "Feb 2019 – Jul 2022",
     "location": "Seattle, WA (Remote)",
     "bullets": [
-      "Owned parts of a cross-platform rendering stack (Haxe/C++) used on desktop and mobile.",
-      "Profiled CPU/GPU bottlenecks and improved pipelines and shaders to raise performance and stability.",
-      "Worked closely with artists to ship visual effects that looked good without breaking performance budgets.",
-      "Built tooling that made debugging faster and iteration less painful for the whole team."
+      "This role taught me to treat performance like a feature. I owned core rendering systems in a cross-platform Haxe/C++ engine (desktop and mobile), where every extra millisecond shows up as a worse player experience. A lot of my time went into profiling and fixing CPU/GPU bottlenecks, from batching and state changes to shader and pipeline work, so frame times stayed stable and releases didn’t get derailed by late regressions. I built diagnostics to make problems reproducible, and I worked closely with artists and designers to ship VFX that looked right in production without blowing the budget. That mix of tooling plus performance discipline made iteration faster and kept the engine predictable as content scaled up."
     ]
   }
 ]

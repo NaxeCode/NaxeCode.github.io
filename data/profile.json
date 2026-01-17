@@ -1,13 +1,13 @@
 {
   "name": "Aladdin Ali",
   "alias": "NaxeCode",
-  "title": "Software engineer (backend-first) who likes making complex systems feel simple",
+  "title": "I build .NET APIs, integrations, and platform tooling",
   "about": [
-    "I’m a backend-first software engineer who’s happiest when a system is both reliable and easy to work in.",
-    "Most of my work is in C#/.NET—building APIs, automation, and data-heavy services, often in environments where auditability and uptime matter.",
-    "I also enjoy the product side of things: turning messy requirements into a clean UI, solid workflows, and a codebase a team can confidently extend."
+    "I build backend systems that hold up when the stakes are real: audits, on-call, and awkward integrations.",
+    "Most of my work is C#/.NET (APIs, automation, and data-heavy services), plus SQL performance work and deployments that don’t create surprises.",
+    "When I go full-stack, I still aim for the same thing: clear workflows, predictable behavior, and a codebase teams can extend without fear."
   ],
-  "buildingNow": "A small suite of tools that make audits and debugging easier, plus a clean web shell for shipping polished side projects.",
+  "buildingNow": "A small set of audit/debugging helpers, plus a simple web shell for shipping polished side projects.",
   "skills": [
     "C# / .NET",
     "ASP.NET Core",
@@ -20,7 +20,7 @@
     "Simulation & analytics"
   ],
   "contact": {
-    "email": "siraj.n.lee@gmail.com",
+    "email": "naxecode@proton.me",
     "github": "https://github.com/naxecode",
     "linkedin": "https://linkedin.com/in/aladdin-ali01"
   }

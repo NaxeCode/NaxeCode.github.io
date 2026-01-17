@@ -31,6 +31,11 @@ export function loadExperience(): ExperienceItem[] {
   return experienceSchema.parse(experienceData);
 }
 
+export function getMostRecentExperience(): ExperienceItem | null {
+  const experience = loadExperience();
+  return experience.length > 0 ? experience[0] : null;
+}
+
 export function loadJourney(): JourneyItem[] {
   return journeySchema.parse(journeyData);
 }

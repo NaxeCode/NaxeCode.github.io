@@ -2,12 +2,15 @@
   {
     "slug": "stargazers-cosmic-watchlist",
     "title": "Stargazers Cosmic Watchlist",
-    "summary": "A watchlist app for anime, films, TV, and games—built to be fast, searchable, and easy to share.",
-    "description": "A type-safe watchlist built with Next.js, focused on everyday usefulness: quick filtering, shareable URLs, and an analytics dashboard that helps you spot habits and trends. It pulls in rich metadata from TMDB/OMDb and keeps the core flows simple and reliable.",
+    "summary": "I built a premium, server-first watchlist for anime, films, TV, and games with shareable filters and smart stats.",
+    "description": "I built a server-first watchlist designed to stay fast even with messy metadata and heavy filtering. It uses Server Actions with strict Zod validation, keeps views shareable via URL-based filters, and surfaces stats like completion rate and runtime totals. Optional TMDB/OMDb enrichment adds recommendations without turning the core workflow into a cluttered feature pile.",
     "highlights": [
-      "Fast, server-driven CRUD with validation and Google sign-in.",
-      "Shareable filters so lists are easy to bookmark and send to friends.",
-      "Analytics that turn activity into simple, readable insights."
+      "I built server-first CRUD with Server Actions, strict Zod parsing, and Google OAuth.",
+      "I kept filters shareable via URLs so people can bookmark and share views.",
+      "I added stats and optional TMDB/OMDb enrichment for recommendations.",
+      "I treated the database as the source of truth with server-rendered pages and minimal client state.",
+      "I used revalidation after writes to keep pages fresh without a heavy client cache.",
+      "I used Cosmic UI and Radix primitives to keep the UI consistent and accessible."
     ],
     "tags": ["Next.js", "TypeScript", "Drizzle", "PostgreSQL", "Auth.js"],
     "category": "full-stack",
@@ -16,21 +19,34 @@
     "github": "https://github.com/NaxeCode/Stargazers-Cosmic-Watchlist",
     "demoType": "none",
     "stack": {
-      "frontend": ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS"],
-      "backend": ["Next.js Server Actions", "Zod validation", "Auth.js (Google OAuth)", "TMDB / OMDb APIs"],
+      "frontend": [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS",
+        "@stargazers-stella/cosmic-ui",
+        "Radix UI",
+        "framer-motion"
+      ],
+      "backend": [
+        "Next.js Server Actions",
+        "Zod validation",
+        "Auth.js (Google OAuth)",
+        "TMDB / OMDb APIs"
+      ],
       "database": ["PostgreSQL", "Drizzle ORM"],
-      "tools": ["Vercel", "Vitest"]
+      "tools": ["Vercel", "Vercel Analytics", "Speed Insights", "Vitest"]
     }
   },
   {
     "slug": "photon-trail",
     "title": "Photon Trail",
-    "summary": "A personal finance dashboard that connects accounts, organizes transactions, and makes spending easier to understand.",
-    "description": "A finance dashboard that prioritizes privacy and clarity: secure bank connections, automated categorization, and simple charts that make patterns obvious. Built with a server-first approach so the sensitive parts stay on the backend.",
+    "summary": "I built a personal finance dashboard that connects accounts, organizes transactions, and makes spend patterns easy to review.",
+    "description": "I built Photon Trail around one constraint: sensitive data stays backend-controlled. It connects accounts via Plaid, syncs and organizes transactions, and presents spending in a clean dashboard behind protected routes. I kept the UI simple on purpose: readable charts, consistent categorization, and a workflow that’s easy to understand and hard to misuse.",
     "highlights": [
-      "Secure account linking and sync with encrypted tokens.",
-      "Automated categorization that saves time and surfaces patterns.",
-      "A clean dashboard with protected routes and clear visuals."
+      "I handled account linking and sync with backend-controlled tokens and protected routes.",
+      "I organized transactions with consistent categorization to make patterns easier to review.",
+      "I shipped a clean dashboard with visuals focused on readability over noise."
     ],
     "tags": ["Next.js", "Plaid", "OpenAI", "PostgreSQL", "NextAuth"],
     "category": "full-stack",
@@ -48,12 +64,12 @@
   {
     "slug": "cosmic-digest",
     "title": "Cosmic Digest",
-    "summary": "A lightweight news digest that filters noise, spots trends, and sends scheduled updates.",
-    "description": "A .NET worker that pulls RSS feeds, scores relevance, tags topics, and emails a clean digest on a schedule. It’s designed to be hands-off: consistent runs, predictable output, and easy to deploy.",
+    "summary": "I built a scheduled RSS digest worker that filters noise, tags topics, and emails a clean summary.",
+    "description": "I built a .NET worker that runs unattended: it pulls RSS feeds, scores relevance, tags topics, and emails a digest on a schedule. The main goal is consistency. Runs are deterministic, configuration is straightforward, and containerized deployment keeps behavior the same across environments.",
     "highlights": [
-      "Relevance scoring and topic tagging to keep feeds useful instead of overwhelming.",
-      "Trend signals and alerts so important shifts stand out.",
-      "Dockerized worker that runs consistently across environments."
+      "I kept digests readable with relevance scoring and topic tagging to reduce feed overload.",
+      "I surfaced trend signals and alerts so important changes stand out without constant monitoring.",
+      "I ran it consistently across environments with a Dockerized worker and simple scheduling."
     ],
     "tags": [".NET 10", "C#", "OpenAI", "Mailgun", "Docker"],
     "category": "tool",
@@ -69,12 +85,12 @@
   {
     "slug": "cosmic-ui",
     "title": "Cosmic UI",
-    "summary": "A small React component library focused on accessibility, consistency, and easy theming.",
-    "description": "A lightweight component library published to npm/GitHub Packages. It wraps accessible primitives, standardizes styling patterns, and uses CSS variables so themes stay flexible without being fragile.",
+    "summary": "I built a small React component library that standardizes accessible UI patterns and theming.",
+    "description": "I built a lightweight component library to solve a common team problem: consistent UI without rebuilding the same components in every app. It wraps accessible primitives, standardizes variant patterns, and uses CSS variables so theming stays flexible without getting fragile. Automated publishing keeps releases low-friction.",
     "highlights": [
-      "Accessible primitives wrapped in clean, variant-driven APIs.",
-      "Themeable via CSS variables for simple light/dark swaps.",
-      "Automated publishing so releases stay consistent and low-friction."
+      "I wrapped accessible primitives in clean, variant-driven component APIs.",
+      "I kept theming simple with CSS variables for stable light/dark and brand variations.",
+      "I automated publishing so releases stay consistent and low-friction."
     ],
     "tags": ["React", "TypeScript", "Radix UI", "Tailwind CSS", "Design System"],
     "category": "design-system",

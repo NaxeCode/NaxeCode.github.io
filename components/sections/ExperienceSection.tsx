@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import type { ExperienceItem } from '@/types/experience';
 import type { Copy } from '@/types/copy';
@@ -15,6 +16,13 @@ type Props = {
 export function ExperienceSection({ experience, copy }: Props) {
   const { ref, inView } = useInView({ threshold: 0.1 });
   useSectionTracking({ sectionId: 'experience', threshold: 0.5 });
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  const toId = (value: string) =>
+    value
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
 
   return (
     <section id="experience" className="scroll-mt-28 space-y-5" tabIndex={-1}>
@@ -30,11 +38,20 @@ export function ExperienceSection({ experience, copy }: Props) {
         variants={staggerContainer}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
-        className="glass divide-y divide-border/60"
+        className="surface divide-y divide-border/60"
       >
-        {experience.map((item) => (
+        {experience.map((item) => {
+          const itemKey = `${item.role}-${item.company}-${item.period}`;
+          const listId = `experience-${toId(itemKey)}`;
+          const isExpandable = item.bullets.length > 3;
+          const isExpanded = expanded[itemKey] ?? false;
+          const visibleBullets = isExpandable && !isExpanded
+            ? item.bullets.slice(0, 3)
+            : item.bullets;
+
+          return (
           <motion.div
-            key={`${item.role}-${item.company}-${item.period}`}
+            key={itemKey}
             variants={staggerItem}
             className="p-5 sm:p-6 space-y-3"
           >
@@ -49,13 +66,33 @@ export function ExperienceSection({ experience, copy }: Props) {
               </div>
               <p className="text-xs uppercase tracking-[0.1em] text-muted-foreground">{item.period}</p>
             </div>
-            <ul className="space-y-1.5 text-sm text-foreground/90 list-disc list-inside max-reading">
-              {item.bullets.map((bullet) => (
-                <li key={bullet}>{bullet}</li>
+            <div
+              id={listId}
+              className="space-y-1.5 text-sm text-foreground/90 max-reading"
+            >
+              {visibleBullets.map((bullet) => (
+                <p key={bullet}>{bullet}</p>
               ))}
-            </ul>
+            </div>
+            {isExpandable && (
+              <button
+                type="button"
+                aria-expanded={isExpanded}
+                aria-controls={listId}
+                onClick={() =>
+                  setExpanded((current) => ({
+                    ...current,
+                    [itemKey]: !isExpanded,
+                  }))
+                }
+                className="text-sm font-semibold text-primary hover:text-primary/80"
+              >
+                {isExpanded ? 'Show less' : 'Show more'}
+              </button>
+            )}
           </motion.div>
-        ))}
+          );
+        })}
       </motion.div>
     </section>
   );

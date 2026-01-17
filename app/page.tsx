@@ -1,5 +1,11 @@
 import { ArrowRight, Mail } from "lucide-react";
-import { loadProfile, getFeaturedProjects, loadExperience, loadJourney, loadCopy } from "@/lib/data-loader";
+import {
+  loadProfile,
+  loadProjects,
+  loadExperience,
+  loadJourney,
+  loadCopy,
+} from "@/lib/data-loader";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
@@ -8,7 +14,7 @@ import { AnchorLink } from "@/components/layout/AnchorLink";
 
 export default function Home() {
   const profile = loadProfile();
-  const projects = getFeaturedProjects();
+  const projects = loadProjects();
   const experience = loadExperience();
   const journey = loadJourney();
   const copy = loadCopy();
@@ -53,9 +59,9 @@ export default function Home() {
         <div className="divider" />
 
         <div className="space-y-12">
-          <AboutSection profile={profile} copy={copy.sections.about} />
           <ProjectsSection projects={projects} copy={copy.sections.projects} />
           <ExperienceSection experience={experience} copy={copy.sections.experience} />
+          <AboutSection profile={profile} copy={copy.sections.about} />
           <JourneySection journey={journey} copy={copy.sections.journey} />
         </div>
       </div>

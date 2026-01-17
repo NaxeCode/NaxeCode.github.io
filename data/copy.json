@@ -1,11 +1,11 @@
 {
   "site": {
     "brand": "NaxeCode",
-    "title": "Aladdin Ali | Software Engineer",
-    "description": "Backend-first software engineer building dependable services, smooth integrations, and thoughtful web experiences.",
-    "ogTitle": "Aladdin Ali | Software Engineer",
-    "ogDescription": "I build C#/.NET systems, automation pipelines, and clean web surfaces—especially where reliability and clarity matter.",
-    "locationLine": "Based in Florida — building dependable C#/.NET services and clean web interfaces."
+    "title": "Aladdin Ali | Senior Backend / Full-Stack Engineer",
+    "description": "I build C#/.NET APIs, integrations, and backend tooling for systems that need to be clear and dependable.",
+    "ogTitle": "Aladdin Ali | Senior Backend / Full-Stack Engineer",
+    "ogDescription": "I build C#/.NET services and integrations, and I ship clean web surfaces when they help the workflow.",
+    "locationLine": "Based in Florida (open to U.S. relocation). I build C#/.NET APIs, integrations, and practical web UIs."
   },
   "nav": {
     "about": "About",
@@ -15,7 +15,7 @@
   },
   "hero": {
     "eyebrow": "Aladdin Ali · NaxeCode",
-    "title": "Backend-first engineer who ships end-to-end",
+    "title": "I’m a backend engineer who ships end-to-end",
     "primaryCta": "Work together",
     "secondaryCta": "View projects"
   },
@@ -32,7 +32,7 @@
     "projects": {
       "label": "Projects",
       "heading": "Selected work with outcomes",
-      "description": "A mix of product work and infrastructure—built to be useful, fast, and maintainable.",
+      "description": "A few things I’ve shipped, with outcomes and the tradeoffs that mattered.",
       "actions": {
         "code": "Code",
         "details": "Details"
@@ -41,12 +41,12 @@
     "experience": {
       "label": "Experience",
       "heading": "Teams and impact",
-      "description": "I’ve worked across product teams and platform work—shipping features, modernizing systems, and keeping things reliable."
+      "description": "I work across product and platform: shipping features, modernizing systems, and keeping services easy to operate."
     },
     "journey": {
       "label": "Personal Journey",
       "heading": "How I got here",
-      "description": "From performance-heavy graphics work to backend systems and product delivery."
+      "description": "I started in performance-heavy graphics work, then moved into backend systems, integrations, and product delivery."
     }
   },
   "projectsDetail": {
@@ -66,19 +66,19 @@
     "about": {
       "eyebrow": "Heads up",
       "title": "The About section lives on one page now.",
-      "body": "Everything is consolidated into a single, fast page. Jump straight to the About section to see the summary, skills snapshot, and contact links.",
+      "body": "I keep everything consolidated into a single page now. Jump to About for the summary, skills snapshot, and contact links.",
       "cta": "Go to About"
     },
     "projects": {
       "eyebrow": "Updated flow",
       "title": "Projects now live on the home page.",
-      "body": "Navigation is anchor-based for instant jumps. Head to the Projects section to see selected work and links.",
+      "body": "I use anchor navigation for instant jumps. Head to Projects for selected work and links.",
       "cta": "Go to Projects"
     },
     "contact": {
       "eyebrow": "Quick note",
       "title": "Contact is lightweight now.",
-      "body": "Email and socials sit inside the About section so navigation stays instant. Jump there to get in touch.",
+      "body": "I keep email and socials in About so navigation stays instant. Jump there to get in touch.",
       "ctaEmail": "Email me",
       "ctaAbout": "Go to About"
     }
@@ -90,8 +90,8 @@
     "email": "Email"
   },
   "notFound": {
-    "title": "Lost in space?",
-    "description": "The page you're looking for doesn't exist in this universe.",
+    "title": "Page not found",
+    "description": "The page you’re looking for doesn’t exist.",
     "primaryCta": "Back to Home",
     "secondaryCta": "View Projects"
   }

@@ -2,7 +2,7 @@
 
 ## Summary
 
-Transforms the Next.js static portfolio into a polished, SPA-feeling experience with instant route transitions, professional motion design, excellent accessibility, and comprehensive analytics tracking—all while maintaining full GitHub Pages compatibility.
+Transforms the Next.js static portfolio into a polished, SPA-feeling experience with instant route transitions, professional motion design, excellent accessibility, and comprehensive analytics tracking, while maintaining full GitHub Pages compatibility.
 
 **Goal Achieved:** Professional, fast, fluid, impressive portfolio with zero server dependencies.
 

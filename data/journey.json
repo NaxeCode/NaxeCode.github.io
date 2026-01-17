@@ -2,16 +2,16 @@
   {
     "title": "Rendering roots, performance discipline",
     "period": "2019 – 2022",
-    "summary": "I started in graphics and engine work, where performance is non‑negotiable. It taught me how to profile, measure, and make improvements that actually show up on screen."
+    "summary": "I started in graphics/engine work, where performance is non‑negotiable. That’s where I learned to profile, measure, and ship changes you can actually feel, not just benchmark."
   },
   {
     "title": "Full-stack delivery with guardrails",
     "period": "2022 – 2024",
-    "summary": "From there I moved into product delivery—building admin tools and APIs, tightening up databases, and putting CI in place so releases felt routine instead of risky."
+    "summary": "I moved into product delivery: admin tools, APIs, database work, and CI so releases stayed routine instead of stressful."
   },
   {
     "title": "Regulated systems and AI-assisted tooling",
     "period": "2024 – Present",
-    "summary": "These days I work in regulated, reliability-heavy systems. I care a lot about clarity: good logging, good tests, reproducible runs, and tools that help teams move fast without guessing."
+    "summary": "Today I work in regulated systems, where clarity matters. I lean on good logging, good tests, reproducible runs, and tooling that helps teams move quickly without guessing."
   }
 ]
