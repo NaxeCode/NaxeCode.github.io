@@ -2,6 +2,7 @@
 
 import { ArrowRight, ExternalLink, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import type { Project } from '@/types/project';
 import type { Copy } from '@/types/copy';
@@ -28,15 +29,12 @@ export function ProjectsSection({ projects, copy }: Props) {
   useSectionTracking({ sectionId: 'projects', threshold: 0.5 });
   const [heroIndex, setHeroIndex] = useState(0);
 
-  if (!projects || projects.length === 0) {
-    return null;
-  }
-
-  const featured = projects.filter((project) => project.featured);
-  const primary = featured[0] ?? projects[0];
-  const compact = projects.filter((project) => project.slug !== primary.slug);
+  const hasProjects = projects && projects.length > 0;
+  const featured = hasProjects ? projects.filter((project) => project.featured) : [];
+  const primary = hasProjects ? featured[0] ?? projects[0] : null;
+  const compact = hasProjects && primary ? projects.filter((project) => project.slug !== primary.slug) : [];
   const hasCompact = compact.length > 0;
-  const isWatchlistPrimary = primary.slug === 'stargazers-cosmic-watchlist';
+  const isWatchlistPrimary = primary?.slug === 'stargazers-cosmic-watchlist';
 
   useEffect(() => {
     if (!isWatchlistPrimary || !inView) return;
@@ -47,6 +45,10 @@ export function ProjectsSection({ projects, copy }: Props) {
     }, 3500);
     return () => window.clearInterval(id);
   }, [inView, isWatchlistPrimary]);
+
+  if (!hasProjects || !primary) {
+    return null;
+  }
 
   return (
     <section id="projects" className="scroll-mt-28 space-y-5" tabIndex={-1}>
@@ -74,15 +76,16 @@ export function ProjectsSection({ projects, copy }: Props) {
             <div className="relative overflow-hidden rounded-xl border border-border/60">
               <div className="relative h-44 sm:h-52">
                 {watchlistHeroSlides.map((slide, index) => (
-                  <img
+                  <Image
                     key={slide.src}
                     src={slide.src}
                     alt={slide.alt}
                     className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-out ${
                       index === heroIndex ? 'opacity-100' : 'opacity-0'
                     }`}
-                    loading={index === 0 ? 'eager' : 'lazy'}
-                    decoding="async"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 600px"
+                    priority={index === 0}
                   />
                 ))}
               </div>

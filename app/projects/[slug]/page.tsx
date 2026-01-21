@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { getProjectBySlug, loadCopy } from "@/lib/data-loader";
@@ -116,11 +117,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 Architecture
               </h2>
               <div className="rounded-xl border border-border/60 bg-surface/70 p-3">
-                <img
+                <Image
                   src="/projects/cosmic-watchlist-architecture.png"
                   alt="Cosmic Watchlist architecture diagram"
                   className="fade-quick w-full rounded-lg object-cover"
-                  loading="lazy"
+                  width={1200}
+                  height={675}
+                  sizes="(max-width: 768px) 100vw, 800px"
                 />
               </div>
             </div>
