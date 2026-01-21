@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { trackOutboundLink, trackProjectClick } from "@/lib/analytics";
+import { withOutboundUtm } from "@/lib/utm";
 
 type BaseProps = {
   className?: string;
@@ -36,9 +37,10 @@ export function ProjectLink({ href, slug, title, className, children }: ProjectL
 }
 
 export function OutboundLink({ href, label, className, target = "_blank", rel = "noreferrer", children }: OutboundLinkProps) {
+  const trackedHref = withOutboundUtm(href, label);
   return (
     <a
-      href={href}
+      href={trackedHref}
       target={target}
       rel={rel}
       className={className}

@@ -17,12 +17,21 @@ export function ExperienceSection({ experience, copy }: Props) {
   const { ref, inView } = useInView({ threshold: 0.1 });
   useSectionTracking({ sectionId: 'experience', threshold: 0.5 });
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const maxVisibleBullets = 3;
+  const maxBulletChars = 260;
 
   const toId = (value: string) =>
     value
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/(^-|-$)/g, '');
+
+  const truncateBullet = (bullet: string) => {
+    if (bullet.length <= maxBulletChars) {
+      return bullet;
+    }
+    return `${bullet.slice(0, maxBulletChars).trim()}…`;
+  };
 
   return (
     <section id="experience" className="scroll-mt-28 space-y-5" tabIndex={-1}>
@@ -43,11 +52,15 @@ export function ExperienceSection({ experience, copy }: Props) {
         {experience.map((item) => {
           const itemKey = `${item.role}-${item.company}-${item.period}`;
           const listId = `experience-${toId(itemKey)}`;
-          const isExpandable = item.bullets.length > 3;
+          const isExpandable =
+            item.bullets.length > maxVisibleBullets ||
+            item.bullets.some((bullet) => bullet.length > maxBulletChars);
           const isExpanded = expanded[itemKey] ?? false;
-          const visibleBullets = isExpandable && !isExpanded
-            ? item.bullets.slice(0, 3)
-            : item.bullets;
+          const visibleBullets = isExpanded
+            ? item.bullets
+            : item.bullets
+              .slice(0, maxVisibleBullets)
+              .map((bullet) => truncateBullet(bullet));
 
           return (
           <motion.div

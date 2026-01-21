@@ -1,7 +1,7 @@
 [
   {
     "slug": "stargazers-cosmic-watchlist",
-    "title": "Stargazers Cosmic Watchlist",
+    "title": "Cosmic Watchlist",
     "summary": "I built a premium, server-first watchlist for anime, films, TV, and games with shareable filters and smart stats.",
     "description": "I built a server-first watchlist designed to stay fast even with messy metadata and heavy filtering. It uses Server Actions with strict Zod validation, keeps views shareable via URL-based filters, and surfaces stats like completion rate and runtime totals. Optional TMDB/OMDb enrichment adds recommendations without turning the core workflow into a cluttered feature pile.",
     "highlights": [
@@ -14,7 +14,7 @@
     ],
     "tags": ["Next.js", "TypeScript", "Drizzle", "PostgreSQL", "Auth.js"],
     "category": "full-stack",
-    "year": "2024-2025",
+    "year": "2024 - 2025",
     "featured": true,
     "github": "https://github.com/NaxeCode/Stargazers-Cosmic-Watchlist",
     "demoType": "none",
@@ -50,7 +50,7 @@
     ],
     "tags": ["Next.js", "Plaid", "OpenAI", "PostgreSQL", "NextAuth"],
     "category": "full-stack",
-    "year": "2024-2025",
+    "year": "2024 - 2025",
     "featured": true,
     "github": "https://github.com/NaxeCode/Photon-Trail",
     "demoType": "none",
@@ -63,7 +63,7 @@
   },
   {
     "slug": "cosmic-digest",
-    "title": "Cosmic Digest",
+    "title": "AI Signal Digest",
     "summary": "I built a scheduled RSS digest worker that filters noise, tags topics, and emails a clean summary.",
     "description": "I built a .NET worker that runs unattended: it pulls RSS feeds, scores relevance, tags topics, and emails a digest on a schedule. The main goal is consistency. Runs are deterministic, configuration is straightforward, and containerized deployment keeps behavior the same across environments.",
     "highlights": [
@@ -73,7 +73,7 @@
     ],
     "tags": [".NET 10", "C#", "OpenAI", "Mailgun", "Docker"],
     "category": "tool",
-    "year": "2024-2025",
+    "year": "2024 - 2025",
     "featured": true,
     "github": "https://github.com/NaxeCode/Cosmic-Digest",
     "demoType": "none",
@@ -94,7 +94,7 @@
     ],
     "tags": ["React", "TypeScript", "Radix UI", "Tailwind CSS", "Design System"],
     "category": "design-system",
-    "year": "2024-2025",
+    "year": "2024 - 2025",
     "featured": true,
     "github": "https://github.com/stargazers-stella/cosmic-ui",
     "demoType": "none",

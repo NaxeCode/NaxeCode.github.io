@@ -26,6 +26,7 @@ export function ProjectsSection({ projects, copy }: Props) {
   const primary = featured[0] ?? projects[0];
   const compact = projects.filter((project) => project.slug !== primary.slug);
   const hasCompact = compact.length > 0;
+  const isWatchlistPrimary = primary.slug === 'stargazers-cosmic-watchlist';
 
   return (
     <section id="projects" className="scroll-mt-28 space-y-5" tabIndex={-1}>
@@ -49,9 +50,25 @@ export function ProjectsSection({ projects, copy }: Props) {
           }`}
         >
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-primary/60 via-cyan-400/50 to-transparent" />
+          {isWatchlistPrimary && (
+            <div className="relative overflow-hidden rounded-xl border border-border/60">
+              <img
+                src="/projects/cosmic-watchlist-hero.png"
+                alt="Cosmic Watchlist hero"
+                className="h-44 w-full object-cover sm:h-52"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+              <div className="absolute bottom-3 left-4 text-sm font-semibold uppercase tracking-[0.3em] text-white">
+                Cosmic Watchlist
+              </div>
+            </div>
+          )}
           <div className="flex items-start justify-between gap-3">
             <div className="space-y-1">
-              <h3 className="text-2xl font-semibold text-foreground">{primary.title}</h3>
+              {!isWatchlistPrimary && (
+                <h3 className="text-2xl font-semibold text-foreground">{primary.title}</h3>
+              )}
               <p className="text-sm text-muted-foreground leading-relaxed max-reading">{primary.summary}</p>
             </div>
             <span className="pill text-[11px]">{primary.year}</span>
