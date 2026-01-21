@@ -35,7 +35,8 @@
       "description": "A few things I’ve shipped, with outcomes and the tradeoffs that mattered.",
       "actions": {
         "code": "Code",
-        "details": "Details"
+        "details": "Details",
+        "live": "Live site"
       }
     },
     "experience": {
@@ -60,7 +61,7 @@
       "tools": "Tools"
     },
     "viewCode": "View on GitHub",
-    "liveDemo": "Live Demo"
+    "liveSite": "Live site"
   },
   "stubs": {
     "about": {

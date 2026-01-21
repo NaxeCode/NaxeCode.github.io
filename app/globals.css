@@ -170,6 +170,17 @@
     animation: fadeUp 0.9s ease forwards;
   }
 
+  .fade-quick {
+    opacity: 0;
+    animation: fadeQuick 0.4s ease forwards;
+  }
+
+  .animate-fade-quick {
+    opacity: 0;
+    animation: fadeQuick 0.35s ease-out forwards;
+  }
+
+
   .hover-rise {
     transition: transform 220ms ease, box-shadow 280ms ease, border-color 180ms ease;
   }
@@ -181,6 +192,17 @@
         0 18px 60px -30px rgba(45, 212, 191, 0.55),
         0 12px 40px -28px rgba(59, 130, 246, 0.35);
       border-color: hsl(var(--primary) / 0.45);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-quick {
+      animation: none;
+      opacity: 1;
+    }
+    .animate-fade-quick {
+      animation: none;
+      opacity: 1;
     }
   }
 
@@ -229,6 +251,15 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeQuick {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

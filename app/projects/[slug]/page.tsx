@@ -110,6 +110,22 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </div>
           )}
 
+          {project.slug === "stargazers-cosmic-watchlist" && (
+            <div className="space-y-2">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+                Architecture
+              </h2>
+              <div className="rounded-xl border border-border/60 bg-surface/70 p-3">
+                <img
+                  src="/projects/cosmic-watchlist-architecture.png"
+                  alt="Cosmic Watchlist architecture diagram"
+                  className="fade-quick w-full rounded-lg object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          )}
+
           <div className="flex flex-wrap gap-3 pt-2">
             {project.github && (
               <OutboundLink
@@ -124,11 +140,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             {project.demo && (
               <OutboundLink
                 href={project.demo}
-                label={`${project.title} - Demo`}
+                label={`${project.title} - Live Site`}
                 className="btn-press inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground"
               >
                 <ExternalLink className="h-4 w-4" />
-                {copy.projectsDetail.liveDemo}
+                {copy.projectsDetail.liveSite}
               </OutboundLink>
             )}
           </div>

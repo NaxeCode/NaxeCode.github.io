@@ -38,6 +38,7 @@ export const copySchema = z.object({
       actions: z.object({
         code: z.string(),
         details: z.string(),
+        live: z.string(),
       }),
     }),
     experience: z.object({
@@ -62,7 +63,7 @@ export const copySchema = z.object({
       tools: z.string(),
     }),
     viewCode: z.string(),
-    liveDemo: z.string(),
+    liveSite: z.string(),
   }),
   stubs: z.object({
     about: z.object({
