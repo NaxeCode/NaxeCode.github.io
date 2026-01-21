@@ -33,6 +33,33 @@ export function ExperienceSection({ experience, copy }: Props) {
     return `${bullet.slice(0, maxBulletChars).trim()}…`;
   };
 
+  const parseMonthYear = (value: string) => {
+    const match = value.trim().match(/^([A-Za-z]{3})\s+(\d{4})$/);
+    if (!match) return null;
+    const month = match[1].toLowerCase();
+    const year = Number(match[2]);
+    const monthIndex = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'].indexOf(month);
+    if (monthIndex < 0 || Number.isNaN(year)) return null;
+    return { year, monthIndex };
+  };
+
+  const computeDuration = (period: string) => {
+    const [startRaw, endRaw] = period.split('–').map((part) => part.trim());
+    if (!startRaw || !endRaw) return null;
+    const start = parseMonthYear(startRaw);
+    const end = endRaw.toLowerCase() === 'present'
+      ? { year: new Date().getFullYear(), monthIndex: new Date().getMonth() }
+      : parseMonthYear(endRaw);
+    if (!start || !end) return null;
+    const totalMonths = (end.year - start.year) * 12 + (end.monthIndex - start.monthIndex) + 1;
+    if (totalMonths <= 0) return null;
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+    if (years === 0) return `${months} mos`;
+    if (months === 0) return `${years} yr${years > 1 ? 's' : ''}`;
+    return `${years} yr${years > 1 ? 's' : ''} ${months} mos`;
+  };
+
   return (
     <section id="experience" className="scroll-mt-28 space-y-5" tabIndex={-1}>
       <div className="space-y-1">
@@ -77,7 +104,12 @@ export function ExperienceSection({ experience, copy }: Props) {
                   <p className="text-xs text-muted-foreground">{item.location}</p>
                 )}
               </div>
-              <p className="text-xs uppercase tracking-[0.1em] text-muted-foreground">{item.period}</p>
+              <div className="text-right space-y-1">
+                <p className="text-xs uppercase tracking-[0.1em] text-muted-foreground">{item.period}</p>
+                {computeDuration(item.period) && (
+                  <p className="text-[11px] text-muted-foreground/80">{computeDuration(item.period)}</p>
+                )}
+              </div>
             </div>
             <div
               id={listId}
