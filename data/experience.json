@@ -1,8 +1,17 @@
 [
   {
+    "role": "Backend Engineer (Contract)",
+    "company": "Regulated banking platform",
+    "period": "2026 – Present",
+    "location": "South Florida (hybrid)",
+    "bullets": [
+      "Contract backend engineering on a regulated banking platform. Specifics stay private; the work centres on correctness, auditability, and dependable integrations between systems."
+    ]
+  },
+  {
     "role": "Senior Backend Engineer",
     "company": "MahiGaming",
-    "period": "Jan 2025 – Present",
+    "period": "Jan 2025 – 2026",
     "location": "Deerfield Beach, FL",
     "bullets": [
       "This is regulated work, so “close enough” doesn’t ship. I build and extend the backend pieces that keep game behavior explainable under review: math/state flow, RTP validation, and the RGS messages that tie everything together. When audits and investigations needed to move faster, I rebuilt PlayCheck as a plugin-based system so we could add new checks without ripping up the core each time. I also moved our heaviest simulations into Linux containers and wired them into GitLab CI, which made runs repeatable and cut compute costs by about 50%. On the tooling side, I migrated older WPF/.NET Framework apps to Avalonia on .NET 10 so diagnostics were consistent across machines and debugging didn’t depend on who was running it."
