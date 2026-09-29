@@ -90,6 +90,7 @@ export const copySchema = z.object({
     copyrightName: z.string(),
     github: z.string(),
     linkedin: z.string(),
+    x: z.string(),
     email: z.string(),
   }),
   notFound: z.object({

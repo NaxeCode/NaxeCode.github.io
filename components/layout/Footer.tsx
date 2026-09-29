@@ -11,7 +11,7 @@ export function Footer() {
         <span className="text-foreground/80">© {year} {copy.footer.copyrightName}</span>
         <div className="flex items-center gap-3">
           <a
-            href="https://github.com/naxecode"
+            href={profile.contact.github}
             target="_blank"
             rel="noreferrer"
             className="hover:text-primary"
@@ -19,12 +19,20 @@ export function Footer() {
             {copy.footer.github}
           </a>
           <a
-            href="https://linkedin.com/in/aladdin-ali01"
+            href={profile.contact.linkedin}
             target="_blank"
             rel="noreferrer"
             className="hover:text-primary"
           >
             {copy.footer.linkedin}
+          </a>
+          <a
+            href={profile.contact.x}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-primary"
+          >
+            {copy.footer.x}
           </a>
           <a href={`mailto:${profile.contact.email}`} className="hover:text-primary">
             {copy.footer.email}

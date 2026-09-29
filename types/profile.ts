@@ -11,6 +11,7 @@ export const profileSchema = z.object({
     email: z.string().email(),
     github: z.string().url(),
     linkedin: z.string().url(),
+    x: z.string().url(),
   }),
 });
 

@@ -24,15 +24,23 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://naxecode.github.io"),
   title: copyData.site.title,
   description: copyData.site.description,
   openGraph: {
     title: copyData.site.ogTitle,
     description: copyData.site.ogDescription,
-    url: "https://naxecode.github.io",
+    url: "https://naxecode.github.io/",
     siteName: copyData.site.brand,
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: copyData.site.ogTitle,
+    description: copyData.site.ogDescription,
+    site: "@NaxeDev",
+    creator: "@NaxeDev",
   },
 };
 

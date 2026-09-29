@@ -1,27 +1,30 @@
 {
   "name": "Aladdin Ali",
-  "alias": "NaxeCode",
-  "title": "I build .NET APIs, integrations, and platform tooling",
+  "alias": "Naxe",
+  "title": "Backend & platform engineer",
   "about": [
-    "I build backend systems that hold up when the stakes are real: audits, on-call, and awkward integrations.",
-    "Most of my work is C#/.NET (APIs, automation, and data-heavy services), plus SQL performance work and deployments that don’t create surprises.",
-    "When I go full-stack, I still aim for the same thing: clear workflows, predictable behavior, and a codebase teams can extend without fear."
+    "I build systems that stay correct when inputs are messy and dependencies fail: APIs, ingestion pipelines, financial data, and the plumbing between them.",
+    "What I care about: idempotency, retries and failure isolation, reconciliation, auditability, and observability. Most of my backend work is C# / .NET, with TypeScript, Postgres, Redis, and Python workers alongside it.",
+    "I've also been making games since 2015 (Haxe, HaxeFlixel, Heaps, C#, Godot), and I build the Linux and desktop tools I actually use."
   ],
-  "buildingNow": "A small set of audit/debugging helpers, plus a simple web shell for shipping polished side projects.",
+  "buildingNow": "Ground, a financial-analysis platform foundation, and Photon Trail, a personal-finance pipeline.",
   "skills": [
     "C# / .NET",
     "ASP.NET Core",
-    "Docker & GitLab CI",
-    "SQL optimization",
-    "Microservices",
-    "Plugin architecture",
-    "Avalonia/WPF migration",
-    "Next.js / TypeScript",
-    "Simulation & analytics"
+    "TypeScript",
+    "Next.js",
+    "PostgreSQL",
+    "Redis",
+    "Python workers",
+    "Idempotency & retries",
+    "Reconciliation & auditability",
+    "Observability",
+    "Haxe / game dev"
   ],
   "contact": {
     "email": "naxecode@proton.me",
-    "github": "https://github.com/naxecode",
-    "linkedin": "https://linkedin.com/in/aladdin-ali01"
+    "github": "https://github.com/NaxeCode",
+    "linkedin": "https://www.linkedin.com/in/aladdin-ali01/",
+    "x": "https://x.com/NaxeDev"
   }
 }

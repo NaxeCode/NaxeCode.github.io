@@ -1,22 +1,97 @@
 [
   {
+    "slug": "cosmic-digest",
+    "title": "Cosmic Digest",
+    "summary": ".NET RSS ingestion with per-source health, conditional caching, retries and circuit breaking. Relevance scoring decides what's worth sending before anything gets sent.",
+    "description": "Cosmic Digest turns RSS feeds into a short personal brief, and sends nothing when nothing clears the bar. A deterministic layer handles ingestion, deduplication, and scoring so the AI input stays small and auditable. The AI step only makes the judgment call keyword scoring can't: whether an item actually changes anything. Email goes out through Resend with an idempotency key, and run state is persisted between scheduled runs.",
+    "highlights": [
+      "Per-source health, conditional-cache metadata, retries, and circuit state for every feed.",
+      "Groups related coverage into one event without treating publisher count as corroboration.",
+      "Deterministic priority, freshness, trust, and novelty scoring before any AI call.",
+      "Structured act / watch / learn decision from an OpenAI model; low-value items are dropped.",
+      "Sends through Resend with an idempotency key and tracks API acceptance separately from delivery state.",
+      "Suppresses the email entirely when nothing clears the materiality gate."
+    ],
+    "tags": [".NET 10", "C#", "RSS", "OpenAI", "Resend", "GitHub Actions"],
+    "category": "tool",
+    "year": "2025 - 2026",
+    "featured": true,
+    "github": "https://github.com/NaxeCode/Cosmic-Digest",
+    "demoType": "none",
+    "stack": {
+      "backend": [".NET 10 (C#)", "OpenAI API", "Resend"],
+      "tools": ["GitHub Actions (scheduled runs)"]
+    }
+  },
+  {
+    "slug": "ground",
+    "title": "Ground",
+    "summary": "Financial-analysis platform foundation: Next.js front end, ASP.NET Core API, Python workers, Redis, and Postgres/TimescaleDB, with clean service boundaries. Work in progress.",
+    "description": "Ground is a financial-analysis platform prototype, built as a monorepo. The goal so far is the foundation, not features: a clean local setup with the main system boundaries in place so the product can grow without rewriting it. The UI surface exists, but much of the data behind it is still placeholder-backed. Real auth, portfolio data, alerting, and execution flows are not done yet.",
+    "highlights": [
+      "Next.js App Router front end talking to the API through a typed SDK and shared contracts.",
+      "ASP.NET Core API with a Redis-backed analysis queue.",
+      "Python worker process for async jobs and analysis.",
+      "Postgres + TimescaleDB for time-series storage, with init and seed data.",
+      "Alpaca integration points for market data and paper trading.",
+      "Whole stack runs locally with Docker Compose."
+    ],
+    "tags": ["ASP.NET Core", "Next.js", "Python", "Redis", "TimescaleDB"],
+    "category": "full-stack",
+    "year": "2026",
+    "featured": true,
+    "github": "https://github.com/NaxeCode/pulse",
+    "demo": "https://pulse-web-psi.vercel.app",
+    "demoType": "none",
+    "stack": {
+      "frontend": ["Next.js (App Router)", "TypeScript", "Typed SDK"],
+      "backend": ["ASP.NET Core", "Python workers", "Redis queue", "Alpaca API"],
+      "database": ["PostgreSQL", "TimescaleDB"],
+      "tools": ["Docker Compose"]
+    }
+  },
+  {
+    "slug": "photon-trail",
+    "title": "Photon Trail",
+    "summary": "Personal-finance pipeline: Plaid ingestion into Neon/Postgres, with AI categorization that returns confidence scores. Work in progress.",
+    "description": "Photon Trail keeps sensitive data on the server. Accounts are linked with Plaid, access tokens are encrypted at rest and never sent to the client, and transactions sync incrementally using Plaid cursors. An AI route batches transactions, asks for category suggestions with confidence scores, validates the JSON with Zod, and only then upserts the suggestions. The core architecture is in place; features and polish are still in progress.",
+    "highlights": [
+      "Plaid Link flow with server-side token exchange; access tokens encrypted at rest.",
+      "Incremental transaction sync using Plaid cursors.",
+      "AI categorization with confidence scores, validated with Zod before anything is written.",
+      "Neon Postgres with Drizzle ORM and migrations.",
+      "Google sign-in via NextAuth with database sessions."
+    ],
+    "tags": ["Next.js", "Plaid", "PostgreSQL", "Drizzle", "OpenAI"],
+    "category": "full-stack",
+    "year": "2025 - 2026",
+    "featured": true,
+    "github": "https://github.com/NaxeCode/Photon-Trail",
+    "demoType": "none",
+    "stack": {
+      "frontend": ["Next.js 14", "React 18", "TypeScript", "Tailwind CSS", "SWR"],
+      "backend": ["Plaid API", "OpenAI SDK", "NextAuth", "Zod"],
+      "database": ["Neon (PostgreSQL)", "Drizzle ORM"],
+      "tools": ["Vitest"]
+    }
+  },
+  {
     "slug": "stargazers-cosmic-watchlist",
     "title": "Cosmic Watchlist",
-    "summary": "I built a premium, server-first watchlist for anime, films, TV, and games with shareable filters and smart stats.",
-    "description": "I built a server-first watchlist designed to stay fast even with messy metadata and heavy filtering. It uses Server Actions with strict Zod validation, keeps views shareable via URL-based filters, and surfaces stats like completion rate and runtime totals. Optional TMDB/OMDb enrichment adds recommendations without turning the core workflow into a cluttered feature pile.",
+    "summary": "Shipped server-first watchlist for anime, film, TV, and games: auth, fast CRUD, shareable filters, stats, recommendations.",
+    "description": "A server-first watchlist that stays simple under messy metadata and heavy filtering. Writes go through Server Actions with Zod validation, the database is the source of truth, and pages revalidate after writes instead of relying on heavy client caching. Filters live in the URL so any view can be bookmarked or shared. Optional TMDB/OMDb enrichment adds recommendations without complicating the core workflow.",
     "highlights": [
-      "Server-first CRUD via Server Actions with strict Zod validation and Google OAuth.",
-      "Shareable filters via URL params for bookmarks and clean links.",
-      "Smart stats with optional TMDB/OMDb enrichment for recommendations.",
-      "Database-first source of truth with server-rendered pages and minimal client state.",
-      "Revalidation after writes to keep views fresh without heavy client caching.",
-      "Cosmic UI + Radix primitives for consistent, accessible UI patterns."
+      "Server-first CRUD via Server Actions with Zod validation.",
+      "Google sign-in via Auth.js with Postgres sessions.",
+      "Shareable filters via URL params.",
+      "Stats: completion rate, runtime totals, activity heatmap, and breakdowns.",
+      "Optional TMDB/OMDb enrichment for recommendations."
     ],
     "tags": ["Next.js", "TypeScript", "Drizzle", "PostgreSQL", "Auth.js"],
     "category": "full-stack",
-    "year": "2024 - 2025",
+    "year": "2025 - 2026",
     "featured": true,
-    "github": "https://github.com/NaxeCode/Stargazers-Cosmic-Watchlist",
+    "github": "https://github.com/NaxeCode/Cosmic-Watchlist",
     "demo": "https://stargazers-cosmic-watchlist.vercel.app",
     "demoType": "none",
     "stack": {
@@ -25,9 +100,7 @@
         "React 19",
         "TypeScript",
         "Tailwind CSS",
-        "@stargazers-stella/cosmic-ui",
-        "Radix UI",
-        "framer-motion"
+        "@stargazers-stella/cosmic-ui"
       ],
       "backend": [
         "Next.js Server Actions",
@@ -36,72 +109,51 @@
         "TMDB / OMDb APIs"
       ],
       "database": ["PostgreSQL", "Drizzle ORM"],
-      "tools": ["Vercel", "Vercel Analytics", "Speed Insights", "Vitest"]
+      "tools": ["Vercel"]
     }
   },
   {
-    "slug": "photon-trail",
-    "title": "Photon Trail",
-    "summary": "I built a personal finance dashboard that connects accounts, organizes transactions, and makes spend patterns easy to review.",
-    "description": "I built Photon Trail around one constraint: sensitive data stays backend-controlled. It connects accounts via Plaid, syncs and organizes transactions, and presents spending in a clean dashboard behind protected routes. I kept the UI simple on purpose: readable charts, consistent categorization, and a workflow that’s easy to understand and hard to misuse.",
+    "slug": "activitymux",
+    "title": "ActivityMux",
+    "summary": "Desktop app for Windows and Linux that sets one Discord Rich Presence from presets, process rules, or a manual pin.",
+    "description": "ActivityMux runs one loop in a Rust background thread: list running processes, resolve a single preset (manual pin first, then the highest-priority matching process rule, then the default), and publish it over Discord IPC. It reconnects when Discord restarts and re-sends on a heartbeat. Config is a versioned JSON file written through a temp file and backup, so an interrupted save can't leave it broken. Released for Windows and Linux.",
     "highlights": [
-      "I handled account linking and sync with backend-controlled tokens and protected routes.",
-      "I organized transactions with consistent categorization to make patterns easier to review.",
-      "I shipped a clean dashboard with visuals focused on readability over noise."
+      "Presence presets and timers, with a manual pin and a default fallback.",
+      "Process rules with priorities, matching any or all of a rule's processes.",
+      "Discord reconnect, tray mode, and autostart.",
+      "Crash-safe config writes via temp file and backup; JSON import and export.",
+      "Signed update manifests; installers for Windows (.exe, .msi) and Linux (.AppImage, .deb)."
     ],
-    "tags": ["Next.js", "Plaid", "OpenAI", "PostgreSQL", "NextAuth"],
-    "category": "full-stack",
-    "year": "2024 - 2025",
-    "featured": true,
-    "github": "https://github.com/NaxeCode/Photon-Trail",
-    "demoType": "none",
-    "stack": {
-      "frontend": ["Next.js 14", "React 18", "TypeScript", "Tailwind CSS", "Chart.js"],
-      "backend": ["Plaid API", "OpenAI SDK", "NextAuth"],
-      "database": ["Neon (PostgreSQL)", "Drizzle ORM"],
-      "tools": ["Vercel", "Zod"]
-    }
-  },
-  {
-    "slug": "cosmic-digest",
-    "title": "AI Signal Digest",
-    "summary": "I built a scheduled RSS digest worker that filters noise, tags topics, and emails a clean summary.",
-    "description": "I built a .NET worker that runs unattended: it pulls RSS feeds, scores relevance, tags topics, and emails a digest on a schedule. The main goal is consistency. Runs are deterministic, configuration is straightforward, and containerized deployment keeps behavior the same across environments.",
-    "highlights": [
-      "I kept digests readable with relevance scoring and topic tagging to reduce feed overload.",
-      "I surfaced trend signals and alerts so important changes stand out without constant monitoring.",
-      "I ran it consistently across environments with a Dockerized worker and simple scheduling."
-    ],
-    "tags": [".NET 10", "C#", "OpenAI", "Mailgun", "Docker"],
+    "tags": ["Tauri 2", "Rust", "React", "TypeScript"],
     "category": "tool",
-    "year": "2024 - 2025",
+    "year": "2026",
     "featured": true,
-    "github": "https://github.com/NaxeCode/Cosmic-Digest",
+    "github": "https://github.com/NaxeCode/activitymux",
+    "demo": "https://naxecode.github.io/activitymux/",
     "demoType": "none",
     "stack": {
-      "backend": [".NET 10 (C#)", "OpenAI API", "Mailgun API", "CodeHollow.FeedReader", "AngleSharp"],
-      "tools": ["Docker"]
+      "frontend": ["React", "Mantine", "TypeScript"],
+      "backend": ["Rust", "Tauri 2", "discord-rich-presence", "sysinfo"],
+      "tools": ["GitHub Actions", "GitHub Releases"]
     }
   },
   {
-    "slug": "cosmic-ui",
-    "title": "Cosmic UI",
-    "summary": "I built a small React component library that standardizes accessible UI patterns and theming.",
-    "description": "I built a lightweight component library to solve a common team problem: consistent UI without rebuilding the same components in every app. It wraps accessible primitives, standardizes variant patterns, and uses CSS variables so theming stays flexible without getting fragile. Automated publishing keeps releases low-friction.",
+    "slug": "minnen",
+    "title": "Minnen",
+    "summary": "A psychological game about night terrors. Haxe and HaxeFlixel, in development.",
+    "description": "Minnen is a psychological game about night terrors, built in Haxe with HaxeFlixel and LDtk for levels. It's one of the longer-running projects from making games since 2015, and it's still in development.",
     "highlights": [
-      "I wrapped accessible primitives in clean, variant-driven component APIs.",
-      "I kept theming simple with CSS variables for stable light/dark and brand variations.",
-      "I automated publishing so releases stay consistent and low-friction."
+      "Haxe + HaxeFlixel, with flixel-addons.",
+      "Levels built in LDtk via the ldtk-haxe-api."
     ],
-    "tags": ["React", "TypeScript", "Radix UI", "Tailwind CSS", "Design System"],
-    "category": "design-system",
-    "year": "2024 - 2025",
-    "featured": true,
-    "github": "https://github.com/stargazers-stella/cosmic-ui",
+    "tags": ["Haxe", "HaxeFlixel", "LDtk"],
+    "category": "game",
+    "year": "2018 - present",
+    "featured": false,
+    "github": "https://github.com/NaxeCode/Minnen",
     "demoType": "none",
     "stack": {
-      "frontend": ["React 18/19", "TypeScript", "Radix UI", "Tailwind CSS"],
-      "tools": ["tsup", "class-variance-authority", "GitHub Actions", "GitHub Packages"]
+      "tools": ["Haxe", "HaxeFlixel", "LDtk"]
     }
   }
 ]

@@ -1,8 +1,13 @@
 [
   {
+    "title": "Making games",
+    "period": "2015 – present",
+    "summary": "I started by making games (Haxe, HaxeFlixel, Heaps, C#, Godot). I still do: Minnen, a psychological game about night terrors, is in development."
+  },
+  {
     "title": "Rendering roots, performance discipline",
     "period": "2019 – 2022",
-    "summary": "I started in graphics/engine work, where performance is non‑negotiable. That’s where I learned to profile, measure, and ship changes you can actually feel, not just benchmark."
+    "summary": "Games led me into graphics and engine work professionally, where performance is non‑negotiable. That’s where I learned to profile, measure, and ship changes you can actually feel, not just benchmark."
   },
   {
     "title": "Full-stack delivery with guardrails",
