@@ -1,3 +1,5 @@
+<img src=".github/brand/logo.svg" width="80" alt="" />
+
 # naxecode.github.io
 
 Personal site for Aladdin Ali (Naxe): backend & platform engineer, making games since 2015.
@@ -24,6 +26,10 @@ npm run build   # static export to out/
 
 ## Status
 Live at https://naxecode.github.io.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
 
 ---
 <sub>Built by [Aladdin Ali](https://github.com/NaxeCode) · [naxecode.github.io](https://naxecode.github.io)</sub>

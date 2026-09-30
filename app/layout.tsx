@@ -34,13 +34,15 @@ export const metadata: Metadata = {
     siteName: copyData.site.brand,
     locale: "en_US",
     type: "website",
+    images: [{ url: "/og.png", width: 1280, height: 640, alt: "Aladdin Ali · Naxe" }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: copyData.site.ogTitle,
     description: copyData.site.ogDescription,
     site: "@NaxeDev",
     creator: "@NaxeDev",
+    images: ["/og.png"],
   },
 };
 
