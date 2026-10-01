@@ -30,9 +30,11 @@ export default function Header() {
   const NavLink = isHomepage ? AnchorLink : Link;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl shadow-[0_10px_60px_-45px_rgba(59,130,246,0.6)]">
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl shadow-[0_10px_60px_-45px_rgba(124,131,255,0.6)]">
       <nav className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 h-14 flex items-center justify-between">
-        <Link href="/" className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
+        <Link href="/" className="flex items-center gap-2.5 text-lg font-semibold text-foreground hover:text-primary transition-colors">
+          {/* eslint-disable-next-line @next/next/no-img-element -- static SVG mark */}
+          <img src="/icon.svg" alt="" width={26} height={26} className="rounded-[7px]" />
           {copy.site.brand}
         </Link>
         <div className="flex items-center gap-2">

@@ -24,13 +24,13 @@ export default function Home() {
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 md:px-8 space-y-12">
         <header className="pt-12 sm:pt-14">
           <div className="glass relative overflow-hidden p-6 sm:p-8 space-y-6 section-fade hover-rise">
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-cyan-500/10 via-transparent to-sky-400/5" />
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-violet-500/10 via-transparent to-sky-400/5" />
             <div className="absolute -left-14 -top-14 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
             <div className="relative space-y-3 max-reading">
-              <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
+              <p className="eyebrow">
                 {copy.hero.eyebrow}
               </p>
-              <h1 className="text-4xl sm:text-5xl font-bold text-foreground">
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-aura inline-block pb-1">
                 {copy.hero.title}
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">{profile.about[0]}</p>
@@ -40,7 +40,7 @@ export default function Home() {
             </div>
             <div className="relative flex flex-wrap gap-3">
               <a
-                className="btn-press inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-teal-500/20"
+                className="btn-press inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-indigo-500/30"
                 href={`mailto:${profile.contact.email}`}
               >
                 <Mail className="h-4 w-4" />
