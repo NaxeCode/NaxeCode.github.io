@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { getProjectBySlug, loadCopy } from "@/lib/data-loader";
 import { OutboundLink } from "@/components/TrackedLink";
+import { ProjectMark } from "@/components/ProjectMark";
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -28,10 +29,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </div>
 
         <div className="glass relative overflow-hidden p-6 sm:p-8 space-y-4 hover-rise">
-          <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-primary/10 via-transparent to-cyan-400/5" />
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-primary/10 via-transparent to-fuchsia-400/5" />
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div className="space-y-2">
-              <h1 className="text-3xl font-semibold text-foreground">{project.title}</h1>
+              <div className="flex items-center gap-4">
+                <ProjectMark github={project.github} size={56} />
+                <h1 className="text-3xl font-semibold text-foreground">{project.title}</h1>
+              </div>
               <p className="text-muted-foreground text-base">{project.summary}</p>
             </div>
             <span className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">
@@ -48,7 +52,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           )}
 
           <div className="space-y-2">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.08em] text-muted-foreground">{copy.projectsDetail.tags}</h2>
+            <h2 className="eyebrow">{copy.projectsDetail.tags}</h2>
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span
@@ -62,7 +66,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </div>
 
           <div className="space-y-2">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.08em] text-muted-foreground">{copy.projectsDetail.description}</h2>
+            <h2 className="eyebrow">{copy.projectsDetail.description}</h2>
             <p className="text-muted-foreground leading-relaxed">{project.description}</p>
           </div>
 
@@ -113,7 +117,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
           {project.slug === "stargazers-cosmic-watchlist" && (
             <div className="space-y-2">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+              <h2 className="eyebrow">
                 Architecture
               </h2>
               <div className="rounded-xl border border-border/60 bg-surface/70 p-3">
