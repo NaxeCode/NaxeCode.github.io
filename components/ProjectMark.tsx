@@ -1,26 +1,24 @@
-/* eslint-disable @next/next/no-img-element -- remote SVG from the repo; static export has no image optimizer */
+/* eslint-disable @next/next/no-img-element -- static SVG tile; the export has no image optimizer */
 import { cn } from '@/lib/utils';
+import type { Brand } from '@/lib/brand';
 
 type Props = {
-  github?: string;
+  brand: Brand | null;
   size?: number;
   className?: string;
 };
 
-/** The repo's brand tile (`.github/brand/logo.svg`), so the site matches the GitHub cards. */
-export function ProjectMark({ github, size = 40, className }: Props) {
-  const match = github?.match(/^https:\/\/github\.com\/([^/]+)\/([^/#?]+)/);
-  if (!match) return null;
-  const [, owner, repo] = match;
+/** The project's glass tile from the brand generator (public/tiles/<repo>.svg). The only glass on a page. */
+export function ProjectMark({ brand, size = 40, className }: Props) {
+  if (!brand) return null;
   return (
     <img
-      src={`https://raw.githubusercontent.com/${owner}/${repo}/HEAD/.github/brand/logo.svg`}
+      src={brand.tile}
       alt=""
       width={size}
       height={size}
-      loading="lazy"
       decoding="async"
-      className={cn('shrink-0 rounded-[10px] shadow-[0_8px_30px_-12px_rgba(124,131,255,0.55)]', className)}
+      className={cn('tile', className)}
     />
   );
 }

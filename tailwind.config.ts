@@ -18,8 +18,9 @@ const config: Config = {
         '2xl': '1400px',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'JetBrains Mono', 'ui-monospace', 'monospace'],
+        // Geist and Geist Mono, self-hosted from the `geist` package (brand spec section 4).
+        sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
       },
       colors: {
         accent: {
@@ -44,11 +45,9 @@ const config: Config = {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
-        surface: {
-          DEFAULT: 'hsl(var(--surface))',
-          strong: 'hsl(var(--surface-strong))',
-          muted: 'hsl(var(--surface-muted))',
-          inset: 'hsl(var(--surface-inset))',
+        glass: {
+          DEFAULT: 'hsl(var(--glass))',
+          hi: 'hsl(var(--glass-hi))',
         },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
@@ -60,6 +59,12 @@ const config: Config = {
         },
         label: 'hsl(var(--label))',
         note: 'hsl(var(--note))',
+        ice: 'hsl(var(--ice))',
+        cyan: 'hsl(var(--cyan))',
+        indigo: 'hsl(var(--indigo))',
+        violet: 'hsl(var(--violet))',
+        rose: 'hsl(var(--rose))',
+        amber: 'hsl(var(--amber))',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -69,9 +74,9 @@ const config: Config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
-      boxShadow: {
-        card: '0 30px 120px -50px rgba(0,0,0,0.5)',
-        glow: '0 15px 70px -25px rgba(124, 131, 255, 0.5)',
+      maxWidth: {
+        page: '1024px',
+        reading: '768px',
       },
     },
   },

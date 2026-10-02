@@ -4,7 +4,14 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { getProjectBySlug, loadCopy } from "@/lib/data-loader";
 import { OutboundLink } from "@/components/TrackedLink";
-import { ProjectMark } from "@/components/ProjectMark";
+import { IdentityRow } from "@/components/IdentityRow";
+import { getBrand } from "@/lib/brand";
+
+// Cosmic Watchlist keeps its screenshots on the detail page as a static pair (brand spec section 11, decision 3).
+const watchlistShots = [
+  { src: '/projects/landing-header.png', alt: 'Cosmic Watchlist landing page' },
+  { src: '/projects/demo-your-collection.png', alt: 'Cosmic Watchlist collection view' },
+];
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -15,148 +22,116 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     notFound();
   }
 
+  const stack = [
+    { label: copy.projectsDetail.stack.frontend, items: project.stack?.frontend },
+    { label: copy.projectsDetail.stack.backend, items: project.stack?.backend },
+    { label: copy.projectsDetail.stack.database, items: project.stack?.database },
+    { label: copy.projectsDetail.stack.tools, items: project.stack?.tools },
+  ].filter((group) => group.items && group.items.length > 0);
+  const isWatchlist = project.slug === "stargazers-cosmic-watchlist";
+
   return (
-    <main className="min-h-screen pb-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 space-y-6">
-        <div className="pt-8">
-          <Link
-            href="/#projects"
-            className="btn-press inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-surface-muted/70"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            {copy.projectsDetail.back}
-          </Link>
-        </div>
+    <div className="mx-auto max-w-reading px-4 sm:px-6 md:px-8">
+      <div className="pt-8">
+        <Link href="/#projects" className="link">
+          <ArrowLeft className="h-4 w-4" />
+          {copy.projectsDetail.back}
+        </Link>
+      </div>
 
-        <div className="glass relative overflow-hidden p-6 sm:p-8 space-y-4 hover-rise">
-          <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-primary/10 via-transparent to-fuchsia-400/5" />
-          <div className="flex flex-wrap items-start justify-between gap-3">
-            <div className="space-y-2">
-              <div className="flex items-center gap-4">
-                <ProjectMark github={project.github} size={56} />
-                <h1 className="text-3xl font-semibold text-foreground">{project.title}</h1>
-              </div>
-              <p className="text-muted-foreground text-base">{project.summary}</p>
-            </div>
-            <span className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">
-              {project.year}
-            </span>
+      <article className="section-fade mt-10 space-y-10">
+        <header className="space-y-5">
+          <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
+            <IdentityRow brand={getBrand(project)} title={project.title} as="h1" titleClassName="text-3xl" />
+            <span className="meta pt-2">{project.year}</span>
           </div>
-
-          {project.highlights && project.highlights.length > 0 && (
-            <ul className="space-y-2 text-sm text-foreground/90 list-disc list-inside">
-              {project.highlights.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          )}
-
-          <div className="space-y-2">
-            <h2 className="eyebrow">{copy.projectsDetail.tags}</h2>
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-border/70 bg-surface-muted px-3 py-1 text-xs font-semibold text-foreground/80"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-2">
-            <h2 className="eyebrow">{copy.projectsDetail.description}</h2>
-            <p className="text-muted-foreground leading-relaxed">{project.description}</p>
-          </div>
-
-          {project.stack && (
-            <div className="grid gap-4 sm:grid-cols-2">
-              {project.stack.frontend && project.stack.frontend.length > 0 && (
-                <div>
-                  <h3 className="text-sm font-semibold text-foreground mb-2">{copy.projectsDetail.stack.frontend}</h3>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    {project.stack.frontend.map((tech) => (
-                      <li key={tech}>• {tech}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {project.stack.backend && project.stack.backend.length > 0 && (
-                <div>
-                  <h3 className="text-sm font-semibold text-foreground mb-2">{copy.projectsDetail.stack.backend}</h3>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    {project.stack.backend.map((tech) => (
-                      <li key={tech}>• {tech}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {project.stack.database && project.stack.database.length > 0 && (
-                <div>
-                  <h3 className="text-sm font-semibold text-foreground mb-2">{copy.projectsDetail.stack.database}</h3>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    {project.stack.database.map((tech) => (
-                      <li key={tech}>• {tech}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {project.stack.tools && project.stack.tools.length > 0 && (
-                <div>
-                  <h3 className="text-sm font-semibold text-foreground mb-2">{copy.projectsDetail.stack.tools}</h3>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    {project.stack.tools.map((tech) => (
-                      <li key={tech}>• {tech}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          )}
-
-          {project.slug === "stargazers-cosmic-watchlist" && (
-            <div className="space-y-2">
-              <h2 className="eyebrow">
-                Architecture
-              </h2>
-              <div className="rounded-xl border border-border/60 bg-surface/70 p-3">
-                <Image
-                  src="/projects/cosmic-watchlist-architecture.png"
-                  alt="Cosmic Watchlist architecture diagram"
-                  className="fade-quick w-full rounded-lg object-cover"
-                  width={1200}
-                  height={675}
-                  sizes="(max-width: 768px) 100vw, 800px"
-                />
-              </div>
-            </div>
-          )}
-
-          <div className="flex flex-wrap gap-3 pt-2">
+          <p className="lead">{project.summary}</p>
+          <div className="flex flex-wrap gap-3">
             {project.github && (
-              <OutboundLink
-                href={project.github}
-                label={`${project.title} - GitHub`}
-                className="btn-press inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
-              >
+              <OutboundLink href={project.github} label={`${project.title} - GitHub`} className="btn btn-primary">
                 <Github className="h-4 w-4" />
                 {copy.projectsDetail.viewCode}
               </OutboundLink>
             )}
             {project.demo && (
-              <OutboundLink
-                href={project.demo}
-                label={`${project.title} - Live Site`}
-                className="btn-press inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground"
-              >
+              <OutboundLink href={project.demo} label={`${project.title} - Live Site`} className="btn btn-secondary">
                 <ExternalLink className="h-4 w-4" />
                 {copy.projectsDetail.liveSite}
               </OutboundLink>
             )}
           </div>
-        </div>
-      </div>
-    </main>
+        </header>
+
+        {isWatchlist && (
+          <div className="grid gap-4 sm:grid-cols-2">
+            {watchlistShots.map((shot) => (
+              <Image
+                key={shot.src}
+                src={shot.src}
+                alt={shot.alt}
+                width={1200}
+                height={675}
+                sizes="(max-width: 640px) 100vw, 380px"
+                priority
+                className="w-full rounded-lg border border-border/60 object-cover"
+              />
+            ))}
+          </div>
+        )}
+
+        {project.highlights && project.highlights.length > 0 && (
+          <section className="entry space-y-3">
+            <ul className="body list-disc space-y-2 pl-5 marker:text-border">
+              {project.highlights.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <section className="entry space-y-3">
+          <h2 className="eyebrow">{copy.projectsDetail.description}</h2>
+          <p className="body">{project.description}</p>
+        </section>
+
+        {stack.length > 0 && (
+          <section className="entry grid gap-6 sm:grid-cols-2">
+            {stack.map((group) => (
+              <div key={group.label} className="space-y-2">
+                <h3 className="eyebrow">{group.label}</h3>
+                <ul className="body space-y-1">
+                  {group.items!.map((tech) => (
+                    <li key={tech}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </section>
+        )}
+
+        {isWatchlist && (
+          <section className="entry space-y-3">
+            <h2 className="eyebrow">Architecture</h2>
+            <Image
+              src="/projects/cosmic-watchlist-architecture.png"
+              alt="Cosmic Watchlist architecture diagram"
+              className="fade-quick w-full rounded-lg border border-border/60 object-cover"
+              width={1200}
+              height={675}
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </section>
+        )}
+
+        <section className="entry space-y-3">
+          <h2 className="eyebrow">{copy.projectsDetail.tags}</h2>
+          <p className="tags">
+            {project.tags.slice(0, 4).map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </p>
+        </section>
+      </article>
+    </div>
   );
 }

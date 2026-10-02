@@ -1,22 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Analytics } from "@/components/Analytics";
 import copyData from "@/data/copy.json";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   themeColor: "#0b0e1a",
@@ -24,7 +13,6 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
 };
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://naxecode.github.io"),
   title: copyData.site.title,
@@ -55,7 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`${inter.variable} ${mono.variable} font-sans`}>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans`}>
         <a href="#main-content" className="skip-to-content">
           Skip to content
         </a>

@@ -61,20 +61,17 @@ export function ExperienceSection({ experience, copy }: Props) {
   };
 
   return (
-    <section id="experience" className="scroll-mt-28 space-y-5" tabIndex={-1}>
-      <div className="space-y-1">
+    <section id="experience" className="scroll-mt-20 space-y-10" tabIndex={-1}>
+      <div className="space-y-3">
         <p className="eyebrow">{copy.label}</p>
-        <h2 className="text-3xl font-semibold text-foreground">{copy.heading}</h2>
-        <p className="text-muted-foreground text-sm max-reading">
-          {copy.description}
-        </p>
+        <h2 className="h2">{copy.heading}</h2>
+        <p className="body max-reading">{copy.description}</p>
       </div>
       <motion.div
         ref={ref}
         variants={staggerContainer}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
-        className="surface divide-y divide-border/60"
       >
         {experience.map((item) => {
           const itemKey = `${item.role}-${item.company}-${item.period}`;
@@ -88,54 +85,44 @@ export function ExperienceSection({ experience, copy }: Props) {
             : item.bullets
               .slice(0, maxVisibleBullets)
               .map((bullet) => truncateBullet(bullet));
+          const duration = computeDuration(item.period);
 
           return (
-          <motion.div
-            key={itemKey}
-            variants={staggerItem}
-            className="p-5 sm:p-6 space-y-3"
-          >
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <div className="space-y-1">
-                <p className="text-lg font-semibold text-foreground">
-                  {item.role} · {item.company}
+            <motion.div key={itemKey} variants={staggerItem} className="entry space-y-4 pb-8">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                <div className="space-y-1">
+                  <h3 className="entry-title">
+                    {item.role} · {item.company}
+                  </h3>
+                  {item.location && <p className="meta">{item.location}</p>}
+                </div>
+                <p className="meta sm:text-right">
+                  {item.period}
+                  {duration && <span className="text-muted-foreground/70"> · {duration}</span>}
                 </p>
-                {item.location && (
-                  <p className="text-xs text-muted-foreground">{item.location}</p>
-                )}
               </div>
-              <div className="text-right space-y-1">
-                <p className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">{item.period}</p>
-                {computeDuration(item.period) && (
-                  <p className="text-[11px] text-muted-foreground/80">{computeDuration(item.period)}</p>
-                )}
+              <div id={listId} className="body max-reading space-y-2">
+                {visibleBullets.map((bullet) => (
+                  <p key={bullet}>{bullet}</p>
+                ))}
               </div>
-            </div>
-            <div
-              id={listId}
-              className="space-y-1.5 text-sm text-foreground/90 max-reading"
-            >
-              {visibleBullets.map((bullet) => (
-                <p key={bullet}>{bullet}</p>
-              ))}
-            </div>
-            {isExpandable && (
-              <button
-                type="button"
-                aria-expanded={isExpanded}
-                aria-controls={listId}
-                onClick={() =>
-                  setExpanded((current) => ({
-                    ...current,
-                    [itemKey]: !isExpanded,
-                  }))
-                }
-                className="text-sm font-semibold text-primary hover:text-primary/80"
-              >
-                {isExpanded ? 'Show less' : 'Show more'}
-              </button>
-            )}
-          </motion.div>
+              {isExpandable && (
+                <button
+                  type="button"
+                  aria-expanded={isExpanded}
+                  aria-controls={listId}
+                  onClick={() =>
+                    setExpanded((current) => ({
+                      ...current,
+                      [itemKey]: !isExpanded,
+                    }))
+                  }
+                  className="link-strong"
+                >
+                  {isExpanded ? 'Show less' : 'Show more'}
+                </button>
+              )}
+            </motion.div>
           );
         })}
       </motion.div>
