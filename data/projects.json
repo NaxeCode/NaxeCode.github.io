@@ -41,7 +41,7 @@
     "year": "2026",
     "featured": true,
     "github": "https://github.com/NaxeCode/pulse",
-    "demo": "https://pulse-web-psi.vercel.app",
+    "demo": "https://ground.naxe.dev",
     "demoType": "none",
     "stack": {
       "frontend": ["Next.js (App Router)", "TypeScript", "Typed SDK"],
@@ -92,7 +92,7 @@
     "year": "2025 - 2026",
     "featured": true,
     "github": "https://github.com/NaxeCode/Cosmic-Watchlist",
-    "demo": "https://stargazers-cosmic-watchlist.vercel.app",
+    "demo": "https://watchlist.naxe.dev",
     "demoType": "none",
     "stack": {
       "frontend": [
@@ -129,7 +129,7 @@
     "year": "2026",
     "featured": true,
     "github": "https://github.com/NaxeCode/activitymux",
-    "demo": "https://naxecode.github.io/activitymux/",
+    "demo": "https://naxe.dev/activitymux/",
     "demoType": "none",
     "stack": {
       "frontend": ["React", "Mantine", "TypeScript"],
