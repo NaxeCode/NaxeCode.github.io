@@ -1,8 +1,17 @@
 import Link from "next/link";
 
+const TITLE = "Aura Gainz - Support";
+const DESCRIPTION = "Get help with Aura Gainz for iPhone and Apple Watch.";
+const PAGE_URL = "https://naxe.dev/aura-gainz/support/";
+
+// Route metadata merges shallowly, so restate openGraph/twitter or the
+// portfolio's homepage card is shared for this page.
 export const metadata = {
-  title: "Aura Gainz - Support",
-  description: "Get help with Aura Gainz for iPhone and Apple Watch.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: PAGE_URL, type: "website" },
+  twitter: { card: "summary", title: TITLE, description: DESCRIPTION },
 };
 
 const FAQ = [
