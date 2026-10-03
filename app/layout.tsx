@@ -14,13 +14,13 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 export const metadata: Metadata = {
-  metadataBase: new URL("https://naxecode.github.io"),
+  metadataBase: new URL("https://naxe.dev"),
   title: copyData.site.title,
   description: copyData.site.description,
   openGraph: {
     title: copyData.site.ogTitle,
     description: copyData.site.ogDescription,
-    url: "https://naxecode.github.io/",
+    url: "https://naxe.dev/",
     siteName: copyData.site.brand,
     locale: "en_US",
     type: "website",

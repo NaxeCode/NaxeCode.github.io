@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: project.title,
       description: project.summary,
-      url: `https://naxecode.github.io/projects/${project.slug}/`,
+      url: `https://naxe.dev/projects/${project.slug}/`,
       images: [{ url: image, width: 1280, height: 640, alt: project.title }],
     },
     twitter: {
