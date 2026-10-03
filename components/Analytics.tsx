@@ -26,6 +26,8 @@ export function Analytics() {
       if (!anchor || anchor.target === '_blank' || anchor.hasAttribute('download')) return;
       const url = new URL(anchor.href, window.location.href);
       if (url.origin !== window.location.origin) return;
+      // Same-document links ("Skip to content", #anchors) keep native behavior.
+      if (url.pathname === window.location.pathname && url.search === window.location.search) return;
       event.preventDefault();
       event.stopPropagation();
       window.location.assign(url.href);
