@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# build info and editor/assistant settings
+*.tsbuildinfo
+.claude/
+.vscode/

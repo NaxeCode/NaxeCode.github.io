@@ -1,36 +1,26 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Analytics } from "@/components/Analytics";
 import copyData from "@/data/copy.json";
 
-const cascadia = localFont({
-  src: "../public/fonts/CascadiaCode.woff2",
-  variable: "--font-cascadia",
-});
-
-const poppins = localFont({
-  src: "../public/fonts/Poppins-Regular.ttf",
-  variable: "--font-poppins",
-  weight: "400",
-});
-
 export const viewport: Viewport = {
+  themeColor: "#0b0e1a",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
 };
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://naxecode.github.io"),
+  metadataBase: new URL("https://naxe.dev"),
   title: copyData.site.title,
   description: copyData.site.description,
   openGraph: {
     title: copyData.site.ogTitle,
     description: copyData.site.ogDescription,
-    url: "https://naxecode.github.io/",
+    url: "https://naxe.dev/",
     siteName: copyData.site.brand,
     locale: "en_US",
     type: "website",
@@ -53,7 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`${poppins.variable} ${cascadia.variable} font-sans`}>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans`}>
         <a href="#main-content" className="skip-to-content">
           Skip to content
         </a>
