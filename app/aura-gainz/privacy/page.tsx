@@ -1,8 +1,17 @@
 import Link from "next/link";
 
+const TITLE = "Aura Gainz - Privacy Policy";
+const DESCRIPTION = "How Aura Gainz handles your workout and health data.";
+const PAGE_URL = "https://naxe.dev/aura-gainz/privacy/";
+
+// Route metadata merges shallowly, so restate openGraph/twitter or the
+// portfolio's homepage card is shared for this page.
 export const metadata = {
-  title: "Aura Gainz - Privacy Policy",
-  description: "How Aura Gainz handles your workout and health data.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: PAGE_URL, type: "website" },
+  twitter: { card: "summary", title: TITLE, description: DESCRIPTION },
 };
 
 const EFFECTIVE = "October 3, 2026";
