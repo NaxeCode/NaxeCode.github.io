@@ -1,23 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Analytics } from "@/components/Analytics";
 import copyData from "@/data/copy.json";
 
-const cascadia = localFont({
-  src: "../public/fonts/CascadiaCode.woff2",
-  variable: "--font-cascadia",
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
-const poppins = localFont({
-  src: "../public/fonts/Poppins-Regular.ttf",
-  variable: "--font-poppins",
-  weight: "400",
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
 });
 
 export const viewport: Viewport = {
+  themeColor: "#0b0e1a",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -53,7 +55,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`${poppins.variable} ${cascadia.variable} font-sans`}>
+      <body className={`${inter.variable} ${mono.variable} font-sans`}>
         <a href="#main-content" className="skip-to-content">
           Skip to content
         </a>

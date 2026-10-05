@@ -63,7 +63,7 @@ export function ExperienceSection({ experience, copy }: Props) {
   return (
     <section id="experience" className="scroll-mt-28 space-y-5" tabIndex={-1}>
       <div className="space-y-1">
-        <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground">{copy.label}</p>
+        <p className="eyebrow">{copy.label}</p>
         <h2 className="text-3xl font-semibold text-foreground">{copy.heading}</h2>
         <p className="text-muted-foreground text-sm max-reading">
           {copy.description}
@@ -105,7 +105,7 @@ export function ExperienceSection({ experience, copy }: Props) {
                 )}
               </div>
               <div className="text-right space-y-1">
-                <p className="text-xs uppercase tracking-[0.1em] text-muted-foreground">{item.period}</p>
+                <p className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">{item.period}</p>
                 {computeDuration(item.period) && (
                   <p className="text-[11px] text-muted-foreground/80">{computeDuration(item.period)}</p>
                 )}
