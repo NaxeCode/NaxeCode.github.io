@@ -28,9 +28,9 @@ export function AboutSection({ profile, copy }: Props) {
       tabIndex={-1}
     >
       <div className="surface relative overflow-hidden p-6 sm:p-8 space-y-6">
-        <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-primary/10 via-transparent to-cyan-400/5" />
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-primary/10 via-transparent to-fuchsia-400/5" />
         <div className="relative space-y-1">
-          <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground">{copy.label}</p>
+          <p className="eyebrow">{copy.label}</p>
           <h2 className="text-3xl font-semibold text-foreground">{copy.heading}</h2>
           <p className="text-sm text-muted-foreground">{profile.title}</p>
         </div>
@@ -43,7 +43,7 @@ export function AboutSection({ profile, copy }: Props) {
           <span className="font-semibold text-primary">{copy.buildingLabel}</span> {profile.buildingNow}
         </div>
         <div className="relative space-y-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+          <p className="eyebrow">
             {copy.skillsLabel}
           </p>
           <div className="flex flex-wrap gap-2">
@@ -60,7 +60,7 @@ export function AboutSection({ profile, copy }: Props) {
         <div className="relative flex flex-wrap gap-3">
           <a
             href={`mailto:${profile.contact.email}`}
-            className="btn-press inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg shadow-teal-500/25"
+            className="btn-press inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg shadow-indigo-500/30"
           >
             {copy.emailCta}
           </a>

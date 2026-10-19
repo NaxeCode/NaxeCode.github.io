@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen flex items-center justify-center px-4">
       <div className="max-w-2xl text-center space-y-4">
-        <p className="text-sm uppercase tracking-[0.12em] text-muted-foreground">{stub.eyebrow}</p>
+        <p className="eyebrow">{stub.eyebrow}</p>
         <h1 className="text-3xl font-semibold text-foreground">{stub.title}</h1>
         <p className="text-muted-foreground">{stub.body}</p>
         <div className="flex flex-wrap items-center justify-center gap-3">

@@ -10,6 +10,7 @@ import { ProjectLink, OutboundLink } from '@/components/TrackedLink';
 import { useInView } from '@/hooks/useInView';
 import { useSectionTracking } from '@/hooks/useSectionTracking';
 import { staggerContainer, staggerItem } from '@/lib/motion';
+import { ProjectMark } from '@/components/ProjectMark';
 
 type Props = {
   projects: Project[];
@@ -53,7 +54,7 @@ export function ProjectsSection({ projects, copy }: Props) {
   return (
     <section id="projects" className="scroll-mt-28 space-y-5" tabIndex={-1}>
       <div className="space-y-1">
-        <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground">{copy.label}</p>
+        <p className="eyebrow">{copy.label}</p>
         <h2 className="text-3xl font-semibold text-foreground">{copy.heading}</h2>
         <p className="text-muted-foreground text-sm max-reading">{copy.description}</p>
       </div>
@@ -71,7 +72,7 @@ export function ProjectsSection({ projects, copy }: Props) {
             hasCompact ? 'md:col-span-7' : 'md:col-span-12'
           }`}
         >
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-primary/60 via-cyan-400/50 to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-sky-400/60 via-primary/60 to-fuchsia-400/40" />
           {isWatchlistPrimary && (
             <div className="relative overflow-hidden rounded-xl border border-border/60">
               <div className="relative h-44 sm:h-52">
@@ -98,7 +99,10 @@ export function ProjectsSection({ projects, copy }: Props) {
           <div className="flex items-start justify-between gap-3">
             <div className="space-y-1">
               {!isWatchlistPrimary && (
-                <h3 className="text-2xl font-semibold text-foreground">{primary.title}</h3>
+                <div className="flex items-center gap-3">
+                  <ProjectMark github={primary.github} size={44} />
+                  <h3 className="text-2xl font-semibold text-foreground">{primary.title}</h3>
+                </div>
               )}
               <p className="text-sm text-muted-foreground leading-relaxed max-reading">{primary.summary}</p>
             </div>
@@ -161,7 +165,10 @@ export function ProjectsSection({ projects, copy }: Props) {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="space-y-1">
-                    <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
+                    <div className="flex items-center gap-3">
+                      <ProjectMark github={project.github} size={34} />
+                      <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
+                    </div>
                     <p className="text-sm text-muted-foreground leading-relaxed max-reading">{project.summary}</p>
                   </div>
                   <span className="pill text-[11px]">{project.year}</span>

@@ -18,8 +18,8 @@ const config: Config = {
         '2xl': '1400px',
       },
       fontFamily: {
-        cascadia: ['CascadiaCode', 'monospace'],
-        poppins: ['Poppins', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'JetBrains Mono', 'ui-monospace', 'monospace'],
       },
       colors: {
         accent: {
@@ -58,6 +58,8 @@ const config: Config = {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
+        label: 'hsl(var(--label))',
+        note: 'hsl(var(--note))',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -69,7 +71,7 @@ const config: Config = {
       },
       boxShadow: {
         card: '0 30px 120px -50px rgba(0,0,0,0.5)',
-        glow: '0 15px 70px -25px rgba(94, 234, 212, 0.45)',
+        glow: '0 15px 70px -25px rgba(124, 131, 255, 0.5)',
       },
     },
   },
