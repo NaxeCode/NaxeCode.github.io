@@ -2,7 +2,7 @@
 
 # Aladdin Ali’s engineering portfolio
 
-A static portfolio for exploring public work in applied AI, C# and .NET, graphics, financial reconciliation and audio tooling. The home page pairs a draggable render comparison with a synthetic ledger. Project pages link to working labs, implementation decisions and public evidence.
+A static portfolio for exploring public work in applied AI, C# and .NET, graphics, financial reconciliation, physics simulations and audio tooling. The home page pairs a draggable render comparison with a synthetic ledger. Project pages link to working labs, implementation decisions and public evidence.
 
 ## Run locally
 

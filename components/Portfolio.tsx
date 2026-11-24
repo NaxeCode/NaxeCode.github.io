@@ -92,6 +92,35 @@ export function DigestFeature() {
   );
 }
 
+export function SimulationStudies() {
+  const simulations = studies.filter(study => ['shallow-water', 'rigid-body'].includes(study.slug));
+  const schedule = studies.find(study => study.slug === 'schedule-rehearsal');
+  return (
+    <section className="simulation-section" aria-labelledby="simulation-title">
+      <h2 id="simulation-title" className="group-title">Simulation and scheduling</h2>
+      <div className="simulation-grid">
+        {simulations.map(study => (
+          <article key={study.slug}>
+            <StudyVisual study={study} />
+            <h3><Link href={`/projects/${study.slug}/`}>{study.name}</Link></h3>
+            <p className="work-summary">{study.summary}</p>
+            <div className="work-links"><LabLink study={study} /><CaseLink study={study} /></div>
+          </article>
+        ))}
+      </div>
+      {schedule && (
+        <article className="schedule-entry">
+          <div><p className="work-discipline">{schedule.discipline}</p>
+            <h3><Link href="/projects/schedule-rehearsal/">{schedule.name}</Link></h3>
+            <p className="work-summary">{schedule.summary}</p>
+          </div>
+          <div className="work-links"><LabLink study={schedule} /><CaseLink study={schedule} /></div>
+        </article>
+      )}
+    </section>
+  );
+}
+
 export function MoreWork() {
   return (
     <section className="more-work" aria-labelledby="other-work-title">

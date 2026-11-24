@@ -1,0 +1,501 @@
+{
+  "model": "Three-block rotor; uniform density 2700 kg/m³",
+  "method": "Coupled RK4; normalize quaternion after each step",
+  "measurement": "Max over every completed step. World momentum error is ||L(t)-L(0)|| / ||L(0)||. Alignment is signed cosine. First crossing is bracketed within one dt before its sample.",
+  "limits": {
+    "geometryAbsolute": 1e-12,
+    "principalAngularVelocityAbsoluteRadPerS": 1e-13,
+    "principalBasisVectorDistance": 1e-7,
+    "symmetricFinestAngularVelocityAbsoluteRadPerS": 1e-8,
+    "symmetricFinestBasisVectorDistance": 1e-7,
+    "minimumOrder": 3.8,
+    "coarsestRelativeEnergy": 0.00002,
+    "coarsestRelativeWorldMomentumVector": 0.00002,
+    "defaultStepRelativeEnergy": 1e-7,
+    "defaultStepRelativeWorldMomentumVector": 1e-7
+  },
+  "geometry": {
+    "massKg": 0.40726799999999996,
+    "centerFromFootM": 0.07610978520286396,
+    "momentsKgM2": [
+      0.00045968596728400955,
+      0.0007807706639999998,
+      0.0012096254392840095
+    ],
+    "maxTensorErrorKgM2": 4.336808689942018e-19
+  },
+  "principal": {
+    "seconds": 8,
+    "dtS": 0.004166666666666667,
+    "spinRadPerS": 6,
+    "runs": [
+      {
+        "axis": "X",
+        "maxBasisDistance": 9.765087293598705e-9,
+        "maxAngularVelocityErrorRadPerS": 0
+      },
+      {
+        "axis": "Y",
+        "maxBasisDistance": 9.765083100179801e-9,
+        "maxAngularVelocityErrorRadPerS": 0
+      },
+      {
+        "axis": "Z",
+        "maxBasisDistance": 9.765076788739398e-9,
+        "maxAngularVelocityErrorRadPerS": 0
+      }
+    ]
+  },
+  "symmetricTop": {
+    "seconds": 6,
+    "momentsKgM2": [
+      0.002,
+      0.002,
+      0.003
+    ],
+    "initialOmegaRadPerS": [
+      1.4,
+      -0.9,
+      3.1
+    ],
+    "runs": [
+      {
+        "dtS": 0.03333333333333333,
+        "maxAngularVelocityErrorRadPerS": 9.191192343285326e-7,
+        "maxBasisDistance": 0.00000207716675442954
+      },
+      {
+        "dtS": 0.016666666666666666,
+        "maxAngularVelocityErrorRadPerS": 5.74460947884432e-8,
+        "maxBasisDistance": 1.2885069070824417e-7
+      },
+      {
+        "dtS": 0.008333333333333333,
+        "maxAngularVelocityErrorRadPerS": 3.5903987789927367e-9,
+        "maxBasisDistance": 8.020398803994387e-9
+      },
+      {
+        "dtS": 0.004166666666666667,
+        "maxAngularVelocityErrorRadPerS": 2.2440182910506875e-10,
+        "maxBasisDistance": 5.00216833213814e-10
+      }
+    ],
+    "orders": [
+      {
+        "bodyRate": 3.9999713035035596,
+        "orientation": 4.01084486408647
+      },
+      {
+        "bodyRate": 3.999992825595575,
+        "orientation": 4.005882485990434
+      },
+      {
+        "bodyRate": 3.99998774988237,
+        "orientation": 4.003048461833017
+      }
+    ]
+  },
+  "rotor": [
+    {
+      "axis": "X",
+      "dtS": 0.016666666666666666,
+      "seconds": 24,
+      "steps": 1440,
+      "spinRadPerS": 6,
+      "nudgeFraction": 0.04,
+      "initialEnergyJ": 0.008296833606235373,
+      "initialWorldMomentumKgM2PerS": [
+        -0.00018738495936000037,
+        0.002758115803704058,
+        0
+      ],
+      "maxRelativeEnergyDrift": 6.390950229813817e-10,
+      "maxRelativeWorldMomentumVectorDrift": 3.281690569296997e-8,
+      "minAlignment": 0.9977000722869884,
+      "maxAlignment": 0.9984750134950291,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "Y",
+      "dtS": 0.016666666666666666,
+      "seconds": 24,
+      "steps": 1440,
+      "spinRadPerS": 6,
+      "nudgeFraction": 0.04,
+      "initialEnergyJ": 0.014088709164651375,
+      "initialWorldMomentumKgM2PerS": [
+        0,
+        0.004684623983999998,
+        0.0002903101054281623
+      ],
+      "maxRelativeEnergyDrift": 1.2357921792269704e-7,
+      "maxRelativeWorldMomentumVectorDrift": 9.803448138633404e-7,
+      "minAlignment": -0.9980853035507863,
+      "maxAlignment": 0.9980853202728726,
+      "firstNegativeAlignmentSampleS": 1.3333333333333333
+    },
+    {
+      "axis": "Z",
+      "dtS": 0.016666666666666666,
+      "seconds": 24,
+      "steps": 1440,
+      "spinRadPerS": 6,
+      "nudgeFraction": 0.04,
+      "initialEnergyJ": 0.02178649686296995,
+      "initialWorldMomentumKgM2PerS": [
+        0.00011032463214816229,
+        0.007257752635704059,
+        -1.734723475976807e-18
+      ],
+      "maxRelativeEnergyDrift": 1.2646641173738156e-8,
+      "maxRelativeWorldMomentumVectorDrift": 1.6980199485162443e-7,
+      "minAlignment": 0.9996568670933249,
+      "maxAlignment": 0.9998844857931959,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "X",
+      "dtS": 0.008333333333333333,
+      "seconds": 24,
+      "steps": 2880,
+      "spinRadPerS": 6,
+      "nudgeFraction": 0.04,
+      "initialEnergyJ": 0.008296833606235373,
+      "initialWorldMomentumKgM2PerS": [
+        -0.00018738495936000037,
+        0.002758115803704058,
+        0
+      ],
+      "maxRelativeEnergyDrift": 1.9964878547110417e-11,
+      "maxRelativeWorldMomentumVectorDrift": 2.051874779118844e-9,
+      "minAlignment": 0.9977000722869884,
+      "maxAlignment": 0.9984750116138887,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "Y",
+      "dtS": 0.008333333333333333,
+      "seconds": 24,
+      "steps": 2880,
+      "spinRadPerS": 6,
+      "nudgeFraction": 0.04,
+      "initialEnergyJ": 0.014088709164651375,
+      "initialWorldMomentumKgM2PerS": [
+        0,
+        0.004684623983999998,
+        0.0002903101054281623
+      ],
+      "maxRelativeEnergyDrift": 4.857656601553586e-9,
+      "maxRelativeWorldMomentumVectorDrift": 6.131750148164303e-8,
+      "minAlignment": -0.9980853156103683,
+      "maxAlignment": 0.9980853202728726,
+      "firstNegativeAlignmentSampleS": 1.3333333333333333
+    },
+    {
+      "axis": "Z",
+      "dtS": 0.008333333333333333,
+      "seconds": 24,
+      "steps": 2880,
+      "spinRadPerS": 6,
+      "nudgeFraction": 0.04,
+      "initialEnergyJ": 0.02178649686296995,
+      "initialWorldMomentumKgM2PerS": [
+        0.00011032463214816229,
+        0.007257752635704059,
+        -1.734723475976807e-18
+      ],
+      "maxRelativeEnergyDrift": 4.163469117314977e-10,
+      "maxRelativeWorldMomentumVectorDrift": 1.0613377091610464e-8,
+      "minAlignment": 0.9996568668551109,
+      "maxAlignment": 0.9998844858223048,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "X",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 6,
+      "nudgeFraction": 0.04,
+      "initialEnergyJ": 0.008296833606235373,
+      "initialWorldMomentumKgM2PerS": [
+        -0.00018738495936000037,
+        0.002758115803704058,
+        0
+      ],
+      "maxRelativeEnergyDrift": 8.093587137217706e-13,
+      "maxRelativeWorldMomentumVectorDrift": 1.2826309555715948e-10,
+      "minAlignment": 0.9977000722869884,
+      "maxAlignment": 0.9984750115074478,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "Y",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 6,
+      "nudgeFraction": 0.04,
+      "initialEnergyJ": 0.014088709164651375,
+      "initialWorldMomentumKgM2PerS": [
+        0,
+        0.004684623983999998,
+        0.0002903101054281623
+      ],
+      "maxRelativeEnergyDrift": 2.1388046584015072e-10,
+      "maxRelativeWorldMomentumVectorDrift": 3.833168251257336e-9,
+      "minAlignment": -0.9980853149981258,
+      "maxAlignment": 0.9980853202728726,
+      "firstNegativeAlignmentSampleS": 1.3291666666666666
+    },
+    {
+      "axis": "Z",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 6,
+      "nudgeFraction": 0.04,
+      "initialEnergyJ": 0.02178649686296995,
+      "initialWorldMomentumKgM2PerS": [
+        0.00011032463214816229,
+        0.007257752635704059,
+        -1.734723475976807e-18
+      ],
+      "maxRelativeEnergyDrift": 1.44544253015372e-11,
+      "maxRelativeWorldMomentumVectorDrift": 6.634271089518401e-10,
+      "minAlignment": 0.9996568666194926,
+      "maxAlignment": 0.9998844857931959,
+      "firstNegativeAlignmentSampleS": null
+    }
+  ],
+  "rangeCorners": [
+    {
+      "axis": "X",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 2,
+      "nudgeFraction": 0,
+      "initialEnergyJ": 0.0009193719345680191,
+      "initialWorldMomentumKgM2PerS": [
+        -1.0842021724855044e-19,
+        0.0009193719345680192,
+        0
+      ],
+      "maxRelativeEnergyDrift": 0,
+      "maxRelativeWorldMomentumVectorDrift": 8.35963016070828e-16,
+      "minAlignment": 0.9999999999999996,
+      "maxAlignment": 1,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "Y",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 2,
+      "nudgeFraction": 0,
+      "initialEnergyJ": 0.0015615413279999996,
+      "initialWorldMomentumKgM2PerS": [
+        0,
+        0.0015615413279999996,
+        0
+      ],
+      "maxRelativeEnergyDrift": 0,
+      "maxRelativeWorldMomentumVectorDrift": 0,
+      "minAlignment": 1,
+      "maxAlignment": 1,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "Z",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 2,
+      "nudgeFraction": 0,
+      "initialEnergyJ": 0.002419250878568019,
+      "initialWorldMomentumKgM2PerS": [
+        0,
+        0.0024192508785680195,
+        -4.336808689942018e-19
+      ],
+      "maxRelativeEnergyDrift": 0,
+      "maxRelativeWorldMomentumVectorDrift": 1.0140616206556945e-15,
+      "minAlignment": 0.9999999999999996,
+      "maxAlignment": 1,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "X",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 2,
+      "nudgeFraction": 0.12,
+      "initialEnergyJ": 0.0009418581296912191,
+      "initialWorldMomentumKgM2PerS": [
+        -0.00018738495936000015,
+        0.0009193719345680192,
+        0
+      ],
+      "maxRelativeEnergyDrift": 8.944288544787733e-14,
+      "maxRelativeWorldMomentumVectorDrift": 4.386338051944177e-12,
+      "minAlignment": 0.9798545526066861,
+      "maxAlignment": 0.9866831220158273,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "Y",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 2,
+      "nudgeFraction": 0.12,
+      "initialEnergyJ": 0.001596378540651379,
+      "initialWorldMomentumKgM2PerS": [
+        0,
+        0.0015615413279999996,
+        0.0002903101054281623
+      ],
+      "maxRelativeEnergyDrift": 1.6378709012833308e-12,
+      "maxRelativeWorldMomentumVectorDrift": 6.624654205540233e-11,
+      "minAlignment": -0.9831537201567841,
+      "maxAlignment": 0.9831537275160598,
+      "firstNegativeAlignmentSampleS": 2.8541666666666665
+    },
+    {
+      "axis": "Z",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 2,
+      "nudgeFraction": 0.12,
+      "initialEnergyJ": 0.0024324898344257983,
+      "initialWorldMomentumKgM2PerS": [
+        0.00011032463214816229,
+        0.0024192508785680195,
+        -4.336808689942018e-19
+      ],
+      "maxRelativeEnergyDrift": 4.64437157245747e-13,
+      "maxRelativeWorldMomentumVectorDrift": 2.3277888713767638e-11,
+      "minAlignment": 0.996913260832089,
+      "maxAlignment": 0.9989618109689316,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "X",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 10,
+      "nudgeFraction": 0,
+      "initialEnergyJ": 0.022984298364200476,
+      "initialWorldMomentumKgM2PerS": [
+        -8.673617379884035e-19,
+        0.004596859672840096,
+        0
+      ],
+      "maxRelativeEnergyDrift": 0,
+      "maxRelativeWorldMomentumVectorDrift": 1.068409411536695e-15,
+      "minAlignment": 0.9999999999999994,
+      "maxAlignment": 1,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "Y",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 10,
+      "nudgeFraction": 0,
+      "initialEnergyJ": 0.03903853319999999,
+      "initialWorldMomentumKgM2PerS": [
+        0,
+        0.0078077066399999985,
+        0
+      ],
+      "maxRelativeEnergyDrift": 0,
+      "maxRelativeWorldMomentumVectorDrift": 0,
+      "minAlignment": 1,
+      "maxAlignment": 1,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "Z",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 10,
+      "nudgeFraction": 0,
+      "initialEnergyJ": 0.06048127196420047,
+      "initialWorldMomentumKgM2PerS": [
+        0,
+        0.012096254392840096,
+        -1.734723475976807e-18
+      ],
+      "maxRelativeEnergyDrift": 0,
+      "maxRelativeWorldMomentumVectorDrift": 1.0142200554071738e-15,
+      "minAlignment": 0.9999999999999996,
+      "maxAlignment": 1,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "X",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 10,
+      "nudgeFraction": 0.12,
+      "initialEnergyJ": 0.023546453242280475,
+      "initialWorldMomentumKgM2PerS": [
+        -0.0009369247968000005,
+        0.004596859672840096,
+        0
+      ],
+      "maxRelativeEnergyDrift": 1.1909524868492109e-10,
+      "maxRelativeWorldMomentumVectorDrift": 2.7918788523251147e-9,
+      "minAlignment": 0.9798545526066861,
+      "maxAlignment": 0.9866831219066922,
+      "firstNegativeAlignmentSampleS": null
+    },
+    {
+      "axis": "Y",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 10,
+      "nudgeFraction": 0.12,
+      "initialEnergyJ": 0.03990946351628447,
+      "initialWorldMomentumKgM2PerS": [
+        0,
+        0.0078077066399999985,
+        0.0014515505271408115
+      ],
+      "maxRelativeEnergyDrift": 3.797044559221647e-9,
+      "maxRelativeWorldMomentumVectorDrift": 4.1393638857266664e-8,
+      "minAlignment": -0.983153723995284,
+      "maxAlignment": 0.9831537275160599,
+      "firstNegativeAlignmentSampleS": 0.5708333333333333
+    },
+    {
+      "axis": "Z",
+      "dtS": 0.004166666666666667,
+      "seconds": 24,
+      "steps": 5760,
+      "spinRadPerS": 10,
+      "nudgeFraction": 0.12,
+      "initialEnergyJ": 0.06081224586064496,
+      "initialWorldMomentumKgM2PerS": [
+        0.0005516231607408114,
+        0.012096254392840096,
+        -1.734723475976807e-18
+      ],
+      "maxRelativeEnergyDrift": 2.4225483702725523e-9,
+      "maxRelativeWorldMomentumVectorDrift": 1.49157983266063e-8,
+      "minAlignment": 0.9969132613943564,
+      "maxAlignment": 0.9989618109689316,
+      "firstNegativeAlignmentSampleS": null
+    }
+  ]
+}

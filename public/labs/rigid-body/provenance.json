@@ -1,0 +1,13 @@
+{
+  "upstream": "https://github.com/NaxeCode/rigid-body-lab/tree/38f39033c2d77597321a11b86066d2d30e9d75b1",
+  "modifications": "The portfolio adds navigation and its stylesheet to index.html.",
+  "license": "UPSTREAM-LICENSE.txt",
+  "sourceSha256": {
+    "index.html": "3f52b005f2f77da12cc00dd69b89026161e91d15a9c5a5db0211002735f9b5a5",
+    "app.mjs": "9efc5d7262aecb654c3b69767ec9878ad4ba059672da6cdf9faedede0c2abff8",
+    "style.css": "a49f991e738bf0b43d727b18d3f4a3ad06406fed2ea3f2e05412499f4581fc3d",
+    "physics.mjs": "b97a66a1129612bd60614c85a29de2663221c7bab74635d704ffaaf919d634d3",
+    "scene.mjs": "aae284e11742cd0c29b83311815bc916ac05a8984f685ac3f5ef215c26ea766a",
+    "benchmark.json": "dac3cffbac1b615bd28e86af881c4cfc138e7a98d232fe4d2b0b671d5404d6fc"
+  }
+}

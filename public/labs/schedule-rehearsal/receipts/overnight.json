@@ -1,0 +1,261 @@
+{
+  "formatVersion": 1,
+  "recordedUtc": "2026-11-24T12:35:12+00:00",
+  "scheduler": "Quartz.NET 4.8.1",
+  "store": "SQLite ADO job store",
+  "manifest": {
+    "id": "overnight",
+    "title": "Midnight handover",
+    "zone": "America/Havana",
+    "historyDay": "2026-10-31",
+    "pendingDays": [
+      "2026-11-01"
+    ],
+    "localLabel": "Night shift handover",
+    "localTime": "00:30",
+    "overlap": "later",
+    "fixedLabel": "Archive handoff",
+    "fixedUtcTime": "05:30"
+  },
+  "review": {
+    "hash": "2d0f2994de1d4d0ce07a2bacbd13450e1ab4b15d5d74151e0bc00e7425e99118",
+    "approved": false,
+    "plan": {
+      "scenario": "overnight",
+      "policy": "intent",
+      "revision": 1,
+      "manifestHash": "37f9c77756f7d7c8a727efaee041904ad41a6a2fc8b73bb8e32d014743beff5e",
+      "oldRulesHash": "93bf5daf35dfdbe92a87d660f0e5863d886abe91e9fd0cd4652487b23d20be61",
+      "newRulesHash": "b17c31650e9163761b50645b4ab3806649deb24be55c790857fdd004b5611be3",
+      "rows": [
+        {
+          "occurrence": {
+            "id": "local/2026-10-31",
+            "day": "2026-10-31",
+            "intent": "local",
+            "label": "Night shift handover",
+            "oldMappings": [
+              "2026-10-31T04:30:00Z"
+            ],
+            "newMappings": [
+              "2026-10-31T04:30:00Z"
+            ],
+            "original": "2026-10-31T04:30:00Z",
+            "proposed": "2026-10-31T04:30:00Z"
+          },
+          "stored": "2026-10-31T04:30:00Z",
+          "target": "2026-10-31T04:30:00Z",
+          "decision": "protect"
+        },
+        {
+          "occurrence": {
+            "id": "fixed/2026-10-31",
+            "day": "2026-10-31",
+            "intent": "fixed",
+            "label": "Archive handoff",
+            "oldMappings": [
+              "2026-10-31T05:30:00Z"
+            ],
+            "newMappings": [
+              "2026-10-31T05:30:00Z"
+            ],
+            "original": "2026-10-31T05:30:00Z",
+            "proposed": "2026-10-31T05:30:00Z"
+          },
+          "stored": "2026-10-31T05:30:00Z",
+          "target": "2026-10-31T05:30:00Z",
+          "decision": "protect"
+        },
+        {
+          "occurrence": {
+            "id": "local/2026-11-01",
+            "day": "2026-11-01",
+            "intent": "local",
+            "label": "Night shift handover",
+            "oldMappings": [
+              "2026-11-01T04:30:00Z",
+              "2026-11-01T05:30:00Z"
+            ],
+            "newMappings": [
+              "2026-11-01T04:30:00Z"
+            ],
+            "original": "2026-11-01T05:30:00Z",
+            "proposed": "2026-11-01T04:30:00Z"
+          },
+          "stored": "2026-11-01T05:30:00Z",
+          "target": "2026-11-01T04:30:00Z",
+          "decision": "move"
+        },
+        {
+          "occurrence": {
+            "id": "fixed/2026-11-01",
+            "day": "2026-11-01",
+            "intent": "fixed",
+            "label": "Archive handoff",
+            "oldMappings": [
+              "2026-11-01T05:30:00Z"
+            ],
+            "newMappings": [
+              "2026-11-01T05:30:00Z"
+            ],
+            "original": "2026-11-01T05:30:00Z",
+            "proposed": "2026-11-01T05:30:00Z"
+          },
+          "stored": "2026-11-01T05:30:00Z",
+          "target": "2026-11-01T05:30:00Z",
+          "decision": "keep"
+        }
+      ]
+    }
+  },
+  "approval": {
+    "hash": "2d0f2994de1d4d0ce07a2bacbd13450e1ab4b15d5d74151e0bc00e7425e99118",
+    "approved": true
+  },
+  "initialTriggers": {
+    "fixed/2026-11-01": "2026-11-01T05:30:00Z",
+    "local/2026-11-01": "2026-11-01T05:30:00Z"
+  },
+  "history": [
+    {
+      "id": "local/2026-10-31",
+      "scheduled": "2026-10-31T04:30:00Z",
+      "fired": "2026-10-31T04:30:00Z",
+      "fireInstance": "seed-91ff0c5e39414c7e8c5abe3cadf6f12b136447569425376",
+      "worker": "seed-91ff0c5e39414c7e8c5abe3cadf6f12b"
+    },
+    {
+      "id": "fixed/2026-10-31",
+      "scheduled": "2026-10-31T05:30:00Z",
+      "fired": "2026-10-31T05:30:00Z",
+      "fireInstance": "seed-91ff0c5e39414c7e8c5abe3cadf6f12b136447569425377",
+      "worker": "seed-91ff0c5e39414c7e8c5abe3cadf6f12b"
+    }
+  ],
+  "interrupt": {
+    "checkpoint": "trigger-committed",
+    "id": "local/2026-11-01",
+    "after": "2026-11-01T04:30:00Z",
+    "worker": "interrupt-9375b7ddb9b444b98e34ac54b9d68183",
+    "exitStatus": -9
+  },
+  "interruptedTriggers": {
+    "fixed/2026-11-01": "2026-11-01T05:30:00Z",
+    "local/2026-11-01": "2026-11-01T04:30:00Z"
+  },
+  "resumed": {
+    "changed": [],
+    "alreadyApplied": [
+      "local/2026-11-01"
+    ],
+    "observed": {
+      "worker": "resume-c6a3ba748c40409cb3bcbd3ef43b207b",
+      "triggers": {
+        "fixed/2026-10-31": null,
+        "fixed/2026-11-01": null,
+        "local/2026-10-31": null,
+        "local/2026-11-01": null
+      },
+      "effects": [
+        {
+          "id": "local/2026-10-31",
+          "scheduled": "2026-10-31T04:30:00Z",
+          "fired": "2026-10-31T04:30:00Z",
+          "fireInstance": "seed-91ff0c5e39414c7e8c5abe3cadf6f12b136447569425376",
+          "worker": "seed-91ff0c5e39414c7e8c5abe3cadf6f12b"
+        },
+        {
+          "id": "fixed/2026-10-31",
+          "scheduled": "2026-10-31T05:30:00Z",
+          "fired": "2026-10-31T05:30:00Z",
+          "fireInstance": "seed-91ff0c5e39414c7e8c5abe3cadf6f12b136447569425377",
+          "worker": "seed-91ff0c5e39414c7e8c5abe3cadf6f12b"
+        },
+        {
+          "id": "local/2026-11-01",
+          "scheduled": "2026-11-01T04:30:00Z",
+          "fired": "2026-11-01T04:30:00Z",
+          "fireInstance": "resume-c6a3ba748c40409cb3bcbd3ef43b207b136448969871084",
+          "worker": "resume-c6a3ba748c40409cb3bcbd3ef43b207b"
+        },
+        {
+          "id": "fixed/2026-11-01",
+          "scheduled": "2026-11-01T05:30:00Z",
+          "fired": "2026-11-01T05:30:00Z",
+          "fireInstance": "resume-c6a3ba748c40409cb3bcbd3ef43b207b136448969871085",
+          "worker": "resume-c6a3ba748c40409cb3bcbd3ef43b207b"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "local/2026-10-31",
+          "scheduled": "2026-10-31T04:30:00Z",
+          "fired": "2026-10-31T04:30:00Z",
+          "fireInstance": "seed-91ff0c5e39414c7e8c5abe3cadf6f12b136447569425376",
+          "worker": "seed-91ff0c5e39414c7e8c5abe3cadf6f12b"
+        },
+        {
+          "id": "fixed/2026-10-31",
+          "scheduled": "2026-10-31T05:30:00Z",
+          "fired": "2026-10-31T05:30:00Z",
+          "fireInstance": "seed-91ff0c5e39414c7e8c5abe3cadf6f12b136447569425377",
+          "worker": "seed-91ff0c5e39414c7e8c5abe3cadf6f12b"
+        },
+        {
+          "id": "local/2026-11-01",
+          "scheduled": "2026-11-01T04:30:00Z",
+          "fired": "2026-11-01T04:30:00Z",
+          "fireInstance": "resume-c6a3ba748c40409cb3bcbd3ef43b207b136448969871084",
+          "worker": "resume-c6a3ba748c40409cb3bcbd3ef43b207b"
+        },
+        {
+          "id": "fixed/2026-11-01",
+          "scheduled": "2026-11-01T05:30:00Z",
+          "fired": "2026-11-01T05:30:00Z",
+          "fireInstance": "resume-c6a3ba748c40409cb3bcbd3ef43b207b136448969871085",
+          "worker": "resume-c6a3ba748c40409cb3bcbd3ef43b207b"
+        }
+      ]
+    }
+  },
+  "secondReplayCallbacks": 0,
+  "policyRuns": {
+    "intent": {
+      "hash": "2d0f2994de1d4d0ce07a2bacbd13450e1ab4b15d5d74151e0bc00e7425e99118",
+      "scheduled": {
+        "local/2026-10-31": "2026-10-31T04:30:00Z",
+        "fixed/2026-10-31": "2026-10-31T05:30:00Z",
+        "local/2026-11-01": "2026-11-01T04:30:00Z",
+        "fixed/2026-11-01": "2026-11-01T05:30:00Z"
+      },
+      "callbacks": 4,
+      "missedIntent": []
+    },
+    "keep": {
+      "hash": "d0330739748fa0ef3daa509cd14032b36fddfe7ab66c562dd255509656e7f9e3",
+      "scheduled": {
+        "local/2026-10-31": "2026-10-31T04:30:00Z",
+        "fixed/2026-10-31": "2026-10-31T05:30:00Z",
+        "fixed/2026-11-01": "2026-11-01T05:30:00Z",
+        "local/2026-11-01": "2026-11-01T05:30:00Z"
+      },
+      "callbacks": 4,
+      "missedIntent": [
+        "local/2026-11-01"
+      ]
+    },
+    "wall": {
+      "hash": "3083cd82b479592451f1f362bec27c898b6c1c3d32ba996275e1b4f7c4f4c539",
+      "scheduled": {
+        "local/2026-10-31": "2026-10-31T04:30:00Z",
+        "fixed/2026-10-31": "2026-10-31T05:30:00Z",
+        "fixed/2026-11-01": "2026-11-01T04:30:00Z",
+        "local/2026-11-01": "2026-11-01T04:30:00Z"
+      },
+      "callbacks": 4,
+      "missedIntent": [
+        "fixed/2026-11-01"
+      ]
+    }
+  }
+}

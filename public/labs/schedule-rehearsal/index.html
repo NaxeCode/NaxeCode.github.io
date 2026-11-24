@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f3ea">
+  <title>Schedule Rehearsal · Havana clock change</title>
+  <meta name="description" content="Review a real time-zone update, interrupt a Quartz.NET migration and inspect the scheduler's saved firings.">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+<link rel="stylesheet" href="../portfolio-nav.css"></head>
+<body><div class="naxe-lab-context" role="navigation" aria-label="Portfolio navigation"><a href="/">Aladdin Ali</a><span aria-hidden="true">/</span><a href="/projects/">Engineering work</a><a class="naxe-case-link" href="/projects/schedule-rehearsal/">Project notes <span aria-hidden="true">↗</span></a></div>
+  <header class="mast"><div class="frame mast-inner">
+    <a class="brand" href="./" aria-label="Schedule Rehearsal home"><span aria-hidden="true" class="clock-mark"></span>Schedule Rehearsal</a>
+    <a class="quiet" href="#method">How it ran <span aria-hidden="true">↘</span></a>
+  </div></header>
+  <main class="frame">
+    <section class="intro" aria-labelledby="heading">
+      <div><p class="eyebrow">CUBA · NOVEMBER 2026</p><h1 id="heading">The hour that stayed.</h1>
+      <p class="lede">Havana canceled its November clock change. A dispatch team still needs its morning briefing at 9. Its settlement partner still expects a file at 14:00 UTC.</p></div>
+      <div class="scenario-control"><label for="scenario">Choose a rehearsal</label><select id="scenario"><option value="morning">Morning dispatch</option><option value="overnight">Midnight handover</option></select></div>
+    </section>
+    <section class="workbench" aria-labelledby="compare">
+      <div class="section-head"><div><p class="eyebrow">RECORDED RUN · TRIGGER REVIEW</p><h2 id="compare">Two promises, one clock change</h2></div><span class="rule-pair">2026e <span aria-hidden="true">→</span> 2026f</span></div>
+      <p id="intro-detail" class="detail">Loading the recorded comparison…</p>
+      <div id="chart" class="chart"></div>
+      <div class="run">
+        <ol class="steps" aria-label="Replay progress"><li>Review</li><li>Approved</li><li>Interrupted</li><li>Replayed</li></ol>
+        <div class="run-grid"><div id="message" role="status" aria-live="polite" aria-atomic="true"></div><div id="actions" class="actions"></div></div>
+      </div>
+    </section>
+    <section id="ledger" class="ledger" hidden aria-labelledby="ledger-title"><h2 id="ledger-title">Firing ledger</h2><p class="detail" id="ledger-note"></p><div id="rows"></div></section>
+    <section class="policy" aria-labelledby="policy-title">
+      <div class="policy-head"><h2 id="policy-title">Try another migration policy</h2><div><label for="policy">Recorded policy</label>
+        <select id="policy"><option value="intent">Honor each promise</option><option value="keep">Keep every UTC instant</option><option value="wall">Move every wall time</option></select></div></div>
+      <p class="detail">Each policy ran in its own fresh database. Compare the pending jobs’ recorded UTC firings with their promises.</p>
+      <p id="policy-summary" role="status" aria-live="polite"></p><div id="policies"></div>
+    </section>
+    <section id="method" class="method" aria-labelledby="method-title">
+      <h2 id="method-title">Inside the rehearsal</h2>
+      <details><summary>What ran behind this replay?</summary><p>Quartz.NET executed the jobs with a controlled clock and a file-backed SQLite store. The runner killed the migration process after its first reschedule committed. A new process reopened the same file, checked the surviving triggers and advanced the scheduler to each approved instant. This page walks through that recorded run.</p><p><a href="https://github.com/NaxeCode/schedule-rehearsal">Open the C# source</a> · <a id="receipt" href="receipts/morning.json">Open the full run receipt</a> · <a href="receipts/edit.json">Inspect the stale approval test</a> · <a href="receipts/controls.json">Winnipeg and half-hour controls</a></p></details>
+      <details><summary>Where did the clock rules come from?</summary><p>Noda Time loaded the 2026e and 2026f releases. IANA’s October 27 update removed Cuba’s expected fallback on November 1. Both scenario manifests are authored examples. The ledger covers the dates in those manifests.</p><p><a href="https://data.iana.org/time-zones/tzdb/NEWS">IANA release notes</a> · <a href="https://www.quartz-scheduler.net/documentation/quartz-4.x/tutorial/testing.html">Quartz testing guide</a> · <a href="NOTICE.txt">Project credits</a></p></details>
+    </section>
+  </main>
+  <footer class="frame">Schedule Rehearsal <span>Quartz.NET · SQLite · Noda Time</span></footer>
+  <noscript><p class="frame">Enable JavaScript for the replay, or <a href="receipts/morning.json">read the captured morning run</a>.</p></noscript>
+</body>
+</html>

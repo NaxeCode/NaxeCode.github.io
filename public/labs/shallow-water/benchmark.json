@@ -1,0 +1,92 @@
+{
+  "protocol": 1,
+  "method": "First-order finite volume, local Lax-Friedrichs flux, forward Euler",
+  "channel_length_m": 120,
+  "g_m_per_s2": 9.81,
+  "target_courant": 0.45,
+  "gate_release": {
+    "upstream_m": 2.4,
+    "downstream_m": 0.6,
+    "sample_time_s": 4,
+    "volume_sample_interval_s": 0.1,
+    "initial_volume_per_unit_width_m2": 180,
+    "exact_plateau_depth_m": 1.3241926246045277,
+    "exact_shock_position_m": 18.255920135178688,
+    "exact_shock_speed_m_per_s": 4.563980033794672,
+    "grids": [
+      {
+        "cells": 120,
+        "dx_m": 1,
+        "steps": 80,
+        "mean_abs_depth_error_m": 0.028067934513852106,
+        "shock_position_m": 18.288957283303287,
+        "shock_position_abs_error_m": 0.033037148124599014,
+        "max_sampled_volume_drift_m2": 1.4210854715202004e-13,
+        "max_courant": 0.45000000000000007
+      },
+      {
+        "cells": 240,
+        "dx_m": 0.5,
+        "steps": 120,
+        "mean_abs_depth_error_m": 0.016595694410204316,
+        "shock_position_m": 18.22988224943425,
+        "shock_position_abs_error_m": 0.02603788574443655,
+        "max_sampled_volume_drift_m2": 9.094947017729282e-13,
+        "max_courant": 0.45000000000000007,
+        "observed_depth_error_order": 0.7581139044635593
+      },
+      {
+        "cells": 480,
+        "dx_m": 0.25,
+        "steps": 239,
+        "mean_abs_depth_error_m": 0.010625810898959314,
+        "shock_position_m": 18.204777517253145,
+        "shock_position_abs_error_m": 0.05114261792554231,
+        "max_sampled_volume_drift_m2": 3.410605131648481e-13,
+        "max_courant": 0.45000000000000007,
+        "observed_depth_error_order": 0.6432360536759041
+      },
+      {
+        "cells": 960,
+        "dx_m": 0.125,
+        "steps": 439,
+        "mean_abs_depth_error_m": 0.006236414550713582,
+        "shock_position_m": 18.207917336136582,
+        "shock_position_abs_error_m": 0.04800279904210569,
+        "max_sampled_volume_drift_m2": 1.8189894035458565e-12,
+        "max_courant": 0.45000000000000007,
+        "observed_depth_error_order": 0.7687842073614238
+      }
+    ]
+  },
+  "periodic_simple_wave": {
+    "initial_depth_m": "1 + 0.02 cos(2π(x + 15)/120)",
+    "sample_time_s": 4,
+    "grids": [
+      {
+        "cells": 120,
+        "expected_crest_speed_m_per_s": 3.2255895376816976,
+        "measured_crest_speed_m_per_s": 3.223129214205553,
+        "relative_speed_error": 0.0007627515675515673
+      },
+      {
+        "cells": 240,
+        "expected_crest_speed_m_per_s": 3.2255895376816976,
+        "measured_crest_speed_m_per_s": 3.2243931902043563,
+        "relative_speed_error": 0.0003708926580290317
+      },
+      {
+        "cells": 480,
+        "expected_crest_speed_m_per_s": 3.2255895376816976,
+        "measured_crest_speed_m_per_s": 3.2250003679352934,
+        "relative_speed_error": 0.00018265490370716897
+      },
+      {
+        "cells": 960,
+        "expected_crest_speed_m_per_s": 3.2255895376816976,
+        "measured_crest_speed_m_per_s": 3.2252982381228685,
+        "relative_speed_error": 0.00009030893590955547
+      }
+    ]
+  }
+}

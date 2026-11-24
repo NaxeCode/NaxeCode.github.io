@@ -1,0 +1,22 @@
+Schedule Rehearsal
+
+The C# application, scenario manifests, replay harness, visitor interface, and original
+documentation were created for this project. JSON receipts are output of its authored
+scenarios. No private schedules or customer records are included.
+
+Quartz.NET 4.8.1 executes the jobs and provisions its own SQLite schema.
+Noda Time 3.3.7 resolves the two time-zone rule sets. Microsoft.Data.Sqlite and
+Microsoft.Extensions.TimeProvider.Testing provide the database driver and test clock.
+These dependencies are restored from NuGet with package hashes in src/packages.lock.json.
+They are not bundled in the static website.
+
+The three files under data/ are unmodified Noda Time NZD distributions:
+https://nodatime.org/tzdb/tzdb2026d.nzd
+https://nodatime.org/tzdb/tzdb2026e.nzd
+https://nodatime.org/tzdb/tzdb2026f.nzd
+They contain IANA time-zone rules and Unicode CLDR mappings. See licenses/ for upstream
+notices and license texts. Each file's SHA-256 is validated at runtime.
+https://data.iana.org/time-zones/
+https://github.com/unicode-org/cldr
+https://github.com/nodatime/nodatime
+https://github.com/quartznet/quartznet
