@@ -6,24 +6,24 @@ export default function NotFound() {
   const copy = loadCopy();
 
   return (
-    <div className="container mx-auto max-w-2xl px-4 py-24 text-center">
+    <div className="mx-auto max-w-2xl px-4 py-24 text-center">
       <div className="space-y-6">
-        <h1 className="text-6xl font-bold text-primary">404</h1>
-        <h2 className="text-2xl font-semibold text-foreground">{copy.notFound.title}</h2>
-        <p className="text-lg text-muted-foreground">
+        <h1 className="display text-aura inline-block">404</h1>
+        <h2 className="h2">{copy.notFound.title}</h2>
+        <p className="lead">
           {copy.notFound.description}
         </p>
         <div className="flex gap-3 justify-center pt-4">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
+            className="btn btn-primary"
           >
             <Home className="h-4 w-4" />
             {copy.notFound.primaryCta}
           </Link>
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground"
+            className="btn btn-secondary"
           >
             <ArrowLeft className="h-4 w-4" />
             {copy.notFound.secondaryCta}

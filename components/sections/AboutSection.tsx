@@ -1,5 +1,6 @@
 'use client';
 
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import type { Profile } from '@/types/profile';
 import type { Copy } from '@/types/copy';
@@ -24,60 +25,47 @@ export function AboutSection({ profile, copy }: Props) {
       variants={fadeInUp}
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
-      className="scroll-mt-28"
+      className="scroll-mt-20 space-y-10"
       tabIndex={-1}
     >
-      <div className="surface relative overflow-hidden p-6 sm:p-8 space-y-6">
-        <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-primary/10 via-transparent to-cyan-400/5" />
-        <div className="relative space-y-1">
-          <p className="text-xs uppercase tracking-[0.12em] text-muted-foreground">{copy.label}</p>
-          <h2 className="text-3xl font-semibold text-foreground">{copy.heading}</h2>
-          <p className="text-sm text-muted-foreground">{profile.title}</p>
-        </div>
-        <div className="relative space-y-3 max-reading text-base text-muted-foreground leading-relaxed">
+      <div className="space-y-3">
+        <p className="eyebrow">{copy.label}</p>
+        <h2 className="h2">{copy.heading}</h2>
+        <p className="body">{profile.title}</p>
+      </div>
+      <div className="grid gap-x-12 gap-y-8 md:grid-cols-[minmax(0,62ch)_1fr]">
+        <div className="entry body space-y-4 pt-6">
           {profile.about.map((line) => (
             <p key={line}>{line}</p>
           ))}
         </div>
-        <div className="relative rounded-xl border border-border/70 bg-surface-muted/80 px-4 py-3 text-sm text-foreground/90">
-          <span className="font-semibold text-primary">{copy.buildingLabel}</span> {profile.buildingNow}
-        </div>
-        <div className="relative space-y-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-            {copy.skillsLabel}
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {profile.skills.map((skill) => (
-              <span
-                key={skill}
-                className="pill border-primary/30 bg-primary/10 text-primary"
-              >
-                {skill}
-              </span>
-            ))}
+        <div className="space-y-8">
+          <div className="entry space-y-2">
+            <p className="eyebrow">{copy.buildingLabel.replace(/:$/, '')}</p>
+            <p className="body">{profile.buildingNow}</p>
           </div>
-        </div>
-        <div className="relative flex flex-wrap gap-3">
-          <a
-            href={`mailto:${profile.contact.email}`}
-            className="btn-press inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg shadow-teal-500/25"
-          >
-            {copy.emailCta}
-          </a>
-          <OutboundLink
-            href={profile.contact.github}
-            label={copy.githubCta}
-            className="btn-press inline-flex items-center justify-center rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground hover:bg-surface-muted/70"
-          >
-            {copy.githubCta}
-          </OutboundLink>
-          <OutboundLink
-            href={profile.contact.linkedin}
-            label={copy.linkedinCta}
-            className="btn-press inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold text-foreground hover:text-primary hover:bg-surface-muted/70"
-          >
-            {copy.linkedinCta}
-          </OutboundLink>
+          <div className="entry space-y-2">
+            <p className="eyebrow">{copy.skillsLabel}</p>
+            <p className="tags leading-relaxed">
+              {profile.skills.map((skill) => (
+                <span key={skill}>{skill}</span>
+              ))}
+            </p>
+          </div>
+          <div className="entry flex flex-wrap items-center gap-x-5 gap-y-3">
+            <a href={`mailto:${profile.contact.email}`} className="btn btn-secondary">
+              <Mail className="h-4 w-4" />
+              {copy.emailCta}
+            </a>
+            <OutboundLink href={profile.contact.github} label={copy.githubCta} className="link">
+              <Github className="h-4 w-4" />
+              {copy.githubCta}
+            </OutboundLink>
+            <OutboundLink href={profile.contact.linkedin} label={copy.linkedinCta} className="link">
+              <Linkedin className="h-4 w-4" />
+              {copy.linkedinCta}
+            </OutboundLink>
+          </div>
         </div>
       </div>
     </motion.section>
