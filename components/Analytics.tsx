@@ -2,16 +2,21 @@
 
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { GA_MEASUREMENT_ID } from '@/lib/analytics';
 import { AnalyticsClient } from './AnalyticsClient';
 
 // App policy pages promise no tracking. They are only reached from outside
 // (App Store, email), so a fresh load never includes Google Analytics.
 const UNTRACKED_PREFIXES = ['/aura-gainz/'];
+const TRACKED_HOSTS = ['naxe.dev', 'naxecode.github.io'];
 
 export function Analytics() {
   const pathname = usePathname() ?? '';
+  const [productionHost, setProductionHost] = useState(false);
+  useEffect(() => {
+    setProductionHost(TRACKED_HOSTS.includes(window.location.hostname));
+  }, []);
   const untracked = UNTRACKED_PREFIXES.some((prefix) => pathname.startsWith(prefix));
 
   // Leave untracked pages with a full page load. A client-side transition
@@ -36,7 +41,7 @@ export function Analytics() {
     return () => document.removeEventListener('click', onClick, true);
   }, [untracked]);
 
-  if (untracked) {
+  if (untracked || !productionHost) {
     return null;
   }
 
