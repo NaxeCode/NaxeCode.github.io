@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Low Tide Relay · LMMS Session</title>
+		<meta
+			name="description"
+			content="Play and edit an original four-track game loop. Export the score as a native LMMS project or commands for the LMMS-Nebula bridge."
+		/>
+		<link rel="stylesheet" href="session.css" />
+		<script defer src="score.js"></script>
+		<script defer src="synth.js"></script>
+		<script defer src="session.js"></script>
+	<link rel="stylesheet" href="../portfolio-nav.css"></head>
+	<body><div class="naxe-lab-context" role="navigation" aria-label="Portfolio navigation"><a href="/">Aladdin Ali</a><span aria-hidden="true">/</span><a href="/projects/">Engineering work</a><a class="naxe-case-link" href="/projects/lmms-nebula/">Project notes <span aria-hidden="true">↗</span></a></div>
+		<main>
+			<header>
+				<div class="top">
+					<span class="brand"
+						><i aria-hidden="true">▥</i> LMMS Session</span
+					><span class="format">Browser score editor</span>
+				</div>
+				<div class="title">
+					<div>
+						<h1>Low Tide Relay</h1>
+						<p>
+							Four interlocking parts for a quiet harbor in a
+							game. Play the cue, change a note, then take the
+							score into LMMS.
+						</p>
+					</div>
+					<div class="transport">
+						<div class="readout">
+							<output id="position">1.1</output
+							><span>bar / beat</span>
+						</div>
+						<div class="transport-controls">
+							<button id="play" type="button">▶ Play</button
+							><button id="stop" type="button">Stop</button>
+						</div>
+					</div>
+				</div>
+			</header>
+			<section class="arrangement" aria-labelledby="arr-title">
+				<div class="arr-top">
+					<h2 id="arr-title">Arrangement</h2>
+					<div class="tempo">
+						<label for="tempo">Tempo</label
+						><input
+							type="number"
+							id="tempo"
+							min="60"
+							max="168"
+							value="96"
+						/><span>BPM</span>
+					</div>
+				</div>
+				<div id="overview" aria-label="Four-bar arrangement"></div>
+			</section>
+			<section class="editor" aria-label="Piano roll and note controls">
+				<div class="editor-top">
+					<div>
+						<p class="part-kicker" id="voice"></p>
+						<h2 id="part-title"></h2>
+					</div>
+					<div class="bars" aria-label="Choose a bar"></div>
+				</div>
+				<p class="roll-help" id="roll-help">
+					Select a note to edit it. Click an empty step to add one.
+				</p>
+				<div class="piano" aria-describedby="roll-help">
+					<div class="key-head"></div>
+					<div id="beat-head"></div>
+					<div id="keys"></div>
+					<div id="roll" aria-label="Piano roll"></div>
+				</div>
+				<div class="inspect">
+					<div class="ins-title">
+						<h3>Note editor</h3>
+						<span id="selection"></span>
+					</div>
+					<div id="fields">
+						<label>Pitch<select id="pitch"></select></label
+						><label>Step<select id="start"></select></label
+						><label>Length<select id="duration"></select></label
+						><label
+							>Velocity<input
+								id="velocity"
+								type="number"
+								min="1"
+								max="200"
+						/></label>
+					</div>
+					<div class="edit-actions">
+						<button id="add">Add note</button
+						><button id="remove">Remove</button
+						><button id="undo" disabled>Undo</button>
+					</div>
+				</div>
+			</section>
+			<section class="exports">
+				<div>
+					<h2>Take the session with you</h2>
+					<p>
+						MMP preserves the four tracks, notes, tempo and mutes.
+						The bridge file replaces notes in four named clips. The
+						WAV uses the browser synthesizer.
+					</p>
+					<details class="native-audio">
+						<summary>Hear the starter score in LMMS</summary>
+						<audio
+							controls
+							preload="none"
+							src="low-tide-relay.ogg"
+							aria-label="Original unedited score rendered in LMMS"
+						></audio>
+					</details>
+				</div>
+				<div class="downloads">
+					<button id="mmp">Export LMMS project</button
+					><button id="commands">Export bridge JSONL</button
+					><button id="render">Render WAV</button>
+				</div>
+			</section>
+			<p role="status" id="status"></p>
+			<footer>
+				LMMS is the upstream digital audio workstation. Aladdin Ali’s
+				fork adds a C++ control socket and Python client. This editor
+				uses Web Audio for playback.
+			</footer>
+		</main>
+	</body>
+</html>

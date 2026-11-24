@@ -1,15 +1,21 @@
 import type { Metadata } from 'next';
+import { getStudy, studies } from '@/lib/case-studies';
 import { getProjectBySlug, loadProjects } from '@/lib/data-loader';
 
 export async function generateStaticParams() {
-  const projects = loadProjects();
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
+  return Array.from(new Set([...studies, ...loadProjects()].map(item => item.slug)), slug => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  const study = getStudy(slug);
+  if (study) {
+    const title = `${study.name} | Aladdin Ali`;
+    const image = study.image ?? '/labs/frame-triage/assets/lead-reference.png';
+    return { title, description: study.summary, alternates: { canonical: `/projects/${slug}/` },
+      openGraph: { title, description: study.summary, url: `/projects/${slug}/`, images: [image] },
+      twitter: { card: 'summary_large_image', title, description: study.summary, images: [image] } };
+  }
   const project = getProjectBySlug(slug);
   if (!project) return {};
 

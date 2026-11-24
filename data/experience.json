@@ -2,10 +2,10 @@
   {
     "role": "Backend Engineer (Contract)",
     "company": "Regulated banking platform",
-    "period": "2026 – Present",
+    "period": "2026",
     "location": "South Florida (hybrid)",
     "bullets": [
-      "Contract backend engineering on a regulated banking platform. Specifics stay private; the work centres on correctness, auditability, and dependable integrations between systems."
+      "Worked on backend integrations for a regulated banking platform."
     ]
   },
   {
@@ -14,7 +14,7 @@
     "period": "Jan 2025 – 2026",
     "location": "Deerfield Beach, FL",
     "bullets": [
-      "This is regulated work, so “close enough” doesn’t ship. I build and extend the backend pieces that keep game behavior explainable under review: math/state flow, RTP validation, and the RGS messages that tie everything together. When audits and investigations needed to move faster, I rebuilt PlayCheck as a plugin-based system so we could add new checks without ripping up the core each time. I also moved our heaviest simulations into Linux containers and wired them into GitLab CI, which made runs repeatable and cut compute costs by about 50%. On the tooling side, I migrated older WPF/.NET Framework apps to Avalonia on .NET 10 so diagnostics were consistent across machines and debugging didn’t depend on who was running it."
+      "Built diagnostics for regulated game behavior, extended a plugin-based checking tool and moved simulation workloads into Linux containers and CI. Worked on desktop tooling across WPF and Avalonia."
     ]
   },
   {
@@ -23,7 +23,7 @@
     "period": "Feb 2024 – Dec 2024",
     "location": "Orlando, FL",
     "bullets": [
-      "The goal here was simple: keep dispatch moving and keep techs in the field, not waiting on software. I built the APIs behind routing, scheduling, and quoting, then went after the slow spots that showed up during busy days. By tightening up the SQL Server side (cleaner schemas, better queries, the right indexes and stored procedures), I sped up key workflows by roughly 45%. I also added caching and safer failure handling around the parts that tended to wobble, and stitched CRM, scheduling, and billing together so information didn’t have to be retyped. That automation cut manual entry by about 70% and reduced the “small mistakes” that turn into real delays."
+      "Built APIs for dispatch, scheduling and quoting, and worked on the SQL Server queries and integrations behind those workflows."
     ]
   },
   {
@@ -32,7 +32,7 @@
     "period": "Jul 2022 – Jan 2024",
     "location": "Seattle, WA (Remote)",
     "bullets": [
-      "I worked on an internal admin product that the business leaned on for day-to-day operations. My job was to keep the backend steady as requirements shifted: clear data contracts, boring reliability, and changes that didn’t surprise the UI. Reporting was a pain point, so I rebuilt the database path for it (schemas and stored procedures) and got report generation about 55% faster, which meant less waiting and better visibility for decision-makers. I also cleaned up the “first week tax” by automating onboarding and deployments in Azure DevOps, taking setup from about three days down to a few hours. And I tightened up auth (JWT + roles) so access was sensible and safe without turning everything into a permissions fight."
+      "Worked on an internal admin product, reporting queries, access control and repeatable deployments with Azure DevOps."
     ]
   },
   {
@@ -41,7 +41,7 @@
     "period": "Feb 2019 – Jul 2022",
     "location": "Seattle, WA (Remote)",
     "bullets": [
-      "This role taught me to treat performance like a feature. I owned core rendering systems in a cross-platform Haxe/C++ engine (desktop and mobile), where every extra millisecond shows up as a worse player experience. A lot of my time went into profiling and fixing CPU/GPU bottlenecks, from batching and state changes to shader and pipeline work, so frame times stayed stable and releases didn’t get derailed by late regressions. I built diagnostics to make problems reproducible, and I worked closely with artists and designers to ship VFX that looked right in production without blowing the budget. That mix of tooling plus performance discipline made iteration faster and kept the engine predictable as content scaled up."
+      "Profiled CPU and GPU bottlenecks in a cross-platform engine. Built diagnostics and worked with artists on the behavior and cost of visual effects."
     ]
   }
 ]

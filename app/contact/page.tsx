@@ -1,36 +1,36 @@
-import Link from "next/link";
-import { loadCopy } from "@/lib/data-loader";
-import copyData from "@/data/copy.json";
+import { ArrowUpRight } from 'lucide-react';
+import { loadProfile } from '@/lib/data-loader';
 
 export const metadata = {
-  title: `${copyData.site.title} - Contact`,
-  description: copyData.site.description,
+  title: 'Contact | Aladdin Ali',
+  description: 'Contact Aladdin Ali about applied AI, .NET and graphics engineering.',
 };
 
 export default function ContactPage() {
-  const copy = loadCopy();
-  const stub = copy.stubs.contact;
-
+  const { contact } = loadProfile();
   return (
-    <div className="flex min-h-[70vh] items-center justify-center px-4">
-      <div className="max-w-2xl text-center space-y-4">
-        <p className="eyebrow">{stub.eyebrow}</p>
-        <h1 className="h2">{stub.title}</h1>
-        <p className="body">{stub.body}</p>
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="mailto:siraj.n.lee@gmail.com"
-            className="btn btn-primary"
-          >
-            {stub.ctaEmail}
-          </a>
-          <Link
-            href="/#about"
-            className="btn btn-secondary"
-          >
-            {stub.ctaAbout}
-          </Link>
-        </div>
+    <div className="portfolio-shell inner-page contact-page">
+      <header className="page-intro">
+        <p className="intro-byline">Contact</p>
+        <h1>Get in touch</h1>
+        <p>
+          For engineering roles or a question about something I built, email me. I’m based in South
+          Florida and open to relocating within the United States.
+        </p>
+      </header>
+      <a className="contact-address" href={`mailto:${contact.email}`}>
+        {contact.email}
+        <ArrowUpRight size={24} aria-hidden="true" />
+      </a>
+      <div className="contact-links">
+        <a href={contact.linkedin}>
+          LinkedIn
+          <ArrowUpRight size={15} aria-hidden="true" />
+        </a>
+        <a href={contact.github}>
+          GitHub
+          <ArrowUpRight size={15} aria-hidden="true" />
+        </a>
       </div>
     </div>
   );
