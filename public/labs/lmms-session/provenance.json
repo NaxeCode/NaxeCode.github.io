@@ -1,0 +1,15 @@
+{
+  "upstream": "https://github.com/NaxeCode/lmms-nebula/tree/f9436fecfb986afb7a9414261cfcea31dfbbd9d3/nebula/session",
+  "modifications": "The portfolio adds navigation and its stylesheet to index.html.",
+  "license": "UPSTREAM-LICENSE.txt",
+  "sourceSha256": {
+    "index.html": "0714eaef33232a1df50b5ea07771bc2ba0eb1eef49ed4f2b4e1238d8d82a2d60",
+    "session.css": "5681e5150f2b8110f5c04867b670764ce29d7adddd2eb4d8615701724b5845bf",
+    "session.js": "41d0936672c46d9723eb35799f8892841b1987559c092934f1c1e3ca9fb82849",
+    "score.js": "8afa14a2ce83311d7f39054c5c4bf73693a599cae204c944a4f716d67719b3f2",
+    "synth.js": "e6ea435b63a80f8b7b7f0d49539499b8d95fa2ef46a44c1729264cad896c5c82",
+    "low-tide-relay.ogg": "ba7e147e230557c378afef76bc2dc9d40891513da38d1ad534715b3b2e3b24ac",
+    "low-tide-relay.mmp": "478314cc66257e77db5850493c2c1a6568950485fc5b792b70e083e41f75302d",
+    "low-tide-relay.jsonl": "da56a7432af7a4dd253d39392b899c1e5eff9a04684778f5e50089127faa6949"
+  }
+}

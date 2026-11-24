@@ -1,13 +1,12 @@
 {
   "name": "Aladdin Ali",
   "alias": "Naxe",
-  "title": "Backend & platform engineer",
+  "title": "Software engineer in applied AI, .NET and graphics",
   "about": [
-    "I build systems that stay correct when inputs are messy and dependencies fail: APIs, ingestion pipelines, financial data, and the plumbing between them.",
-    "What I care about: idempotency, retries and failure isolation, reconciliation, auditability, and observability. Most of my backend work is C# / .NET, with TypeScript, Postgres, Redis, and Python workers alongside it.",
-    "I've also been making games since 2015 (Haxe, HaxeFlixel, Heaps, C#, Godot), and I build the Linux and desktop tools I actually use."
+    "I started in game graphics and went on to build C# diagnostics and backend systems.",
+    "I build applied AI tools that preserve the source material and make unexpected results reproducible."
   ],
-  "buildingNow": "Ground, a financial-analysis platform foundation, and Photon Trail, a personal-finance pipeline.",
+  "buildingNow": "Frame Triage for render regressions, Photon Trail for reconciliation, and source inspection in Cosmic Digest.",
   "skills": [
     "C# / .NET",
     "ASP.NET Core",
@@ -22,7 +21,7 @@
     "Haxe / game dev"
   ],
   "contact": {
-    "email": "naxecode@proton.me",
+    "email": "aladdin@naxe.dev",
     "github": "https://github.com/NaxeCode",
     "linkedin": "https://www.linkedin.com/in/aladdin-ali01/",
     "x": "https://x.com/NaxeDev"

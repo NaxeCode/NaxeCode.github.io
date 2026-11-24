@@ -1,29 +1,28 @@
-import Link from "next/link";
-import { loadCopy } from "@/lib/data-loader";
-import copyData from "@/data/copy.json";
+import { DigestFeature, Flagships, MoreWork, ProjectArchive } from '@/components/Portfolio';
 
 export const metadata = {
-  title: `${copyData.site.title} - Projects`,
-  description: copyData.site.description,
+  title: 'Engineering work | Aladdin Ali',
+  description:
+    'Explore interactive graphics, machine learning, C# service recovery, financial reconciliation and audio tools.',
 };
 
 export default function ProjectsPage() {
-  const copy = loadCopy();
-  const stub = copy.stubs.projects;
-
   return (
-    <div className="flex min-h-[70vh] items-center justify-center px-4">
-      <div className="max-w-2xl text-center space-y-4">
-        <p className="eyebrow">{stub.eyebrow}</p>
-        <h1 className="h2">{stub.title}</h1>
-        <p className="body">{stub.body}</p>
-        <Link
-          href="/#projects"
-          className="btn btn-primary"
-        >
-          {stub.cta}
-        </Link>
-      </div>
+    <div className="portfolio-shell">
+      <header className="page-intro">
+        <p className="intro-byline">Aladdin Ali</p>
+        <h1>Engineering work</h1>
+        <p>
+          Open a lab to work through an example, or read its case study for the implementation and its
+          limits.
+        </p>
+      </header>
+      <section aria-label="Selected work">
+        <Flagships />
+        <DigestFeature />
+      </section>
+      <MoreWork />
+      <ProjectArchive />
     </div>
   );
 }

@@ -1,51 +1,45 @@
-import { ArrowRight, Mail } from "lucide-react";
-import {
-  loadProfile,
-  loadProjects,
-  loadExperience,
-  loadJourney,
-  loadCopy,
-} from "@/lib/data-loader";
-import { AboutSection } from "@/components/sections/AboutSection";
-import { ProjectsSection } from "@/components/sections/ProjectsSection";
-import { ExperienceSection } from "@/components/sections/ExperienceSection";
-import { JourneySection } from "@/components/sections/JourneySection";
-import { AnchorLink } from "@/components/layout/AnchorLink";
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { Background, DigestFeature, Flagships, MoreWork } from '@/components/Portfolio';
 
-export default function Home() {
-  const profile = loadProfile();
-  const projects = loadProjects();
-  const experience = loadExperience();
-  const journey = loadJourney();
-  const copy = loadCopy();
-
+export default function HomePage() {
   return (
-    <div className="mx-auto max-w-page px-4 sm:px-6 md:px-8">
-      {/* Hero: open type on the sky. The eyebrow is the one place the aurora colors a label. */}
-      <header className="section-fade pt-16 sm:pt-24">
-        <div className="max-w-reading space-y-6">
-          <p className="eyebrow-aura">{copy.hero.eyebrow}</p>
-          <h1 className="display">{copy.hero.title}</h1>
-          <p className="lead max-reading">{profile.about[0]}</p>
-          <p className="meta">{copy.site.locationLine}</p>
-          <div className="flex flex-wrap gap-3 pt-2">
-            <a className="btn btn-primary" href={`mailto:${profile.contact.email}`}>
-              <Mail className="h-4 w-4" />
-              {copy.hero.primaryCta}
-            </a>
-            <AnchorLink href="#projects" className="btn btn-secondary">
-              {copy.hero.secondaryCta} <ArrowRight className="h-4 w-4" />
-            </AnchorLink>
-          </div>
+    <div className="portfolio-shell">
+      <header className="portfolio-intro">
+        <div>
+          <p className="intro-byline">
+            <strong>Aladdin Ali</strong> <span aria-hidden="true">/</span> Software engineer
+          </p>
+          <h1>
+            Applied AI, .NET
+            <br /> and graphics.
+          </h1>
+        </div>
+        <div className="intro-prose">
+          <p>
+            I built graphics diagnostics for game engines and C# tools for regulated simulations. When an
+            AI system gets something wrong, I want the next engineer to be able to trace the decision and
+            replay it.
+          </p>
+          <Link className="text-action" href="/about/">
+            My background
+            <ArrowRight aria-hidden="true" size={15} />
+          </Link>
         </div>
       </header>
-
-      <div className="mt-28 space-y-28 md:mt-36 md:space-y-36">
-        <ProjectsSection projects={projects} copy={copy.sections.projects} />
-        <ExperienceSection experience={experience} copy={copy.sections.experience} />
-        <AboutSection profile={profile} copy={copy.sections.about} />
-        <JourneySection journey={journey} copy={copy.sections.journey} />
-      </div>
+      <section id="projects" className="selected-work" aria-labelledby="selected-title">
+        <div className="group-line">
+          <h2 id="selected-title">Selected work</h2>
+          <Link href="/projects/">
+            Project index
+            <ArrowRight size={14} aria-hidden="true" />
+          </Link>
+        </div>
+        <Flagships />
+        <DigestFeature />
+      </section>
+      <MoreWork />
+      <Background />
     </div>
   );
 }

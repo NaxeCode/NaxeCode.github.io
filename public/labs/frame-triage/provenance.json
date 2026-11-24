@@ -1,0 +1,31 @@
+{
+  "upstream": "https://github.com/NaxeCode/Minnen/tree/3d9c78b818cc8f43c3261f3969b4899e72db172a/tools/frame-triage",
+  "modifications": "The portfolio adds navigation and its stylesheet to index.html.",
+  "license": "UPSTREAM-LICENSE.txt",
+  "sourceSha256": {
+    "index.html": "6cfa5fb2cc938d381b848905f14e78f4a5fcd16b9b0e85b8601c0d4f899cde2a",
+    "style.css": "6230a2c1011be9a114df4fb32be63dd30850036d960c1cb049aee269d6877d90",
+    "app.mjs": "644a2ee074f07448875c6e3979135a6db99683987721552ca7cba6264cfccc8e",
+    "analysis.mjs": "45b573b82b9b7f298128597362eb8ef9fa6a5a65912957c1050b3c00abde84a0",
+    "assets/baseline-miss-candidate.png": "96bb8edd174dbb713f66467c33ad9cffcfd9ca519932443b2e41111b098c766f",
+    "assets/baseline-miss-reference.png": "610e4eebbb11dc5b187aad0cacb052321205552419012560560f5ee48369848f",
+    "assets/camera-candidate.png": "753e53df59fb3bf59346cde3c6bf13e95d5496a23e9ce941151f0695fa7d3121",
+    "assets/camera-reference.png": "2f033ae91a263e7f81137628c622b7709db31dbf6bc8ec90acec9ed9e1299768",
+    "assets/cases.json": "826bd9bbf07848171a164b12034a4ed7cedc33fec104a09eb5d70b4b28b46a3d",
+    "assets/evaluation.json": "9f4caeafe2414e78531fcfb1aac805c63fdd5d59206f5548c3abb75b88c4ca58",
+    "assets/exposure-candidate.png": "ee94af84124c38c0a975728d454cb0446d856ca35262f815684673e352562971",
+    "assets/exposure-reference.png": "af0c677e3cb66b62fe7a45b91490c78dcefd1be44c9e3f35716ac9a79f3e7075",
+    "assets/false-alarm-candidate.png": "241ea34cf213a7c306c3ed61655b2613f04e0a2d5522a432f12430777ec940ee",
+    "assets/false-alarm-reference.png": "7a0d48bbd123c11cf2f1a58d9aef47a3b8ca9a73cd75ac3e2994cffeb3980bf5",
+    "assets/finish-candidate.png": "837f5f29ff650c6a2194572b9ed9dbe4965ff04113b60aedb4aa0646caec622a",
+    "assets/finish-reference.png": "7aacb818a3194ff30c02c8d539f282b4876f63c58eb3179f203f2800fec63d5e",
+    "assets/jitter-candidate.png": "40f3539f99d674896089a46c79a6c32c7a1a5963cd3d230af4f8a866563d3144",
+    "assets/jitter-reference.png": "566bd48ab89d9f62287fb6feb3e2afa3ca1cd9265ec3150e60c7a9164372f5b2",
+    "assets/lead-candidate.png": "3415b2cada829fcd6866245b3d84b316ea7a558ebaebef15d23cb4afaa9bbbf0",
+    "assets/lead-reference.png": "519d037d53ec1a6921899b715b15f9712555079dfe67dc79315fa4cc5dc0f03e",
+    "assets/model.json": "a440111c8e7b5210222ba6d898b05df1398aefa6429b345a9f9916cf644805e6",
+    "assets/offset-candidate.png": "24784f96b8c8301ea8183d895f634bc56587c90c415213dc968406d08f7c04d9",
+    "assets/offset-reference.png": "a2d880d2951e232e69eafea42b0b6372e3d8e8728e8166af534d8f8fd84805a5",
+    "assets/test-cases.json": "2c71490b2c61773548c3a3d5dcb9024fa4a1cea0b2b55ad7c5544542250e2ed4"
+  }
+}

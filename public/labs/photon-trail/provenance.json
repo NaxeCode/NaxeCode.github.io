@@ -1,0 +1,8 @@
+{
+  "upstream": "https://github.com/NaxeCode/Photon-Trail/tree/553b14491c1103eb7dc2d07ceecf755b986883b0/app/demo",
+  "modifications": "The portfolio adds navigation and its stylesheet to index.html.",
+  "license": "UPSTREAM-LICENSE.txt",
+  "sourceSha256": {
+    "index.html": "a93b178918a7144e1daf8926acf99c9514c82d43c27259241b0251953d6a7cd5"
+  }
+}

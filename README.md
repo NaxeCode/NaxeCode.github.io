@@ -1,46 +1,25 @@
-<img src=".github/brand/logo.svg" width="80" alt="" />
+<img src=".github/brand/logo.svg" width="68" alt="" />
 
-# naxecode.github.io
+# Aladdin Ali’s engineering portfolio
 
-Personal site for Aladdin Ali (Naxe): backend & platform engineer, making games since 2015.
+A static portfolio for exploring public work in applied AI, C# and .NET, graphics, financial reconciliation and audio tooling. The home page pairs a draggable render comparison with a synthetic ledger. Project pages link to working labs, implementation decisions and public evidence.
 
-[![active](.github/brand/badges/status.svg)](#status)
-![Next.js](.github/brand/badges/tech-next-js.svg)
-![TypeScript](.github/brand/badges/tech-typescript.svg)
-![Tailwind](.github/brand/badges/tech-tailwind.svg)
-![Zod](.github/brand/badges/tech-zod.svg)
+## Run locally
 
-## What it does
-- Single-page portfolio: projects, experience, about, and journey sections, plus a detail page per project.
-- All copy lives in `data/*.json` and is validated with Zod at build time (`types/`, `lib/data-loader.ts`).
-- The look follows the brand generator in [`NaxeCode/.github/brand/gen.py`](https://github.com/NaxeCode/NaxeCode/tree/main/.github/brand): tokens and bands in `lib/brand.ts`, the sky in `app/globals.css` and `public/stars.svg`, project tiles in `public/tiles/`.
-
-## How it works
-Next.js App Router with `output: 'export'`, so the build is a static `out/` folder. Pushing to `main` runs `.github/workflows/nextjs.yml`, which builds the site and deploys it to GitHub Pages.
-
-## Getting started
-```bash
+```sh
 npm ci
-npm run dev     # local dev server
-npm run build   # static export to out/
+npm run dev
 ```
 
-## Status
-Live at https://naxecode.github.io.
+For the production export, run `npm run build` and serve the resulting `out/` folder with `python3 -m http.server 8000 --directory out`. Open [localhost:8000](http://localhost:8000/). The labs under `public/labs/` are standalone documents and also work from the static export.
 
-## How this project is run
+## Where to look
 
-[![tracked in Linear](.github/brand/badges/run-linear.svg)](https://linear.app)
-[![AI-reviewed · Codex](.github/brand/badges/run-codex.svg)](#how-this-project-is-run)
-[![PR-only main](.github/brand/badges/run-main.svg)](#how-this-project-is-run)
+- [Case studies](lib/case-studies.ts) hold the selected project descriptions, actions and source references.
+- [Portfolio sections](components/Portfolio.tsx) present the project visuals, background and archive.
+- The [project catalog](data/projects.json) retains the existing project URLs.
+- The [Naxe generator](https://github.com/NaxeCode/NaxeCode/tree/main/.github/brand) supplies the static sky, mark and palette. The site self-hosts Geist and Geist Mono.
 
-- **Planning:** tracked in Linear as initiatives → projects → milestones → issues; branch names and PR titles carry the issue ID.
-- **Review:** every pull request gets a Codex review before merge.
-- **Guardrails:** the default branch changes only through pull requests (GitHub ruleset).
+The Pages workflow publishes changes merged into the default branch. [Live portfolio](https://naxe.dev/) · [MIT license](LICENSE)
 
-## License
-
-MIT. See [LICENSE](LICENSE).
-
----
-<sub>Built by [Aladdin Ali](https://github.com/NaxeCode) · [naxecode.github.io](https://naxecode.github.io)</sub>
+To refresh a lab, build its original project, then run `node scripts/mirror-lab.mjs LAB EXPORT_DIRECTORY PUBLIC_SOURCE_URL UPSTREAM_LICENSE_FILE`. The script copies the reviewed files, adds the return navigation, preserves the upstream license and records SHA-256 hashes of the original files in each lab’s `provenance.json`.

@@ -1,0 +1,51 @@
+.naxe-lab-context {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 34px;
+  padding: 5px max(18px, calc((100% - 1120px) / 2));
+  box-sizing: border-box;
+  background: #0b0e1a;
+  border-bottom: 1px solid #384155;
+  font:
+    500 12px/1.45 system-ui,
+    sans-serif;
+  letter-spacing: normal;
+  text-align: left;
+  color: #8b95ad;
+}
+.naxe-lab-context a {
+  display: inline;
+  margin: 0;
+  padding: 3px 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #cbd7ec;
+  background: none;
+  border: 0;
+}
+.naxe-lab-context a:first-child {
+  color: #f1f3fc;
+  font-weight: 650;
+}
+.naxe-lab-context a.naxe-case-link {
+  margin-left: auto;
+  color: #94dcf5;
+}
+.naxe-lab-context a:hover {
+  color: white;
+  text-decoration: underline;
+}
+.naxe-lab-context a:focus-visible {
+  outline: 2px solid #94dcf5;
+  outline-offset: 2px;
+}
+@media (max-width: 380px) {
+  .naxe-lab-context {
+    padding-inline: 12px;
+    font-size: 11px;
+  }
+}

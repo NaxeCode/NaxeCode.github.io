@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { getStudy } from "@/lib/case-studies";
+import { CaseStudyPage } from "@/components/CaseStudyPage";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
@@ -15,6 +17,8 @@ const watchlistShots = [
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const study = getStudy(slug);
+  if (study) return <CaseStudyPage study={study} />;
   const project = getProjectBySlug(slug);
   const copy = loadCopy();
 

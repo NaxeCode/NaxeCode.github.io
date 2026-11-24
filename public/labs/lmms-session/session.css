@@ -1,0 +1,642 @@
+:root {
+	font:
+		16px/1.45 Geist,
+		"Helvetica Neue",
+		Arial,
+		sans-serif;
+	color: #2e3430;
+	background: #eaece6;
+	--ink: #2b3230;
+	--soft: #5b655e;
+	--line: #cdd2c8;
+	--pine: #23372f;
+	--mint: #cbdcc0;
+	--paper: #f7f8f2;
+}
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+}
+main {
+	width: min(1180px, calc(100% - 72px));
+	margin: 24px auto 30px;
+}
+h1,
+h2,
+h3,
+p {
+	margin: 0;
+}
+button,
+input,
+select {
+	font: inherit;
+}
+button {
+	cursor: pointer;
+}
+button:disabled {
+	cursor: default;
+	opacity: 0.48;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+	outline: 3px solid #8c629c;
+	outline-offset: 2px;
+}
+header {
+	background: #263a32;
+	color: #f2f3dd;
+	border-radius: 12px 12px 0 0;
+	padding: 0 26px 21px;
+}
+.top,
+.title,
+.brand,
+.transport,
+.transport-controls,
+.arr-top,
+.tempo,
+.editor-top,
+.bars,
+.inspect,
+.edit-actions,
+.exports,
+.downloads {
+	display: flex;
+	align-items: center;
+}
+.top {
+	height: 43px;
+	justify-content: space-between;
+	border-bottom: 1px solid #5c6b61;
+}
+.brand {
+	gap: 9px;
+	font-size: 14px;
+	font-weight: 670;
+}
+.brand i {
+	font:
+		24px Georgia,
+		serif;
+	line-height: 1;
+	transform: rotate(90deg);
+	color: #dfe8a8;
+}
+.format,
+.readout span {
+	font-size: 12px;
+	color: #d3dbcf;
+}
+.title {
+	justify-content: space-between;
+	gap: 26px;
+	padding-top: 16px;
+}
+.title h1 {
+	font:
+		italic 500 clamp(47px, 5.8vw, 78px) / 1.07 "Instrument Serif",
+		Georgia,
+		serif;
+	letter-spacing: -0.065em;
+}
+.title p {
+	color: #d8e0d3;
+	max-width: 62ch;
+	font-size: 14px;
+	margin-top: 5px;
+}
+.transport {
+	gap: 16px;
+}
+.readout {
+	text-align: right;
+}
+.readout output {
+	display: block;
+	font:
+		500 30px/1 Geist,
+		"Courier New",
+		monospace;
+	letter-spacing: -0.06em;
+	color: #e1eba6;
+	font-variant-numeric: tabular-nums;
+}
+.readout span {
+	font-size: 10px;
+}
+.transport-controls {
+	gap: 5px;
+}
+.transport-controls button {
+	border: 1px solid #6c796d;
+	color: white;
+	background: #34483e;
+	height: 44px;
+	border-radius: 4px;
+	padding: 0 12px;
+	font-weight: 620;
+	font-size: 14px;
+}
+.transport-controls #play {
+	background: #e0e999;
+	color: #243026;
+	border-color: #e0e999;
+	min-width: 86px;
+}
+.arrangement,
+.editor,
+.exports {
+	background: var(--paper);
+	border: 1px solid var(--line);
+	border-top: 0;
+	padding: 15px 24px;
+}
+.arr-top,
+.editor-top,
+.exports {
+	justify-content: space-between;
+	gap: 15px;
+}
+h2 {
+	font-size: 21px;
+	letter-spacing: -0.042em;
+	line-height: 1.25;
+}
+.tempo {
+	gap: 5px;
+	font-size: 12px;
+	color: var(--soft);
+}
+.tempo input {
+	width: 60px;
+	height: 30px;
+	padding: 2px 5px;
+	color: var(--ink);
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	background: white;
+	text-align: center;
+	font-weight: 650;
+}
+.tempo span {
+	font-size: 11px;
+}
+#overview {
+	margin-top: 9px;
+}
+.track {
+	display: grid;
+	grid-template-columns: 153px 45px minmax(0, 1fr);
+	align-items: center;
+	gap: 9px;
+	padding: 2px 0;
+}
+.track + .track {
+	border-top: 1px solid #e1e5da;
+}
+.track-label {
+	border: 0;
+	background: transparent;
+	color: var(--ink);
+	text-align: left;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 3px;
+	font-size: 14px;
+	font-weight: 650;
+	min-width: 0;
+}
+.track-label i {
+	display: inline-block;
+	width: 5px;
+	height: 18px;
+	border-radius: 2px;
+	background: var(--track);
+}
+.track-label[aria-pressed="true"] {
+	color: var(--track);
+}
+.mute {
+	font-size: 10px;
+	border: 1px solid #c4cbbe;
+	border-radius: 3px;
+	background: transparent;
+	padding: 4px 5px;
+	color: #46534b;
+}
+.mute[aria-pressed="true"] {
+	background: #414a42;
+	color: white;
+}
+.mini {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 2px;
+}
+.measure {
+	height: 27px;
+	position: relative;
+	background: #e8ede2;
+	border: 0;
+	border-radius: 2px;
+	overflow: hidden;
+}
+.measure[aria-pressed="true"] {
+	box-shadow: inset 0 0 0 1px var(--track);
+	background: #e1ebda;
+}
+.measure i {
+	position: absolute;
+	display: block;
+	height: 2px;
+	min-width: 2px;
+	background: var(--track);
+	pointer-events: none;
+}
+.muted .measure i {
+	opacity: 0.3;
+}
+.mini .cursor,
+.roll-cursor {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: #ae4535;
+	pointer-events: none;
+	display: none;
+	z-index: 2;
+}
+.editor {
+	padding-top: 14px;
+	padding-bottom: 13px;
+}
+.part-kicker {
+	font-size: 11px;
+	color: var(--soft);
+	font-weight: 550;
+}
+.editor-top h2 {
+	font-size: 24px;
+}
+.bars {
+	gap: 3px;
+}
+.bars button,
+.edit-actions button,
+.downloads button {
+	padding: 6px 10px;
+	border: 1px solid #b9c2b7;
+	border-radius: 4px;
+	background: #fff;
+	color: var(--ink);
+	font-size: 12px;
+	font-weight: 600;
+}
+.bars button[aria-pressed="true"] {
+	background: #34473a;
+	color: white;
+	border-color: #34473a;
+}
+.roll-help {
+	color: var(--soft);
+	font-size: 12px;
+	margin: 6px 0 7px;
+}
+.piano {
+	display: grid;
+	grid-template-columns: 45px minmax(0, 1fr);
+	border: 1px solid #bdc6b7;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.key-head,
+#beat-head {
+	background: #e1e6d9;
+}
+.key-head {
+	border-right: 1px solid var(--line);
+}
+#beat-head {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	font-size: 10px;
+	color: #506049;
+	font-weight: 600;
+}
+#beat-head span {
+	padding: 2px 5px;
+	border-left: 1px solid #c3cdbb;
+}
+#keys {
+	display: grid;
+	background: #edf0e7;
+	border-right: 1px solid #bdc9b5;
+}
+#keys span {
+	font-size: 10px;
+	color: #4b564d;
+	text-align: center;
+	border-top: 1px solid #d6ddce;
+	line-height: var(--row, 16px);
+	height: var(--row, 16px);
+}
+#keys .black {
+	background: #d7dfcf;
+}
+#roll {
+	position: relative;
+	cursor: crosshair;
+	--row: 16px;
+	background-color: #fafbf6;
+	background-image:
+		linear-gradient(to right, #bfccb7 1px, transparent 1px),
+		linear-gradient(to right, #e1e7db 1px, transparent 1px),
+		linear-gradient(to bottom, #d7dfcf 1px, transparent 1px);
+	background-size:
+		25% 100%,
+		6.25% 100%,
+		100% var(--row);
+}
+.note {
+	position: absolute;
+	min-width: 2px;
+	height: calc(var(--row) - 3px);
+	padding: 0;
+	border: 0;
+	background: var(--track);
+	border-radius: 3px;
+	cursor: pointer;
+}
+.note[aria-pressed="true"] {
+	box-shadow:
+		inset 0 0 0 2px #e8efa4,
+		0 0 0 1px #273b30;
+}
+.note:focus-visible {
+	z-index: 4;
+}
+.inspect {
+	gap: 17px;
+	margin-top: 10px;
+	flex-wrap: wrap;
+}
+.ins-title h3 {
+	font-size: 13px;
+	letter-spacing: -0.025em;
+}
+.ins-title span {
+	font-size: 11px;
+	color: var(--soft);
+}
+#fields {
+	display: flex;
+	align-items: end;
+	gap: 8px;
+}
+#fields label {
+	font-size: 10px;
+	color: var(--soft);
+	font-weight: 600;
+	display: flex;
+	flex-direction: column;
+}
+#fields select,
+#fields input {
+	background: white;
+	border: 1px solid #c5cec1;
+	border-radius: 3px;
+	color: var(--ink);
+	height: 27px;
+	padding: 2px 4px;
+	font-size: 12px;
+	min-width: 51px;
+}
+#fields input {
+	width: 58px;
+}
+.edit-actions {
+	gap: 5px;
+	align-self: end;
+}
+.edit-actions button {
+	padding: 5px 8px;
+}
+.exports {
+	padding-top: 16px;
+	padding-bottom: 18px;
+	border-radius: 0 0 10px 10px;
+	align-items: center;
+	background: #e1e7db;
+}
+.exports h2 {
+	font-size: 18px;
+}
+.exports p {
+	font-size: 12px;
+	color: var(--soft);
+	max-width: 66ch;
+	margin-top: 3px;
+}
+.downloads {
+	gap: 4px;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+.downloads button:first-child {
+	background: #34483b;
+	color: white;
+	border-color: #34483b;
+}
+.downloads button {
+	white-space: nowrap;
+}
+footer,
+#status {
+	font-size: 11px;
+	color: var(--soft);
+}
+footer {
+	margin: 9px 2px;
+}
+#status:empty {
+	display: none;
+}
+#status {
+	margin-top: 7px;
+}
+@media (max-width: 780px) {
+	main {
+		width: calc(100% - 32px);
+		margin: 16px auto;
+	}
+	.title {
+		align-items: flex-start;
+	}
+	.transport {
+		gap: 8px;
+	}
+	.readout {
+		display: none;
+	}
+	.arrangement,
+	.editor,
+	.exports {
+		padding-left: 14px;
+		padding-right: 14px;
+	}
+	.track {
+		grid-template-columns: 110px 38px minmax(0, 1fr);
+		gap: 5px;
+	}
+	.exports {
+		display: block;
+	}
+	.downloads {
+		justify-content: start;
+		margin-top: 8px;
+	}
+}
+@media (max-width: 560px) {
+	main {
+		width: calc(100% - 16px);
+		margin: 8px auto;
+	}
+	.top {
+		height: 35px;
+	}
+	.format {
+		font-size: 10px;
+	}
+	header {
+		padding: 0 14px 12px;
+	}
+	.title {
+		display: block;
+		padding-top: 7px;
+	}
+	.title h1 {
+		font-size: 49px;
+	}
+	.title p {
+		font-size: 12px;
+	}
+	.transport {
+		margin-top: 9px;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+	}
+	.readout {
+		display: flex;
+		align-items: baseline;
+		gap: 4px;
+	}
+	.readout output {
+		font-size: 20px;
+	}
+	.transport-controls button {
+		height: 34px;
+		padding: 0 12px;
+		font-size: 13px;
+	}
+	.arrangement,
+	.editor,
+	.exports {
+		padding: 9px 10px;
+	}
+	.arr-top h2 {
+		font-size: 17px;
+	}
+	.track {
+		grid-template-columns: 85px 34px minmax(0, 1fr);
+		gap: 3px;
+	}
+	.track-label {
+		font-size: 11px;
+		gap: 4px;
+	}
+	.track-label i {
+		height: 13px;
+		width: 4px;
+	}
+	.mute {
+		font-size: 10px;
+		padding: 3px 2px;
+	}
+	.measure {
+		height: 22px;
+	}
+	.editor-top h2 {
+		font-size: 20px;
+	}
+	.bars button {
+		font-size: 11px;
+		padding: 5px 6px;
+	}
+	.piano {
+		grid-template-columns: 32px minmax(0, 1fr);
+	}
+	.roll-help {
+		font-size: 11px;
+	}
+	.inspect {
+		gap: 6px 10px;
+	}
+	.edit-actions {
+		margin-left: auto;
+	}
+	.ins-title {
+		width: 100%;
+	}
+	.ins-title h3,
+	.ins-title span {
+		display: inline;
+		margin-right: 5px;
+	}
+	#fields {
+		gap: 4px;
+	}
+	#fields select,
+	#fields input {
+		min-width: 38px;
+		font-size: 11px;
+	}
+	#fields input {
+		width: 46px;
+	}
+	.edit-actions button {
+		font-size: 10px;
+		padding: 4px;
+	}
+	.downloads {
+		gap: 4px;
+	}
+	.downloads button {
+		font-size: 11px;
+		padding: 5px 6px;
+	}
+}
+
+.native-audio {
+	margin-top: 5px;
+}
+.native-audio summary {
+	font-size: 12px;
+	color: #294d39;
+	cursor: pointer;
+	width: fit-content;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+.native-audio audio {
+	width: min(100%, 305px);
+	height: 34px;
+	margin-top: 6px;
+}

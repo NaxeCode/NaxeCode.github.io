@@ -1,10 +1,10 @@
 {
   "site": {
     "brand": "NaxeCode",
-    "title": "Aladdin Ali | Backend & Platform Engineer",
-    "description": "Backend & platform engineer. I build systems that stay correct when inputs are messy and dependencies fail: APIs, ingestion pipelines, financial data, and integrations. Making games since 2015.",
-    "ogTitle": "Aladdin Ali | Backend & Platform Engineer",
-    "ogDescription": "Backend & platform engineer. I build systems that stay correct when inputs are messy and dependencies fail: APIs, ingestion pipelines, financial data, and integrations. Making games since 2015.",
+    "title": "Aladdin Ali | Applied AI, .NET and graphics",
+    "description": "Explore software by Aladdin Ali, from graphics regression analysis and financial reconciliation to source-traceable AI in C#.",
+    "ogTitle": "Aladdin Ali | Applied AI, .NET and graphics",
+    "ogDescription": "Explore software by Aladdin Ali, from graphics regression analysis and financial reconciliation to source-traceable AI in C#.",
     "locationLine": "Based in Florida (open to U.S. relocation). C# / .NET, TypeScript, Postgres, Redis, Python workers, Next.js."
   },
   "nav": {
@@ -15,7 +15,7 @@
   },
   "hero": {
     "eyebrow": "Aladdin Ali · Naxe",
-    "title": "Backend & platform engineer",
+    "title": "Applied AI, .NET and graphics",
     "primaryCta": "Email me",
     "secondaryCta": "View projects"
   },
@@ -47,7 +47,7 @@
     "journey": {
       "label": "Personal Journey",
       "heading": "How I got here",
-      "description": "I started by making games, moved through engine and graphics work, and now build backend systems and platforms."
+      "description": "I started in game graphics, built C# diagnostics and backend systems, and carried the same debugging habits into applied AI."
     }
   },
   "projectsDetail": {
