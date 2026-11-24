@@ -1,10 +1,10 @@
 {
-  "upstream": "https://github.com/NaxeCode/Minnen/tree/3d9c78b818cc8f43c3261f3969b4899e72db172a/tools/frame-triage",
+  "upstream": "https://github.com/NaxeCode/Minnen/tree/1f1b75e70b8cfedd6195cc4465a2993c59df33dc/tools/frame-triage",
   "modifications": "The portfolio adds navigation and its stylesheet to index.html.",
   "license": "UPSTREAM-LICENSE.txt",
   "sourceSha256": {
     "index.html": "6cfa5fb2cc938d381b848905f14e78f4a5fcd16b9b0e85b8601c0d4f899cde2a",
-    "style.css": "6230a2c1011be9a114df4fb32be63dd30850036d960c1cb049aee269d6877d90",
+    "style.css": "43ab8337b3272211919fa833a7080c0e9df064e7a27ecf966753d852359cfc76",
     "app.mjs": "644a2ee074f07448875c6e3979135a6db99683987721552ca7cba6264cfccc8e",
     "analysis.mjs": "45b573b82b9b7f298128597362eb8ef9fa6a5a65912957c1050b3c00abde84a0",
     "assets/baseline-miss-candidate.png": "96bb8edd174dbb713f66467c33ad9cffcfd9ca519932443b2e41111b098c766f",

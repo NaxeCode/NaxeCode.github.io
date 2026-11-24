@@ -40,12 +40,12 @@ export const studies: CaseStudy[] = [
     sources: [
       {
         title: 'Rebuild the benchmark',
-        href: 'https://github.com/NaxeCode/Minnen/tree/3d9c78b818cc8f43c3261f3969b4899e72db172a/tools/frame-triage',
+        href: 'https://github.com/NaxeCode/Minnen/tree/1f1b75e70b8cfedd6195cc4465a2993c59df33dc/tools/frame-triage',
         detail: 'Renderer, training procedure, CLI and test commands',
       },
       {
         title: 'Held-out frame decisions',
-        href: 'https://github.com/NaxeCode/Minnen/blob/3d9c78b818cc8f43c3261f3969b4899e72db172a/tools/frame-triage/web/assets/test-cases.json',
+        href: 'https://github.com/NaxeCode/Minnen/blob/1f1b75e70b8cfedd6195cc4465a2993c59df33dc/tools/frame-triage/web/assets/test-cases.json',
         detail: 'Inspect the two jitter alarms and the four baseline misses',
       },
       {
