@@ -78,7 +78,6 @@ function showEvidence() {
     : "The same change applies to the following day’s dispatch.");
   byId("policy").value = "intent";
   comparePolicy();
-  byId("receipt").href = "receipts/" + m.id + ".json";
 }
 
 function comparePolicy() {
@@ -160,24 +159,34 @@ function render() {
 async function load() {
   const id = ++request;
   const name = scenario.value;
-  byId("actions").replaceChildren();
+  const url = "receipts/" + name + ".json";
+  data = undefined;
+  phase = 0;
+  repeated = false;
+  byId("policy").disabled = true;
+  byId("receipt").href = url;
+  byId("ledger").hidden = true;
+  document.querySelector(".lede").textContent = "";
+  document.querySelectorAll(".steps [aria-current]").forEach(item => item.removeAttribute("aria-current"));
+  for (const region of ["actions", "chart", "message", "rows", "policies", "policy-summary"]) {
+    byId(region).replaceChildren();
+  }
+  byId("intro-detail").textContent = "Loading the recorded comparison…";
   try {
-    const response = await fetch("receipts/" + name + ".json");
+    const response = await fetch(url);
     if (!response.ok) throw new Error("Missing recording");
     const receipt = await response.json();
     if (id !== request) return;
     data = receipt;
-    phase = 0;
-    repeated = false;
     showEvidence();
     render();
+    byId("policy").disabled = false;
   } catch {
     if (id !== request) return;
-    byId("chart").replaceChildren();
-    byId("intro-detail").textContent = "The recorded rehearsal could not load. Open the JSON receipt or reload this page over HTTP.";
-    byId("message").replaceChildren();
-    byId("ledger").hidden = true;
-    byId("receipt").href = "receipts/" + name + ".json";
+    byId("intro-detail").textContent = "The recording could not load. Retry to see the selected rehearsal.";
+    const retry = element("button", "Retry recording");
+    retry.onclick = load;
+    byId("actions").replaceChildren(retry);
   }
 }
 

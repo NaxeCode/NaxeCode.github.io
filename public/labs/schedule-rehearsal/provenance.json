@@ -1,10 +1,10 @@
 {
-  "upstream": "https://github.com/NaxeCode/schedule-rehearsal/tree/0e67e236480dee7a17da6de6d77fb877c7a64028",
+  "upstream": "https://github.com/NaxeCode/schedule-rehearsal/tree/6c68571e1e48670403a3624817ad46f13616b07b",
   "modifications": "The portfolio adds navigation and its stylesheet to index.html.",
   "license": "UPSTREAM-LICENSE.txt",
   "sourceSha256": {
-    "index.html": "33a862374b407cd53ebb9a32e6b649e5fb6caab958b5910f8a198ff8a868a57f",
-    "app.js": "0a82bbb5dc64c5929da999bf82eccfd43d53b5bbc2985c0cd8b7d7d8da99540b",
+    "index.html": "17defac6a549f80598e0c9cc077f58158ced46c635c624cdf6b258af06371738",
+    "app.js": "8bd7f83b1eace874a7bcadd4a4205bf57edf40a9937d0c4720c5e2221f5da467",
     "style.css": "3e21378df71cdd9d06b6b432173aab389b2e11ee81729f4ddf307a6bf209ee9f",
     "NOTICE.txt": "951bc25c4f19e79db95389c1723824b37af8c9e6c6023ca2645aa746e9b77cea",
     "receipts/morning.json": "2e4d1955eab29631ee6c8d78c3514a9b1e00b5a7e25bf4b6b68925ea9cf91573",
