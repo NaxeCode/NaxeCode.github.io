@@ -1,0 +1,12 @@
+Shallow Water Lab
+Copyright 2026 Aladdin Ali. All rights reserved.
+
+The application, numerical implementation, analytical reference implementation,
+verification scripts and plots were written for this project.
+
+Method references
+Ketcheson, LeVeque and del Razo, Riemann Problems and Jupyter Solutions (2020).
+Shallow-water equations, shock jump conditions and rarefaction invariants:
+https://www.clawpack.org/riemann_book/html/Shallow_water.html
+Local Lax–Friedrichs method (Rusanov flux):
+https://www.clawpack.org/riemann_book/html/Approximate_solvers.html

@@ -1,0 +1,11 @@
+Schedule Rehearsal
+
+Original visitor interface and authored scenario receipts. The static presentation
+replays measurements recorded by a C# CLI using Quartz.NET 4.8.1, SQLite, Noda Time
+3.3.7, and Microsoft.Extensions.TimeProvider.Testing. The site contains no bundled
+scheduler binaries, zone databases, third-party fonts, or external images.
+
+IANA releases 2026e and 2026f supply the underlying rules.
+https://data.iana.org/time-zones/
+https://nodatime.org/tzdb/
+https://github.com/quartznet/quartznet

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Play } from 'lucide-react';
-import { Background, DigestFeature, Flagships, MoreWork } from '@/components/Portfolio';
+import { Background, DigestFeature, Flagships, SimulationStudies, MoreWork } from '@/components/Portfolio';
 
 export default function HomePage() {
   return (
@@ -44,6 +44,7 @@ export default function HomePage() {
         <Flagships />
         <DigestFeature />
       </section>
+      <SimulationStudies />
       <MoreWork />
       <Background />
     </div>

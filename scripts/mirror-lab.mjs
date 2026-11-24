@@ -5,6 +5,20 @@ import { fileURLToPath } from 'node:url';
 
 // Only public artifacts listed here may cross from a source checkout into the site.
 const labs = {
+  'shallow-water': {
+    project: 'shallow-water',
+    files: ['index.html', 'app.mjs', 'plots.mjs', 'lab.css', 'benchmark.json',
+      'lib/reference.mjs', 'lib/solver.mjs', 'lib/experiment.mjs'],
+  },
+  'rigid-body': {
+    project: 'rigid-body',
+    files: ['index.html', 'app.mjs', 'style.css', 'physics.mjs', 'scene.mjs', 'benchmark.json'],
+  },
+  'schedule-rehearsal': {
+    project: 'schedule-rehearsal',
+    files: ['index.html', 'app.js', 'style.css', 'NOTICE.txt',
+      'receipts/morning.json', 'receipts/overnight.json', 'receipts/edit.json', 'receipts/controls.json'],
+  },
   'frame-triage': {
     project: 'frame-triage',
     files: ['index.html', 'style.css', 'app.mjs', 'analysis.mjs'],

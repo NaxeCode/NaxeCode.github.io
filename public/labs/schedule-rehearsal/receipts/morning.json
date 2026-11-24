@@ -1,0 +1,343 @@
+{
+  "formatVersion": 1,
+  "recordedUtc": "2026-11-24T12:35:07+00:00",
+  "scheduler": "Quartz.NET 4.8.1",
+  "store": "SQLite ADO job store",
+  "manifest": {
+    "id": "morning",
+    "title": "Havana morning dispatch",
+    "zone": "America/Havana",
+    "historyDay": "2026-10-30",
+    "pendingDays": [
+      "2026-11-02",
+      "2026-11-03"
+    ],
+    "localLabel": "Dispatch briefing",
+    "localTime": "09:00",
+    "overlap": "later",
+    "fixedLabel": "Settlement export",
+    "fixedUtcTime": "14:00"
+  },
+  "review": {
+    "hash": "3c125ee54ae2804e7c63ce937f4e5cb786eceaf5e2a608c2e1d2847094f7d7d4",
+    "approved": false,
+    "plan": {
+      "scenario": "morning",
+      "policy": "intent",
+      "revision": 1,
+      "manifestHash": "858eb1207ede31d1c8769362fcf63b6ebf5d09bf389a94ca187d8de97a4359b4",
+      "oldRulesHash": "93bf5daf35dfdbe92a87d660f0e5863d886abe91e9fd0cd4652487b23d20be61",
+      "newRulesHash": "b17c31650e9163761b50645b4ab3806649deb24be55c790857fdd004b5611be3",
+      "rows": [
+        {
+          "occurrence": {
+            "id": "local/2026-10-30",
+            "day": "2026-10-30",
+            "intent": "local",
+            "label": "Dispatch briefing",
+            "oldMappings": [
+              "2026-10-30T13:00:00Z"
+            ],
+            "newMappings": [
+              "2026-10-30T13:00:00Z"
+            ],
+            "original": "2026-10-30T13:00:00Z",
+            "proposed": "2026-10-30T13:00:00Z"
+          },
+          "stored": "2026-10-30T13:00:00Z",
+          "target": "2026-10-30T13:00:00Z",
+          "decision": "protect"
+        },
+        {
+          "occurrence": {
+            "id": "fixed/2026-10-30",
+            "day": "2026-10-30",
+            "intent": "fixed",
+            "label": "Settlement export",
+            "oldMappings": [
+              "2026-10-30T14:00:00Z"
+            ],
+            "newMappings": [
+              "2026-10-30T14:00:00Z"
+            ],
+            "original": "2026-10-30T14:00:00Z",
+            "proposed": "2026-10-30T14:00:00Z"
+          },
+          "stored": "2026-10-30T14:00:00Z",
+          "target": "2026-10-30T14:00:00Z",
+          "decision": "protect"
+        },
+        {
+          "occurrence": {
+            "id": "local/2026-11-02",
+            "day": "2026-11-02",
+            "intent": "local",
+            "label": "Dispatch briefing",
+            "oldMappings": [
+              "2026-11-02T14:00:00Z"
+            ],
+            "newMappings": [
+              "2026-11-02T13:00:00Z"
+            ],
+            "original": "2026-11-02T14:00:00Z",
+            "proposed": "2026-11-02T13:00:00Z"
+          },
+          "stored": "2026-11-02T14:00:00Z",
+          "target": "2026-11-02T13:00:00Z",
+          "decision": "move"
+        },
+        {
+          "occurrence": {
+            "id": "fixed/2026-11-02",
+            "day": "2026-11-02",
+            "intent": "fixed",
+            "label": "Settlement export",
+            "oldMappings": [
+              "2026-11-02T14:00:00Z"
+            ],
+            "newMappings": [
+              "2026-11-02T14:00:00Z"
+            ],
+            "original": "2026-11-02T14:00:00Z",
+            "proposed": "2026-11-02T14:00:00Z"
+          },
+          "stored": "2026-11-02T14:00:00Z",
+          "target": "2026-11-02T14:00:00Z",
+          "decision": "keep"
+        },
+        {
+          "occurrence": {
+            "id": "local/2026-11-03",
+            "day": "2026-11-03",
+            "intent": "local",
+            "label": "Dispatch briefing",
+            "oldMappings": [
+              "2026-11-03T14:00:00Z"
+            ],
+            "newMappings": [
+              "2026-11-03T13:00:00Z"
+            ],
+            "original": "2026-11-03T14:00:00Z",
+            "proposed": "2026-11-03T13:00:00Z"
+          },
+          "stored": "2026-11-03T14:00:00Z",
+          "target": "2026-11-03T13:00:00Z",
+          "decision": "move"
+        },
+        {
+          "occurrence": {
+            "id": "fixed/2026-11-03",
+            "day": "2026-11-03",
+            "intent": "fixed",
+            "label": "Settlement export",
+            "oldMappings": [
+              "2026-11-03T14:00:00Z"
+            ],
+            "newMappings": [
+              "2026-11-03T14:00:00Z"
+            ],
+            "original": "2026-11-03T14:00:00Z",
+            "proposed": "2026-11-03T14:00:00Z"
+          },
+          "stored": "2026-11-03T14:00:00Z",
+          "target": "2026-11-03T14:00:00Z",
+          "decision": "keep"
+        }
+      ]
+    }
+  },
+  "approval": {
+    "hash": "3c125ee54ae2804e7c63ce937f4e5cb786eceaf5e2a608c2e1d2847094f7d7d4",
+    "approved": true
+  },
+  "initialTriggers": {
+    "fixed/2026-11-02": "2026-11-02T14:00:00Z",
+    "fixed/2026-11-03": "2026-11-03T14:00:00Z",
+    "local/2026-11-02": "2026-11-02T14:00:00Z",
+    "local/2026-11-03": "2026-11-03T14:00:00Z"
+  },
+  "history": [
+    {
+      "id": "local/2026-10-30",
+      "scheduled": "2026-10-30T13:00:00Z",
+      "fired": "2026-10-30T13:00:00Z",
+      "fireInstance": "seed-190a9248173d45edbacef3a3c6feca0a136441106851917",
+      "worker": "seed-190a9248173d45edbacef3a3c6feca0a"
+    },
+    {
+      "id": "fixed/2026-10-30",
+      "scheduled": "2026-10-30T14:00:00Z",
+      "fired": "2026-10-30T14:00:00Z",
+      "fireInstance": "seed-190a9248173d45edbacef3a3c6feca0a136441106851918",
+      "worker": "seed-190a9248173d45edbacef3a3c6feca0a"
+    }
+  ],
+  "interrupt": {
+    "checkpoint": "trigger-committed",
+    "id": "local/2026-11-02",
+    "after": "2026-11-02T13:00:00Z",
+    "worker": "interrupt-ee7e0704ea0242b19affebf9c5b0bdb9",
+    "exitStatus": -9
+  },
+  "interruptedTriggers": {
+    "fixed/2026-11-02": "2026-11-02T14:00:00Z",
+    "fixed/2026-11-03": "2026-11-03T14:00:00Z",
+    "local/2026-11-02": "2026-11-02T13:00:00Z",
+    "local/2026-11-03": "2026-11-03T14:00:00Z"
+  },
+  "resumed": {
+    "changed": [
+      "local/2026-11-03"
+    ],
+    "alreadyApplied": [
+      "local/2026-11-02"
+    ],
+    "observed": {
+      "worker": "resume-bee18a1f606942f5a5dc683bb58ad8a5",
+      "triggers": {
+        "fixed/2026-10-30": null,
+        "fixed/2026-11-02": null,
+        "fixed/2026-11-03": null,
+        "local/2026-10-30": null,
+        "local/2026-11-02": null,
+        "local/2026-11-03": null
+      },
+      "effects": [
+        {
+          "id": "local/2026-10-30",
+          "scheduled": "2026-10-30T13:00:00Z",
+          "fired": "2026-10-30T13:00:00Z",
+          "fireInstance": "seed-190a9248173d45edbacef3a3c6feca0a136441106851917",
+          "worker": "seed-190a9248173d45edbacef3a3c6feca0a"
+        },
+        {
+          "id": "fixed/2026-10-30",
+          "scheduled": "2026-10-30T14:00:00Z",
+          "fired": "2026-10-30T14:00:00Z",
+          "fireInstance": "seed-190a9248173d45edbacef3a3c6feca0a136441106851918",
+          "worker": "seed-190a9248173d45edbacef3a3c6feca0a"
+        },
+        {
+          "id": "local/2026-11-02",
+          "scheduled": "2026-11-02T13:00:00Z",
+          "fired": "2026-11-02T13:00:00Z",
+          "fireInstance": "resume-bee18a1f606942f5a5dc683bb58ad8a5136442567641126",
+          "worker": "resume-bee18a1f606942f5a5dc683bb58ad8a5"
+        },
+        {
+          "id": "fixed/2026-11-02",
+          "scheduled": "2026-11-02T14:00:00Z",
+          "fired": "2026-11-02T14:00:00Z",
+          "fireInstance": "resume-bee18a1f606942f5a5dc683bb58ad8a5136442567641127",
+          "worker": "resume-bee18a1f606942f5a5dc683bb58ad8a5"
+        },
+        {
+          "id": "local/2026-11-03",
+          "scheduled": "2026-11-03T13:00:00Z",
+          "fired": "2026-11-03T13:00:00Z",
+          "fireInstance": "resume-bee18a1f606942f5a5dc683bb58ad8a5136442567641128",
+          "worker": "resume-bee18a1f606942f5a5dc683bb58ad8a5"
+        },
+        {
+          "id": "fixed/2026-11-03",
+          "scheduled": "2026-11-03T14:00:00Z",
+          "fired": "2026-11-03T14:00:00Z",
+          "fireInstance": "resume-bee18a1f606942f5a5dc683bb58ad8a5136442567641129",
+          "worker": "resume-bee18a1f606942f5a5dc683bb58ad8a5"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "local/2026-10-30",
+          "scheduled": "2026-10-30T13:00:00Z",
+          "fired": "2026-10-30T13:00:00Z",
+          "fireInstance": "seed-190a9248173d45edbacef3a3c6feca0a136441106851917",
+          "worker": "seed-190a9248173d45edbacef3a3c6feca0a"
+        },
+        {
+          "id": "fixed/2026-10-30",
+          "scheduled": "2026-10-30T14:00:00Z",
+          "fired": "2026-10-30T14:00:00Z",
+          "fireInstance": "seed-190a9248173d45edbacef3a3c6feca0a136441106851918",
+          "worker": "seed-190a9248173d45edbacef3a3c6feca0a"
+        },
+        {
+          "id": "local/2026-11-02",
+          "scheduled": "2026-11-02T13:00:00Z",
+          "fired": "2026-11-02T13:00:00Z",
+          "fireInstance": "resume-bee18a1f606942f5a5dc683bb58ad8a5136442567641126",
+          "worker": "resume-bee18a1f606942f5a5dc683bb58ad8a5"
+        },
+        {
+          "id": "fixed/2026-11-02",
+          "scheduled": "2026-11-02T14:00:00Z",
+          "fired": "2026-11-02T14:00:00Z",
+          "fireInstance": "resume-bee18a1f606942f5a5dc683bb58ad8a5136442567641127",
+          "worker": "resume-bee18a1f606942f5a5dc683bb58ad8a5"
+        },
+        {
+          "id": "local/2026-11-03",
+          "scheduled": "2026-11-03T13:00:00Z",
+          "fired": "2026-11-03T13:00:00Z",
+          "fireInstance": "resume-bee18a1f606942f5a5dc683bb58ad8a5136442567641128",
+          "worker": "resume-bee18a1f606942f5a5dc683bb58ad8a5"
+        },
+        {
+          "id": "fixed/2026-11-03",
+          "scheduled": "2026-11-03T14:00:00Z",
+          "fired": "2026-11-03T14:00:00Z",
+          "fireInstance": "resume-bee18a1f606942f5a5dc683bb58ad8a5136442567641129",
+          "worker": "resume-bee18a1f606942f5a5dc683bb58ad8a5"
+        }
+      ]
+    }
+  },
+  "secondReplayCallbacks": 0,
+  "policyRuns": {
+    "intent": {
+      "hash": "3c125ee54ae2804e7c63ce937f4e5cb786eceaf5e2a608c2e1d2847094f7d7d4",
+      "scheduled": {
+        "local/2026-10-30": "2026-10-30T13:00:00Z",
+        "fixed/2026-10-30": "2026-10-30T14:00:00Z",
+        "local/2026-11-02": "2026-11-02T13:00:00Z",
+        "fixed/2026-11-02": "2026-11-02T14:00:00Z",
+        "local/2026-11-03": "2026-11-03T13:00:00Z",
+        "fixed/2026-11-03": "2026-11-03T14:00:00Z"
+      },
+      "callbacks": 6,
+      "missedIntent": []
+    },
+    "keep": {
+      "hash": "d6c8d088a1a6a5de704fb3b653adfebe103517227682674047061c41e6547169",
+      "scheduled": {
+        "local/2026-10-30": "2026-10-30T13:00:00Z",
+        "fixed/2026-10-30": "2026-10-30T14:00:00Z",
+        "fixed/2026-11-02": "2026-11-02T14:00:00Z",
+        "local/2026-11-02": "2026-11-02T14:00:00Z",
+        "fixed/2026-11-03": "2026-11-03T14:00:00Z",
+        "local/2026-11-03": "2026-11-03T14:00:00Z"
+      },
+      "callbacks": 6,
+      "missedIntent": [
+        "local/2026-11-02",
+        "local/2026-11-03"
+      ]
+    },
+    "wall": {
+      "hash": "df49a56fd37cf7fa42250154ebd662f335be3d5f87eb0650bbe7f98eeaec250c",
+      "scheduled": {
+        "local/2026-10-30": "2026-10-30T13:00:00Z",
+        "fixed/2026-10-30": "2026-10-30T14:00:00Z",
+        "fixed/2026-11-02": "2026-11-02T13:00:00Z",
+        "local/2026-11-02": "2026-11-02T13:00:00Z",
+        "fixed/2026-11-03": "2026-11-03T13:00:00Z",
+        "local/2026-11-03": "2026-11-03T13:00:00Z"
+      },
+      "callbacks": 6,
+      "missedIntent": [
+        "fixed/2026-11-02",
+        "fixed/2026-11-03"
+      ]
+    }
+  }
+}

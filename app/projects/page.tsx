@@ -1,10 +1,10 @@
 import { PortfolioTour } from '@/components/PortfolioTour';
-import { DigestFeature, Flagships, MoreWork, ProjectArchive } from '@/components/Portfolio';
+import { DigestFeature, Flagships, SimulationStudies, MoreWork, ProjectArchive } from '@/components/Portfolio';
 
 export const metadata = {
   title: 'Engineering work | Aladdin Ali',
   description:
-    'Explore interactive graphics, machine learning, C# service recovery, financial reconciliation and audio tools.',
+    'Explore interactive graphics, machine learning, C# service recovery, financial reconciliation, fluid dynamics, rigid-body rotation and audio tools.',
 };
 
 export default function ProjectsPage() {
@@ -23,6 +23,7 @@ export default function ProjectsPage() {
         <DigestFeature />
       </section>
       <PortfolioTour />
+      <SimulationStudies />
       <MoreWork />
       <ProjectArchive />
     </div>

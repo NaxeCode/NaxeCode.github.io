@@ -1,0 +1,15 @@
+{
+  "upstream": "https://github.com/NaxeCode/shallow-water-lab/tree/b0cb930a4d99f7f3a805e91e4bf0ff81a821ea09",
+  "modifications": "The portfolio adds navigation and its stylesheet to index.html.",
+  "license": "UPSTREAM-LICENSE.txt",
+  "sourceSha256": {
+    "index.html": "8eafe78c4d4522aafbd853ca12e90cfef3a8f0336fe68c3ec4d9946816f760a8",
+    "app.mjs": "50c6a73ab42fc5dd7df67055f4b46f2e649edbe26c9ddc83f00a29af8b0224e8",
+    "plots.mjs": "4f3df3aecea836a63c14007374c3c76a1ca10172e161c28936305d5f90290bec",
+    "lab.css": "f60af2c04d08402963036cf7adc127e0b0000a6fc10babb94b5666a8525dfcb0",
+    "benchmark.json": "b748e2fb74e825c57b2291329bea92a6718de7822710f807d606f62cf67329af",
+    "lib/reference.mjs": "597a7090bc5648d3590f18231a434cc9143a25ae6edbd9d4109fca54292dbb87",
+    "lib/solver.mjs": "03f1b6c04ac4145858f19393d9c8a4dc413d1c07bb4fbdf5a81290fe5d21eef9",
+    "lib/experiment.mjs": "0ca54a88135e9f0213c30e0863029e77805bfb6e45da252137b1092c7b2d9af7"
+  }
+}

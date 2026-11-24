@@ -1,0 +1,8 @@
+Copyright 2026 Aladdin Ali. The Tumble Bench code, interface, composite rotor
+design and benchmark implementation are original work. This notice does not
+grant a separate open-source license.
+
+Method references (no source code or artwork copied)
+MIT OpenCourseWare, 16.07 Dynamics, Fall 2009, lectures 28 and 29.
+Gerald Jay Sussman and Jack Wisdom, Structure and Interpretation of Classical
+Mechanics, second edition, chapter 2, MIT Press. See README.md for links.

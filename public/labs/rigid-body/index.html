@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f8f4">
+  <title>Tumble Bench · Rigid-body lab</title>
+  <meta name="description" content="Release a virtual rotor on three axes. Watch the intermediate-axis flip and measure angular momentum conservation in three dimensions.">
+  <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="../portfolio-nav.css"></head>
+<body><div class="naxe-lab-context" role="navigation" aria-label="Portfolio navigation"><a href="/">Aladdin Ali</a><span aria-hidden="true">/</span><a href="/projects/">Engineering work</a><a class="naxe-case-link" href="/projects/rigid-body/">Project notes <span aria-hidden="true">↗</span></a></div>
+<a class="skip" href="#experiment">Skip to experiment</a>
+<header class="mast"><div class="wrap mast-inner">
+  <a class="brand" href="#experiment"><span class="emblem" aria-hidden="true"><i></i></span>Rigid-body lab</a>
+  <nav aria-label="Page"><a href="#measurements">Measurements</a><a href="#notes">Bench notes</a></nav>
+</div></header>
+<main class="wrap" id="experiment">
+  <div class="intro"><h1>Tumble Bench</h1>
+    <p>Give a free rotor a small nudge. Two axes hold their spin. The middle one turns the rotor end over end.</p>
+  </div>
+  <div class="bench">
+    <section class="instrument" aria-labelledby="viewport-title">
+      <div class="stage">
+        <div class="stage-head"><h2 id="viewport-title">Rotor view</h2><span id="clock">0.000 s</span></div>
+        <canvas id="scene" tabindex="0" aria-label="Perspective view of the spinning rotor. Drag to orbit, use arrow keys to rotate the camera, and press Home to restore the view." aria-describedby="scene-description">The attitude trace below reports each rotor’s orientation.</canvas>
+        <div class="stage-foot"><div class="orbit-pad" role="group" aria-label="Orbit camera">
+          <button type="button" data-orbit="ArrowLeft" aria-label="Orbit left">←</button>
+          <button type="button" data-orbit="ArrowRight" aria-label="Orbit right">→</button>
+          <button type="button" data-orbit="ArrowUp" aria-label="Orbit up">↑</button>
+          <button type="button" data-orbit="ArrowDown" aria-label="Orbit down">↓</button>
+        </div><button type="button" id="view-reset">Reset view</button></div>
+      </div>
+      <div class="transport">
+        <button type="button" class="primary" id="play"><span class="play-mark" aria-hidden="true"></span><span id="play-label">Release rotor</span></button>
+        <button type="button" id="step">Step</button><button type="button" id="reset">Reset</button>
+        <span class="time-state" id="state" role="status">Ready</span>
+      </div>
+    </section>
+    <section class="settings" aria-labelledby="setup-title">
+      <h2 id="setup-title">Launch conditions</h2>
+      <fieldset><legend>Viewed axis</legend>
+        <div class="choices">
+          <label><input type="radio" name="axis" value="0"><span><b>X</b> Minimum <small>Stable</small></span></label>
+          <label><input type="radio" name="axis" value="1" checked><span><b>Y</b> Middle <small>Unstable</small></span></label>
+          <label><input type="radio" name="axis" value="2"><span><b>Z</b> Maximum <small>Stable</small></span></label>
+        </div>
+      </fieldset>
+      <div class="slider"><label for="spin">Spin rate</label><output id="spin-value" for="spin">6 rad/s</output><input type="range" id="spin" min="2" max="10" value="6" step="1"></div>
+      <div class="slider"><label for="nudge">Off-axis nudge</label><output id="nudge-value" for="nudge">4%</output><input type="range" id="nudge" min="0" max="12" value="4" step="1"></div>
+      <p class="helper">All three launches share a clock. Changing the spin or nudge resets them.</p>
+    </section>
+  </div>
+  <p class="caption" id="scene-description"><span class="legend-item"><i class="datum" aria-hidden="true"></i> Initial angular momentum</span><span class="legend-item"><i class="marker" aria-hidden="true"></i> Positive body-axis marker</span></p>
+  <section class="measurements" id="measurements" aria-label="Live measurements">
+    <div class="scope">
+      <div class="section-head"><h2>Axis alignment</h2><span>Last 8 s</span></div>
+      <p>+1 points along the launch momentum. −1 means the marked axis has turned over.</p>
+      <div class="graph"><canvas id="chart" aria-label="Time series of alignment for all three simultaneous launches. Current values follow below."></canvas></div>
+      <ul class="trace-key"><li><i class="key-x"></i>X <span class="reading" id="value-0">—</span></li><li><i class="key-y"></i>Y <span class="reading" id="value-1">—</span></li><li><i class="key-z"></i>Z <span class="reading" id="value-2">—</span></li></ul>
+    </div>
+    <div class="checks"><h2>Conservation check</h2><p>Largest relative change since launch for the rotor in view.</p>
+      <dl><div><dt>Energy</dt><dd id="energy">0</dd></div><div><dt>World momentum vector</dt><dd id="momentum">0</dd></div><div><dt>Physics step</dt><dd>1/240 s</dd></div></dl>
+    </div>
+  </section>
+  <section class="notes" id="notes" aria-labelledby="notes-title"><h2 id="notes-title">Bench notes</h2>
+    <details open><summary>What should I look for?</summary><p>Release the middle-axis rotor. Follow the orange marker as its alignment passes through zero and approaches −1. The dashed arrow always points along the initial angular momentum. The orange trail covers the last 1.5 seconds.</p><p>Switch to X or Z at the same instant. Their markers stay near the original direction. Set the nudge to zero and release again to isolate an exact principal-axis spin.</p></details>
+    <details><summary>How is the rotor modeled?</summary><p>Three uniform aluminum blocks form a head, spine and foot. Together they span 180 × 109 × 22 mm and weigh 407.268 g at 2,700 kg/m³. The center of mass lies 76.110 mm above the foot. Each axis is a principal axis of this shape.</p><p>The smallest moment is about X along the head. Y runs down the spine and Z is perpendicular to the broad face. Painted stripes, the marker and its trail carry no mass. Translation, friction and external torques are excluded.</p></details>
+    <details><summary>How can I check the result?</summary><p>The solver advances body angular velocity and a body-to-world quaternion together with fourth-order Runge–Kutta. Each completed step normalizes the quaternion. The energy check compares rotational kinetic energy to launch. The momentum check measures the change in all three world-frame components relative to initial magnitude.</p><p>At each launch the next body-coordinate component receives the selected fraction of the spin rate (X to Y, Y to Z, Z to X). Step advances exactly one 1/240 s interval. The benchmark repeats a 24 s run across three step sizes and compares an axisymmetric top to its closed-form solution.</p><p><a href="./benchmark.json">Read the measured benchmark (JSON)</a></p></details>
+  </section>
+</main>
+<footer class="wrap">Tumble Bench <span>Torque-free rigid-body dynamics</span></footer>
+<noscript><p>This experiment requires JavaScript. The bench notes and benchmark remain available.</p></noscript>
+<script type="module" src="./app.mjs"></script>
+</body>
+</html>

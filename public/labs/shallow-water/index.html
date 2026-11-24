@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c3448">
+  <meta name="description" content="Release a gate in a simulated flume. Compare the evolving shallow-water equations with an analytical dam-break solution.">
+  <title>Shallow Water Lab · Aladdin Ali</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./lab.css">
+  <script type="module" src="./app.mjs"></script>
+<link rel="stylesheet" href="../portfolio-nav.css"></head>
+<body><div class="naxe-lab-context" role="navigation" aria-label="Portfolio navigation"><a href="/">Aladdin Ali</a><span aria-hidden="true">/</span><a href="/projects/">Engineering work</a><a class="naxe-case-link" href="/projects/shallow-water/">Project notes <span aria-hidden="true">↗</span></a></div>
+  <header class="mast">
+    <a class="brand" href="https://naxe.dev/"><span class="mark" aria-hidden="true">≈</span> Aladdin Ali</a>
+    <nav aria-label="Project resources"><a href="#validation">Validation</a><a href="https://github.com/NaxeCode/shallow-water-lab">Source code</a></nav>
+  </header>
+  <main>
+    <div class="intro">
+      <h1>Shallow Water Lab</h1>
+      <p>Lift a gate between two water levels. A rarefaction spreads upstream while a shock travels downstream.</p>
+    </div>
+    <noscript>Enable JavaScript to run the flume. The benchmark and source code are available below.</noscript>
+    <div class="bench">
+      <section class="instrument" aria-label="Flume plots and playback">
+        <header class="instrument-head"><h2>Flume cross-section</h2><span class="legend"><i></i> Model <i class="exact"></i> Exact</span></header>
+        <canvas id="profile" aria-label="Depth in metres along the flume. Current values appear under Gauge readings." role="img"></canvas>
+        <div class="transport">
+          <div class="actions"><button type="button" id="play" aria-label="Play"><b class="play-icon" aria-hidden="true"></b><span>Play</span></button><button type="button" id="step">Step</button><button type="button" id="restart">Restart</button></div>
+          <label class="timeline"><span>Time</span><input id="time" type="range" min="0" step="1" max="100" value="40"><output for="time" id="timeLabel">4.0 s</output></label>
+        </div>
+        <div class="history-head"><h2>Velocity history</h2><div class="heat-key"><span>0</span><i></i><span id="keyMax">m/s</span></div></div>
+        <canvas id="history" aria-label="Space-time plot of depth-averaged velocity. Time increases upwards." role="img"></canvas>
+        <p class="plot-note">Each row is one instant in the flume. Select a point to move the time cursor and gauge.</p>
+      </section>
+      <aside class="setup" aria-label="Experiment settings and measurements">
+        <h2>Release settings</h2>
+        <label for="release">Initial condition</label>
+        <select id="release"><option value="standard">Wet-bed dam break</option><option value="gentle">Gentle release</option><option value="still">Still-water control</option><option value="custom" disabled>Custom release</option></select>
+        <label class="number-label" for="upstream">Upstream depth <output id="upLabel" for="upstream">2.4 m</output></label>
+        <input id="upstream" type="range" min="1.5" max="3.5" step="0.1" value="2.4">
+        <label class="number-label" for="downstream">Downstream depth <output id="downLabel" for="downstream">0.6 m</output></label>
+        <input id="downstream" type="range" min="0.3" max="1.5" step="0.1" value="0.6">
+        <div class="mesh"><label for="mesh">Grid</label><select id="mesh"><option>120</option><option>240</option><option selected>480</option><option>960</option></select><span>cells</span></div>
+        <label class="check"><input type="checkbox" id="overlay" checked> Analytical profile</label>
+        <div class="gauge">
+          <h2>Gauge readings</h2>
+          <label class="number-label" for="position">Position <output id="positionLabel" for="position">+12.0 m</output></label>
+          <input id="position" type="range" min="-60" max="60" step="0.5" value="12">
+          <dl><div><dt>Depth</dt><dd id="gDepth">—</dd></div><div><dt>Velocity</dt><dd id="gSpeed">—</dd></div></dl>
+        </div>
+      </aside>
+    </div>
+    <span class="sr-only" role="status" id="status"></span>
+    <section class="validation" id="validation">
+      <div><h2>How close is the solution?</h2>
+        <p>Compare the numerical water depth in each cell with its exact average. Refining the grid narrows the smeared shock. The closed ends keep the total volume fixed.</p>
+        <a href="./benchmark.json">Four-grid benchmark (JSON)</a>
+      </div>
+      <dl class="metrics"><div><dt>Mean depth error</dt><dd id="depthError">—</dd></div><div><dt>Volume drift per unit width</dt><dd id="volumeDrift">—</dd></div></dl>
+    </section>
+    <details class="method"><summary>Model, boundaries and reference</summary>
+      <p>A first-order conservative finite-volume scheme evolves water depth and discharge in a 120 m rectangular channel. Each interface uses a local Lax–Friedrichs flux. The time step adapts to the fastest gravity wave with a target Courant number of 0.45.</p>
+      <p>The model assumes a horizontal frictionless bed, hydrostatic pressure and uniform channel width. It omits vertical motion, turbulence and dry beds. The exact profile joins a rarefaction to a shock through a constant intermediate state. Playback ends before the first physical wave reaches either wall.</p>
+      <p>For the derivation, see Ketcheson, LeVeque and del Razo’s <a href="https://www.clawpack.org/riemann_book/html/Shallow_water.html">shallow-water Riemann problem</a>. The independent smooth-wave check is documented in the <a href="https://github.com/NaxeCode/shallow-water-lab#validation">project README</a>.</p>
+    </details>
+  </main>
+</body>
+</html>

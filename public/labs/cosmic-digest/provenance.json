@@ -1,9 +1,9 @@
 {
-  "upstream": "https://github.com/NaxeCode/Cosmic-Digest/tree/c8faaee8f4ab70c26eed8aaf26e74b1aa2956759/tools/BriefingLab",
+  "upstream": "https://github.com/NaxeCode/Cosmic-Digest/tree/aa546a119fee1e7a3a550c215333a23f8663e405/tools/BriefingLab",
   "modifications": "The portfolio adds navigation and its stylesheet to index.html.",
   "license": "UPSTREAM-LICENSE.txt",
   "sourceSha256": {
-    "index.html": "8ff19f9a3fa34fd5048a0acdd972edda3096189e1c5813ee25a13c001955b9d2",
-    "report.json": "f6da3457f869e2fcc94e4c9469ab0441e3adeafb6a5f677e211f4811d4508b5e"
+    "index.html": "e195831261f681205383c70aa2add008e453c17993298821cf65973370c016d7",
+    "report.json": "cdd8c2c031c022c0f3812682b05de795369c07ba785d8069226f845575ff4771"
   }
 }

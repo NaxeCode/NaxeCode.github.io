@@ -1,0 +1,121 @@
+:root {
+  color-scheme: light;
+  --paper: #f7f8f4; --ink: #1d2931; --muted: #506169; --line: #c9d1cf;
+  --blue: #274f80; --dark: #1e3c60; --orange: #ac511e;
+  font-family: system-ui, "Segoe UI", sans-serif;
+}
+* {box-sizing: border-box}
+body {margin: 0; background: var(--paper); color: var(--ink)}
+button,input,summary {font: inherit}
+button,a,input,summary {touch-action: manipulation}
+button {cursor: pointer}
+:focus-visible {outline: 3px solid #b9541e; outline-offset: 4px}
+a {color: var(--blue); text-underline-offset: 3px}
+.wrap {max-width: 1312px; margin-inline: auto; padding-inline: clamp(17px, 4.5vw, 70px)}
+.skip {position: absolute; left: 1em; transform: translateY(-150%); z-index: 5; background: white; padding: 12px}
+.skip:focus {transform: translateY(0)}
+.mast {border-bottom: 1px solid var(--line)}
+.mast-inner, .brand, nav, .transport, .stage-head, .stage-foot, .section-head, footer, .caption, .legend-item {display: flex; align-items: center}
+.mast-inner, .stage-head, .stage-foot, .section-head, footer {justify-content: space-between}
+.mast-inner {min-height: 65px}
+.brand {gap: 13px; font-weight: 750; letter-spacing: -.04em; color: var(--ink); text-decoration: none; font-size: 1.18rem}
+.emblem {position: relative; width: 27px; height: 25px; display: inline-block; transform: rotate(-20deg)}
+.emblem::before, .emblem::after, .emblem i {content: ""; position: absolute; background: var(--blue)}
+.emblem::before {inset: 1px 1px auto; height: 8px; border-right: 6px solid #dc9c45}
+.emblem i {top: 7px; left: 11px; height: 13px; width: 5px}
+.emblem::after {bottom: 2px; left: 7px; width: 13px; height: 4px}
+nav {gap: 27px; font-size: .9rem; font-weight: 600}
+nav a {color: var(--muted); text-decoration: none}
+nav a:hover, .brand:hover {color: var(--blue); text-decoration: underline}
+.intro {display: grid; grid-template-columns: 1.2fr 1fr; align-items: end; gap: 32px; margin-block: 30px 25px}
+h1,h2,p {margin: 0}
+h1 {font-family: "Avenir Next Condensed", "Arial Narrow", "Avenir Next", sans-serif; font-size: clamp(3.45rem, 6.5vw, 6.4rem); font-weight: 700; letter-spacing: -.035em; line-height: .98}
+.intro p {max-width: 41ch; color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.16rem); line-height: 1.45; padding-bottom: 3px}
+h2 {font-size: 1.23rem; letter-spacing: -.035em; font-weight: 680}
+.bench,.measurements {display: grid; grid-template-columns: minmax(0, 2.05fr) minmax(250px, .92fr); gap: clamp(20px,3vw,46px)}
+.instrument {min-width: 0; border: 1px solid #aebbba; border-radius: 10px; overflow: hidden; background: white}
+.stage {position: relative; height: clamp(340px, 34vw, 448px); isolation: isolate; background-color: #e8edef; background-image: radial-gradient(#bbc8ca 0.75px, transparent 0.85px); background-size: 18px 18px}
+.stage canvas {display: block; width: 100%; height: 100%; touch-action: none; cursor: grab}
+.stage canvas:active {cursor: grabbing}
+.stage canvas:focus-visible {outline-offset: -4px}
+.stage-head,.stage-foot {position: absolute; inset-inline: 16px; z-index: 1; pointer-events: none}
+.stage-head {top: 14px}
+.stage-head h2 {font-size: .93rem; letter-spacing: -.025em}
+.stage-head span,.stage-head h2,.stage-foot span,.stage-foot button {background: #e8edef; padding: 2px 5px; border-radius: 2px}
+.stage-head span,.time-state,.trace-key .reading,.checks dd,.slider output {font-variant-numeric: tabular-nums}
+.stage-head span {font: 600 .88rem ui-monospace, monospace}
+.stage-foot {bottom: 10px; color: #495a63; font-size: .77rem}
+.stage-foot button {border: 0; color: #344f62; text-decoration: underline; text-underline-offset: 3px; pointer-events: auto; min-height: 30px}
+.transport {gap: 8px; padding: 12px 14px; border-top: 1px solid #b3c0c3}
+.transport button {min-height: 41px; padding: 7px 15px; border: 1px solid #c4cece; background: #fff; border-radius: 6px; color: var(--ink); font-weight: 650; font-size: .86rem}
+.transport .primary {background: var(--blue); color: white; border-color: var(--blue); display: flex; align-items: center; gap: 8px; justify-content: center; min-width: 125px}
+.primary:hover {background: var(--dark)}
+.play-mark {border-left: 8px solid currentColor; border-block: 5px solid transparent}
+.playing .play-mark {width: 8px; height: 10px; border: 0; border-inline: 3px solid currentColor}
+.time-state {margin-left: auto; font-size: .8rem; color: var(--muted)}
+.settings {padding-block: 4px 0}
+.settings h2 {margin-bottom: 18px}
+fieldset {border: 0; padding: 0; margin: 0}
+legend,.slider label {font-size: .85rem; font-weight: 650}
+legend {margin-bottom: 7px; padding: 0}
+.choices {display: grid; gap: 4px}
+.choices label {position: relative; cursor:pointer}
+.choices input {position: absolute; opacity: 0}
+.choices label>span {display:flex; align-items:center; gap: 11px; padding: 7px 11px; min-height: 39px; border: 1px solid var(--line); border-radius: 5px; font-size: .9rem}
+.choices b {font: 650 .83rem ui-monospace,monospace; color: var(--blue)}
+.choices small {margin-left: auto; font-size: .75rem; color: var(--muted)}
+.choices input:checked+span {background:#deebf6; color:var(--dark); border-color:#6d8aab; box-shadow: inset 3px 0 0 var(--blue)}
+.choices input:focus-visible+span {outline: 3px solid var(--orange); outline-offset: 2px}
+.slider {display: grid; grid-template-columns: 1fr auto; align-items: center; margin-top: 15px; gap: 3px}
+.slider output {font-size: .85rem; color: var(--blue); font-weight: 650}
+.slider input {grid-column: 1 / -1; margin: 0; width:100%; accent-color: var(--blue); height: 22px}
+.helper,.checks p,.scope p,.notes p {color: var(--muted); font-size: .9rem; line-height: 1.5}
+.helper {margin-top: 10px; max-width: 39ch; font-size: .8rem}
+.caption {gap: 22px; padding-block: 9px 23px; flex-wrap: wrap}
+.legend-item {gap: 7px; font-size: .77rem; color: var(--muted)}
+.datum,.marker,.trace-key i {display:inline-block; width:18px}
+.datum {border-top: 2px dashed #407572}
+.marker {width: 9px; height:9px; border-radius:50%; background:#bc571e}
+.measurements {border-top: 1px solid var(--line); padding-block: 21px}
+.section-head span {color: var(--muted); font-size: .8rem}
+.scope p,.checks p {margin-top: 4px}
+.graph {height: 107px; margin-top: 12px}
+.graph canvas {display: block; width: 100%; height: 100%}
+.trace-key {display: flex; gap: 18px; padding:0; margin:4px 0 0; flex-wrap:wrap; list-style: none; font-size:.78rem}
+.trace-key li {display:flex; align-items:center; gap:5px}
+.trace-key i {width:14px}
+.key-x {border-top:2px dashed #46639b}.key-y {border-top:3px solid #a84b18}.key-z {border-top:2px dotted #3a7768}
+.checks dl {margin: 11px 0 0}
+.checks dl div {display:flex; justify-content:space-between; gap:15px; border-top:1px solid var(--line); padding:9px 0; font-size:.86rem}
+.checks dd {margin:0; font: 500 .83rem ui-monospace,monospace}
+.notes {display:grid; grid-template-columns: 1fr 2fr; column-gap: 30px; padding-block: 23px; border-top: 1px solid var(--line)}
+.notes h2 {grid-row:span 3}
+.notes details {grid-column:2; border-bottom:1px solid var(--line); padding: 10px 0}
+.notes details:first-of-type {padding-top:0}
+.notes summary {cursor:pointer; font-size: .97rem; font-weight: 650}
+.notes p {margin: 9px 0 2px; max-width: 76ch}
+footer {color:var(--muted); border-top:1px solid var(--line); font-size:.77rem; gap:12px; min-height:60px}
+@media(max-width: 760px) {
+  .intro {grid-template-columns: 1fr; gap: 10px; margin-block: 24px 19px}
+  .intro p {max-width:55ch}
+  .bench,.measurements {grid-template-columns: 1fr}
+  .bench {gap:20px}.stage {height: clamp(288px,64vw,390px)}
+  .settings h2 {margin-bottom:10px}
+  .settings {display:grid; grid-template-columns:1fr 1fr; column-gap:18px}
+  .settings h2,.settings fieldset,.settings .helper {grid-column:1 / -1}
+  .choices {grid-template-columns:repeat(3,1fr)}
+  .choices label>span {display:grid; grid-template-columns:auto 1fr; column-gap:5px; row-gap:1px; padding:6px 7px; font-size:.85rem}
+  .choices small {grid-column:2; margin-left:0}
+  .caption {gap:12px; padding-block:16px}
+  .notes {display:block}.notes h2 {margin-bottom:16px}
+  nav {gap:13px; font-size:.8rem}
+}
+@media(max-width:430px) {
+  .brand {font-size:1rem; gap:6px}.mast-inner {min-height:54px}
+  .transport {padding:9px; gap:5px}.transport button {padding:7px 10px}.transport .primary {min-width:112px}
+  .stage-head,.stage-foot {inset-inline:8px}.stage-foot {bottom:4px}
+  .measurements {gap:23px}.time-state {font-size:.72rem}.stage {height:288px}
+}
+
+.orbit-pad {display:flex; gap:3px}
+.orbit-pad button {width:36px; height:36px; font-size:1rem; font-weight:600; text-decoration:none; border:1px solid #acb8bb; background:#f6f8f6}
