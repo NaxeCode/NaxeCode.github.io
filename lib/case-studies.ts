@@ -8,7 +8,7 @@ export type CaseStudy = {
   caption: string;
   image?: string;
   alt?: string;
-  sections: { title: string; body: string }[];
+  sections: { title: string; body: string; link?: { href: string; label: string } }[];
   sources: { title: string; href: string; detail: string }[];
 };
 
@@ -108,16 +108,29 @@ export const studies: CaseStudy[] = [
     name: 'Cosmic Digest',
     discipline: 'Applied AI / C# and .NET',
     summary:
-      'A daily briefing is only useful if you can tell where a claim came from. This C# service checks the model’s sources and keeps the original email when a send has an uncertain outcome.',
-    action: 'Inspect the briefing',
-    lab: '/labs/cosmic-digest/',
-    caption: 'A recorded decision from the C# briefing pipeline, using synthetic reports.',
+      'Can a model quote the right words and still draw the wrong conclusion? This C# briefing service exposes the source, the raw response and the validator’s decision. A local model experiment shows where those checks fall short.',
+    action: 'Inspect model outputs',
+    lab: '/labs/cosmic-digest/#model/north-hold/reversed',
+    caption: 'Recorded Qwen2.5 outputs on 12 synthetic source packets, each presented in both orders.',
     image: '/studies/digest.webp',
-    alt: 'Cosmic Digest source inspector showing a recorded briefing decision',
+    alt: 'Cosmic Digest local model study comparing the C# guard and source-and-scope rubric',
     sections: [
+      {
+        title: 'Reverse the same two sources',
+        body: 'A release says calibration files are available. A later operations report puts the north camera on hold. In the reversed ordering, the local model chose the release. Its quotation passed the production C# guard, but it missed the hold that the frozen rubric required.',
+        link: {
+          href: '/labs/cosmic-digest/#model/north-hold/reversed',
+          label: 'Inspect the raw response',
+        },
+      },
+      {
+        title: 'What the guard catches',
+        body: 'The experiment used a four-bit Qwen2.5-1.5B-Instruct model on an Apple M4. Twelve fictional packets, shown twice in opposite orders, gave 24 responses. Thirteen passed the guard and six passed both the guard and the frozen source-and-scope rubric. Source selections agreed across orders in just one of the 12 pairs. A retrospective rule requiring agreement and two guard passes referred all 12 for review. It accepted none.',
+      },
       {
         title: 'A quotation can belong to a different report',
         body: 'Six synthetic dispatches form three ranked events. The C# run rejects a quotation borrowed from the wrong report. In another fixture it accepts a conclusion broader than its source. Inspect both outcomes to see where an exact quote helps and where semantic judgment is still needed.',
+        link: { href: '/labs/cosmic-digest/#case/borrowed-quote', label: 'Replay the fixed case' },
       },
       {
         title: 'Replay the prepared message',
@@ -125,6 +138,16 @@ export const studies: CaseStudy[] = [
       },
     ],
     sources: [
+      {
+        title: 'Raw local model run',
+        href: 'https://github.com/NaxeCode/Cosmic-Digest/blob/c8faaee8f4ab70c26eed8aaf26e74b1aa2956759/tools/BriefingLab/model-eval/run.json',
+        detail: 'All 24 recorded model responses and the generation settings',
+      },
+      {
+        title: 'Frozen protocol',
+        href: 'https://github.com/NaxeCode/Cosmic-Digest/blob/86494f41819498ab173edbdd73c119c51cb4eb57/tools/BriefingLab/model-eval/PROTOCOL.md',
+        detail: 'Order comparison, withheld labels and the pre-inference scoring rule',
+      },
       {
         title: 'Quote verification in C#',
         href: 'https://github.com/NaxeCode/Cosmic-Digest/blob/efe2b474703935106d06a3eff9e808c5f52f1e4b/Selection/SourceExcerpt.cs',
@@ -170,7 +193,7 @@ export const studies: CaseStudy[] = [
       },
       {
         title: 'Hear the edit',
-        body: 'Play the original score, edit a note and listen again. The browser synthesizes the editable preview. A separate ten-second clip comes from rendering the exported project in LMMS itself. Export the project or the bridge commands to continue working in the workstation.',
+        body: 'Play the original score, edit a note and listen again. The browser synthesizes the editable preview. A separate ten-second clip comes from rendering the exported project in LMMS itself. A native socket check exercised all four tracks and 74 notes, rejected an invalid batch and preserved a velocity edit through save and reopen.',
       },
     ],
     sources: [

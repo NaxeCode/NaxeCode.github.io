@@ -24,7 +24,15 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
         {study.sections.map((section) => (
           <section key={section.title}>
             <h2>{section.title}</h2>
-            <p>{section.body}</p>
+            <div>
+              <p>{section.body}</p>
+              {section.link && (
+                <a className="text-action" href={section.link.href}>
+                  {section.link.label}
+                  <ArrowUpRight size={14} aria-hidden="true" />
+                </a>
+              )}
+            </div>
           </section>
         ))}
         {study.sources.length > 0 && (
