@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import { Background, DigestFeature, Flagships, MoreWork } from '@/components/Portfolio';
 
 export default function HomePage() {
@@ -21,10 +21,16 @@ export default function HomePage() {
             AI system gets something wrong, I want the next engineer to be able to trace the decision and
             replay it.
           </p>
-          <Link className="text-action" href="/about/">
-            My background
-            <ArrowRight aria-hidden="true" size={15} />
-          </Link>
+          <div className="intro-actions">
+            <Link className="text-action" href="/projects/#tour">
+              <Play aria-hidden="true" size={14} />
+              Watch the 40-second tour
+            </Link>
+            <Link className="text-action" href="/about/">
+              My background
+              <ArrowRight aria-hidden="true" size={15} />
+            </Link>
+          </div>
         </div>
       </header>
       <section id="projects" className="selected-work" aria-labelledby="selected-title">

@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-For the production export, run `npm run build` and serve the resulting `out/` folder with `python3 -m http.server 8000 --directory out`. Open [localhost:8000](http://localhost:8000/). The labs under `public/labs/` are standalone documents and also work from the static export.
+For the production export, run `npm run build` and serve the resulting `out/` folder with `python3 scripts/serve-preview.py --port 8000`. Open [localhost:8000](http://localhost:8000/). The labs under `public/labs/` are standalone documents and also work from the static export.
 
 ## Where to look
 

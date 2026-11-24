@@ -73,7 +73,7 @@ export const studies: CaseStudy[] = [
       },
       {
         title: 'When the ranker picks the wrong receipt',
-        body: 'Two Counterform receipts settle for the same amount. The weighted ranker favors the later bank entry. The proof-run receipt identifies the earlier one. The evaluation keeps this miss visible, and the operator can record the correct match.',
+        body: 'Two Counterform charges settle for the same amount. The weighted ranker favors the later bank entry. The proof-run receipt identifies the earlier one. The evaluation keeps this miss visible, and the operator can record the correct match.',
       },
       {
         title: 'Keep the operator’s decision',

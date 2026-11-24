@@ -1,0 +1,23 @@
+Aladdin Ali | Four engineering labs
+40-second walkthrough
+
+Frame Triage
+00:00  Drag across the two renders. The candidate is missing the ceramic ring.
+00:03  A small camera shift triggers the learned detector.
+00:06  The pixel baseline passes the same pair. The learned detector raised a false alarm.
+
+Photon Trail
+00:10  Two Counterform charges are $54.70. The top-ranked match is wrong.
+00:12  The receipt points to October 27. Confirm entry NL-103.
+00:15  Replaying the import changes zero ledger entries. The confirmed match survives.
+
+Cosmic Digest
+00:20  Reverse the order of the two reports shown to Qwen.
+00:22  The quote check accepts the release notice. The answer misses the later correction.
+00:26  The operations report puts the north camera on hold.
+
+LMMS-Nebula
+00:30  Raise the first Glass lead note from D5 to F5.
+00:33  [Music] The browser plays the edited four-track score.
+
+Footage recorded from the four portfolio labs. The music is the LMMS Session browser synthesizer rendering the edited score Low Tide Relay. LMMS is the upstream workstation.
