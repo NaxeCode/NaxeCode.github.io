@@ -144,12 +144,22 @@ export const studies: CaseStudy[] = [
     ],
     sources: [
       {
-        title: 'Raw local model run',
+        title: 'Correction trial · 16 model responses',
+        href: 'https://github.com/NaxeCode/Cosmic-Digest/blob/aa546a119fee1e7a3a550c215333a23f8663e405/tools/BriefingLab/model-eval/correction-run.json',
+        detail: 'Read both responses for each of the eight new packets',
+      },
+      {
+        title: 'Correction trial · frozen protocol',
+        href: 'https://github.com/NaxeCode/Cosmic-Digest/blob/857c7fe28db5af81cbaf76b73cef7df820e656e5/tools/BriefingLab/model-eval/CORRECTIONS.md',
+        detail: 'Inspect the later-notice rule and scoring criteria committed before inference',
+      },
+      {
+        title: 'Source-order trial · 24 model responses',
         href: 'https://github.com/NaxeCode/Cosmic-Digest/blob/c8faaee8f4ab70c26eed8aaf26e74b1aa2956759/tools/BriefingLab/model-eval/run.json',
         detail: 'All 24 recorded model responses and the generation settings',
       },
       {
-        title: 'Frozen protocol',
+        title: 'Source-order trial · frozen protocol',
         href: 'https://github.com/NaxeCode/Cosmic-Digest/blob/86494f41819498ab173edbdd73c119c51cb4eb57/tools/BriefingLab/model-eval/PROTOCOL.md',
         detail: 'Order comparison, withheld labels and the pre-inference scoring rule',
       },
