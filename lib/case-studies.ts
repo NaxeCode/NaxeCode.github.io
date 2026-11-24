@@ -254,7 +254,7 @@ export const studies: CaseStudy[] = [
       { title: 'Perturb a steady spin', body: 'Set the spin rate and off-axis nudge. Switch the visible launch while all three rotors advance together. Orbit the camera or step through the flip to compare the three trajectories.' },
       { title: 'Check the physics', body: 'Euler’s torque-free equations evolve the angular velocity in the body frame. A quaternion carries the orientation into the world frame. For a 6 rad/s launch with a 4% nudge, the middle axis crossed 90 degrees at about 1.33 seconds. The peak relative world angular momentum error over 24 simulated seconds was 3.84 × 10⁻⁹ or less at a 1/240-second step.' },
     ],
-    sources: [{ title: 'Integrator and validation', href: 'https://github.com/NaxeCode/rigid-body-lab/tree/38f39033c2d77597321a11b86066d2d30e9d75b1', detail: 'Inspect the step size, conservation checks and assumptions behind the rotor' }],
+    sources: [{ title: 'Integrator and validation', href: 'https://github.com/NaxeCode/rigid-body-lab/tree/340ed9df1cdfa05e18f95c77960d4b575cd06a0e', detail: 'Inspect the step size, conservation checks and assumptions behind the rotor' }],
   },
   {
     slug: 'schedule-rehearsal',
@@ -270,7 +270,7 @@ export const studies: CaseStudy[] = [
       { title: 'Preserve the promise', body: 'One job promises a local wall time. Another promises a fixed UTC instant. Migrating them with the same rule can silently change the hour someone receives a result. Compare the old and new IANA data against both intents.' },
       { title: 'Restart after a committed change', body: 'The runner interrupts an approved migration after a trigger change is persisted. A fresh process reopens the store, checks what has already happened and continues. Already-fired work and later edits are checked separately.' },
     ],
-    sources: [{ title: 'Scheduler, manifests and measured runs', href: 'https://github.com/NaxeCode/schedule-rehearsal/tree/0e67e236480dee7a17da6de6d77fb877c7a64028', detail: 'Reproduce the migration against a local persistent Quartz job store' }],
+    sources: [{ title: 'Scheduler, manifests and measured runs', href: 'https://github.com/NaxeCode/schedule-rehearsal/tree/6c68571e1e48670403a3624817ad46f13616b07b', detail: 'Reproduce the migration against a local persistent Quartz job store' }],
   },
 ];
 
