@@ -1,3 +1,4 @@
+import { PortfolioTour } from '@/components/PortfolioTour';
 import { DigestFeature, Flagships, MoreWork, ProjectArchive } from '@/components/Portfolio';
 
 export const metadata = {
@@ -21,6 +22,7 @@ export default function ProjectsPage() {
         <Flagships />
         <DigestFeature />
       </section>
+      <PortfolioTour />
       <MoreWork />
       <ProjectArchive />
     </div>

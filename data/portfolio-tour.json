@@ -1,0 +1,33 @@
+[
+  {
+    "project": "Frame Triage", "slug": "frame-triage", "start": 0,
+    "cues": [
+      [0, 3.9, "Drag across the two renders. The candidate is missing the ceramic ring."],
+      [3.9, 6.5, "A small camera shift triggers the learned detector."],
+      [6.5, 10, "The pixel baseline passes the same pair. The learned detector raised a false alarm."]
+    ]
+  },
+  {
+    "project": "Photon Trail", "slug": "photon-trail", "start": 10,
+    "cues": [
+      [10, 12.6, "Two Counterform charges are $54.70. The top-ranked match is wrong."],
+      [12.6, 15.1, "The receipt points to October 27. Confirm entry NL-103."],
+      [15.1, 20, "Replaying the import changes zero ledger entries. The confirmed match survives."]
+    ]
+  },
+  {
+    "project": "Cosmic Digest", "slug": "cosmic-digest", "start": 20,
+    "cues": [
+      [20, 22.1, "Reverse the order of the two reports shown to Qwen."],
+      [22.1, 26.5, "The quote check accepts the release notice. The answer misses the later correction."],
+      [26.5, 30, "The operations report puts the north camera on hold."]
+    ]
+  },
+  {
+    "project": "LMMS-Nebula", "slug": "lmms-nebula", "start": 30,
+    "cues": [
+      [30, 33.5, "Raise the first Glass lead note from D5 to F5."],
+      [33.5, 40, "[Music] The browser plays the edited four-track score."]
+    ]
+  }
+]
