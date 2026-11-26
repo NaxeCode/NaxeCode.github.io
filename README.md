@@ -20,7 +20,7 @@ For the production export, run `npm run build` and serve the resulting `out/` fo
 - The [project catalog](data/projects.json) retains the existing project URLs.
 - The [Naxe generator](https://github.com/NaxeCode/NaxeCode/tree/main/.github/brand) supplies the static sky, mark and palette. The site self-hosts Geist and Geist Mono.
 
-The Pages workflow publishes changes merged into the default branch. [Live portfolio](https://naxe.dev/) · [MIT license](LICENSE)
+The Pages workflow publishes changes merged into the default branch. [Live portfolio](https://naxe.dev/?utm_source=github&utm_medium=readme&utm_campaign=portfolio&utm_content=portfolio) · [MIT license](LICENSE)
 
 To refresh a lab, build its original project, then run `node scripts/mirror-lab.mjs LAB EXPORT_DIRECTORY PUBLIC_SOURCE_URL UPSTREAM_LICENSE_FILE`. The script copies the reviewed files, adds the return navigation, preserves the upstream license and records SHA-256 hashes of the original files in each lab’s `provenance.json`.
 
@@ -38,6 +38,7 @@ The Next.js pages and all seven standalone labs use the same collector. The site
 | `lab_interaction` | The visitor first used a measured control on this lab visit. |
 | `github_click` / `source_click` | The visitor followed a GitHub link or an external lab or case-study reference. |
 | `contact_click` | The visitor chose email, LinkedIn or X. |
+| `project_site_view` / `demo_interaction` | Opened an explicitly marked public project site or first used its measured control. Watchlist covers the anonymous seeded demo, Cosmic UI the public showcase, and ActivityMux the release landing page. |
 | `tour_start` | The tour video began playing, counted once per page visit. |
 
 Events from a project or lab carry its `project_slug`. For example, the LMMS Session lab reports `lmms-nebula`, matching the case study. `action` identifies a fixed choice such as `compare_detectors` or `email`. Counts cover visitors who opted in and whose browsers delivered the tag.

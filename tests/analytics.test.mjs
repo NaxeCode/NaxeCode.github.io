@@ -11,13 +11,17 @@ before(async () => {
   server = spawn('python3', ['scripts/serve-preview.py', '--no-browser'], { stdio: ['ignore', 'pipe', 'ignore'] });
   const [message] = await once(server.stdout, 'data');
   local = new URL(String(message).match(/http:\/\/\S+/)[0]).origin;
-  browser = await chromium.launch({ channel: process.env.PORTFOLIO_CHROME_CHANNEL || undefined });
+  browser = await chromium.launch({ channel: process.env.PORTFOLIO_CHROME_CHANNEL || undefined, executablePath: process.env.PORTFOLIO_CHROMIUM_BIN });
 });
 after(async () => { await browser?.close(); server?.kill(); });
 
-async function visit(t, { signals = {}, javaScriptEnabled = true, blockTag = false, tagFile } = {}) {
+async function visit(t, { signals = {}, javaScriptEnabled = true, blockTag = false, tagFile, fixtures = {} } = {}) {
   const context = await browser.newContext({ javaScriptEnabled });
-  t.after(() => context.close());
+  t.after(async () => {
+    await context.setOffline(true);
+    await context.unrouteAll({ behavior: 'wait' });
+    await context.close();
+  });
   const page = await context.newPage();
   page.setDefaultTimeout(5000);
   const calls = [], google = [], hits = [];
@@ -29,6 +33,9 @@ async function visit(t, { signals = {}, javaScriptEnabled = true, blockTag = fal
   }, signals);
   await context.route('**/*', async route => {
     const url = new URL(route.request().url());
+    if (Object.hasOwn(fixtures, url.origin + url.pathname)) {
+      return route.fulfill({ contentType: 'text/html', body: fixtures[url.origin + url.pathname] });
+    }
     if (['naxe.dev', 'naxecode.github.io', 'preview.example', 'localhost'].includes(url.hostname)) {
       const response = await route.fetch({ url: local + url.pathname + url.search });
       return route.fulfill({ response });
@@ -287,3 +294,36 @@ test('the collector restricts networking to the tag and GA collection endpoints'
   });
   assert.ok(google.every(url => !url.includes('DO_NOT_COLLECT')));
 });
+
+for (const [entry, slug, collector, id, action] of [
+  ['https://watchlist.naxe.dev/demo', 'stargazers-cosmic-watchlist', '/demo/analytics-collector.html', 'G-BTVMPMSKCE', 'apply_filter'],
+  ['https://stargazers-stella.github.io/cosmic-ui/', 'cosmic-ui', '/cosmic-ui/analytics-collector.html', 'G-7W6TE9X0MB', 'compare_themes'],
+  ['https://naxe.dev/activitymux/', 'activitymux', '/analytics/collector.html', 'G-BPXEKM7YBC', 'open_release'],
+]) {
+  test('measures only the opted-in public ' + slug + ' surface', async t => {
+    const origin = new URL(entry).origin;
+    const fixture = `<label data-analytics-preference data-public-project="${slug}" hidden><input type=checkbox>Allow Google Analytics</label>
+      <button data-demo-action="${action}">Try demonstration</button>
+      <script defer src="https://naxe.dev/analytics/portfolio.js"></script>`;
+    const receiver = `<script defer src="https://naxe.dev/analytics/collector.js" data-measurement-id="${id}"></script>`;
+    const { page, google, wait, calls } = await visit(t, { fixtures: {
+      [entry]: fixture, [origin + collector]: receiver,
+      [origin + '/dashboard/']: fixture, [origin + '/share/private-profile/']: fixture,
+    } });
+    await page.goto(entry + campaign + '&q=DO_NOT_COLLECT');
+    await page.waitForLoadState('networkidle');
+    assert.equal(google.length, 0);
+    await consent(page).check();
+    const opened = await wait('project_site_view');
+    assert.equal(opened.project_slug, slug);
+    assert.equal(opened.campaign_medium, 'resume_pdf');
+    assert.equal(new URL(google[0]).searchParams.get('id'), id);
+    await page.getByRole('button', { name: 'Try demonstration' }).click();
+    assert.equal((await wait('demo_interaction')).action, action);
+    assert.doesNotMatch(JSON.stringify(calls), /DO_NOT_COLLECT/);
+    for (const path of ['/dashboard/', '/share/private-profile/']) {
+      await page.goto(origin + path, { waitUntil: 'networkidle' });
+      assert.equal(google.length, 1);
+    }
+  });
+}

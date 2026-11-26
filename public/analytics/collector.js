@@ -1,12 +1,14 @@
 // Keep Google's document listeners away from portfolio links, inputs and uploads.
 (() => {
   'use strict';
-  if (parent === window || !['https://naxe.dev', 'https://naxecode.github.io'].includes(location.origin)) return;
+  if (parent === window || !['https://naxe.dev', 'https://naxecode.github.io',
+    'https://watchlist.naxe.dev', 'https://stargazers-stella.github.io'].includes(location.origin)) return;
   try {
     if (parent.location.origin !== location.origin || !frameElement?.hasAttribute('data-portfolio-collector')) return;
   } catch { return; }
 
   const id = document.currentScript.dataset.measurementId;
+  const cookiePath = { 'watchlist.naxe.dev': '/demo', 'stargazers-stella.github.io': '/cosmic-ui' }[location.hostname] || '/';
   const disableKey = 'ga-disable-' + id;
   let initialized = false;
   window.dataLayer = [];
@@ -23,7 +25,7 @@
     }
     if (name === 'page_view') {
       const settings = { ...fields, send_page_view: false, allow_google_signals: false,
-        allow_ad_personalization_signals: false, cookie_domain: location.hostname };
+        allow_ad_personalization_signals: false, cookie_domain: location.hostname, cookie_path: cookiePath };
       gtag('config', id, settings);
     }
     gtag('event', name, { ...fields, send_to: id });

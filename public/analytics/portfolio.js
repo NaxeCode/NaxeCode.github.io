@@ -1,7 +1,15 @@
 // Runs in the portfolio and each independently exported lab. Only the collector loads Google.
 (() => {
   'use strict';
-  if (window.top !== window || !['https://naxe.dev', 'https://naxecode.github.io'].includes(location.origin)) return;
+  const portfolio = ['https://naxe.dev', 'https://naxecode.github.io'].includes(location.origin);
+  const publicDemos = {
+    'https://watchlist.naxe.dev': { path: '/demo/', project: 'stargazers-cosmic-watchlist', action: 'apply_filter',
+      collector: '/demo/analytics-collector.html', cookies: '/demo' },
+    'https://stargazers-stella.github.io': { path: '/cosmic-ui/', project: 'cosmic-ui', action: 'compare_themes',
+      collector: '/cosmic-ui/analytics-collector.html', cookies: '/cosmic-ui' },
+  };
+  const demo = publicDemos[location.origin];
+  if (window.top !== window || (!portfolio && !demo)) return;
 
   const consentKey = 'portfolio-analytics-consent';
   const cohortKey = 'portfolio-campaign-v1';
@@ -15,7 +23,7 @@
   const media = ['resume_pdf', 'profile', 'readme', 'repo_homepage', 'post', 'direct_message', 'email', 'qr'];
   const campaigns = ['applied_ai', 'dotnet', 'portfolio'];
   const contentLabels = ['profile', 'readme', 'repo_homepage', 'portfolio', 'tour', 'v1_cover', 'v1_portfolio',
-    ...Array.from({ length: 7 }, (_, i) => 'v1_project' + (i + 1)), ...projectSlugs, ...Object.keys(labs)];
+    ...Array.from({ length: 7 }, (_, i) => 'v1_project' + (i + 1)), ...projectSlugs, ...Object.keys(labs), 'cosmic-ui'];
   const controls = {
     'frame-triage': [['click', '#baseline, #learned', 'compare_detectors'], ['change', '#scene', 'change_scene']],
     'photon-trail': [['click', '.pt-import', 'apply_import'], ['click', '.pt-interrupt', 'interrupt_import']],
@@ -31,6 +39,8 @@
 
   function routeInfo(pathname = location.pathname) {
     const path = pathname.replace(/\/index\.html$/, '/').replace(/\/?$/, '/');
+    if (demo) return path === demo.path ? { ...demo, publicDemo: true } : null;
+    if (path === '/activitymux/') return { path, project: 'activitymux', publicDemo: true, action: 'open_release' };
     if (['/', '/about/', '/contact/', '/projects/'].includes(path)) return { path };
     const [, group, slug, tail] = path.split('/');
     if (tail !== '' || path !== '/' + group + '/' + slug + '/') return null;
@@ -117,7 +127,9 @@
   }
 
   function refresh() {
-    const next = routeInfo();
+    let next = routeInfo();
+    // Only a marked public demo may initialize the tag. Watchlist omits the marker for signed-in visitors.
+    if (next?.publicDemo && !document.querySelector('[data-public-project="' + next.project + '"]')) next = null;
     const allowed = granted();
     for (const label of document.querySelectorAll('[data-analytics-preference]')) {
       label.hidden = !next || !browserAllowsAnalytics();
@@ -141,11 +153,12 @@
       frame.title = 'Portfolio analytics';
       frame.referrerPolicy = 'no-referrer';
       frame.addEventListener('load', flush);
-      frame.src = '/analytics/collector.html';
+      frame.src = route.collector || '/analytics/collector.html';
       document.body.append(frame);
     }
     emit('page_view');
-    if (route.lab) emit('lab_open');
+    if (route.publicDemo) emit('project_site_view');
+    else if (route.lab) emit('lab_open');
     else if (route.project) emit('case_study_view');
   }
 
@@ -157,8 +170,9 @@
         for (const pair of document.cookie.split(';')) {
           const name = pair.trim().split('=')[0];
           if (name !== '_ga' && !/^_ga_[A-Z0-9]+$/.test(name)) continue;
-          document.cookie = name + '=; Max-Age=0; Path=/';
-          document.cookie = name + '=; Max-Age=0; Path=/; Domain=' + location.hostname;
+          const remove = name + '=; Max-Age=0; Path=' + (demo?.cookies || '/');
+          document.cookie = remove;
+          document.cookie = remove + '; Domain=' + location.hostname;
         }
       }
     } catch { /* Unavailable consent storage leaves tracking off. */ }
@@ -173,6 +187,10 @@
       return;
     }
     if (!route || !granted() || routeInfo()?.path !== route.path) return;
+    if (!usedLab && route.publicDemo && event.type === 'click' && target.closest('[data-demo-action="' + route.action + '"]')) {
+      usedLab = true;
+      emit('demo_interaction', route.action);
+    }
     if (!usedLab && route.lab) {
       const match = controls[route.lab].find(([type, selector]) => type === event.type && target.closest(selector));
       if (match) { usedLab = true; emit('lab_interaction', match[2]); }
@@ -196,6 +214,7 @@
 
   for (const type of ['click', 'auxclick', 'change', 'play']) document.addEventListener(type, interaction, true);
   window.addEventListener('portfolio:navigation', refresh);
+  window.addEventListener('portfolio:leave', stop);
   window.addEventListener('pageshow', event => {
     if (event.persisted) route = undefined;
     refresh();
