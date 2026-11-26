@@ -1,6 +1,6 @@
 {
   "upstream": "https://github.com/NaxeCode/schedule-rehearsal/tree/6c68571e1e48670403a3624817ad46f13616b07b",
-  "modifications": "The portfolio adds navigation and its stylesheet to index.html.",
+  "modifications": "The portfolio adds navigation, its stylesheet and optional analytics to index.html.",
   "license": "UPSTREAM-LICENSE.txt",
   "sourceSha256": {
     "index.html": "17defac6a549f80598e0c9cc077f58158ced46c635c624cdf6b258af06371738",

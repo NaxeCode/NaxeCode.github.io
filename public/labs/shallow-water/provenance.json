@@ -1,6 +1,6 @@
 {
   "upstream": "https://github.com/NaxeCode/shallow-water-lab/tree/b0cb930a4d99f7f3a805e91e4bf0ff81a821ea09",
-  "modifications": "The portfolio adds navigation and its stylesheet to index.html.",
+  "modifications": "The portfolio adds navigation, its stylesheet and optional analytics to index.html.",
   "license": "UPSTREAM-LICENSE.txt",
   "sourceSha256": {
     "index.html": "8eafe78c4d4522aafbd853ca12e90cfef3a8f0336fe68c3ec4d9946816f760a8",

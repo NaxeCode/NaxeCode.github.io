@@ -89,7 +89,8 @@ try {
         throw new Error(`Unexpected source document in ${basename(directory)}`);
       }
       output = html
-        .replace(/<\/head>/i, '<link rel="stylesheet" href="../portfolio-nav.css"></head>')
+        .replace(/<\/head>/i, '<link rel="stylesheet" href="../portfolio-nav.css"><script defer src="/analytics/portfolio.js"></script></head>')
+        .replace(/<\/body>/i, '<label hidden data-analytics-preference=""><input type="checkbox"> Allow Google Analytics</label></body>')
         .replace(/<body(?:\s[^>]*)?>/i, (tag) => tag + nav);
     }
     await mkdir(dirname(join(next, name)), { recursive: true });
@@ -102,7 +103,7 @@ try {
     JSON.stringify(
       {
         upstream,
-        modifications: 'The portfolio adds navigation and its stylesheet to index.html.',
+        modifications: 'The portfolio adds navigation, its stylesheet and optional analytics to index.html.',
         license: 'UPSTREAM-LICENSE.txt',
         sourceSha256: records,
       },

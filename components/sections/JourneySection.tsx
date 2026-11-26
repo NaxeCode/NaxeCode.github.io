@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import type { JourneyItem } from '@/types/journey';
 import type { Copy } from '@/types/copy';
 import { useInView } from '@/hooks/useInView';
-import { useSectionTracking } from '@/hooks/useSectionTracking';
 import { staggerContainer, staggerItem } from '@/lib/motion';
 
 type Props = {
@@ -14,7 +13,6 @@ type Props = {
 
 export function JourneySection({ journey, copy }: Props) {
   const { ref, inView } = useInView({ threshold: 0.1 });
-  useSectionTracking({ sectionId: 'journey', threshold: 0.5 });
 
   return (
     <section id="journey" className="scroll-mt-20 space-y-10" tabIndex={-1}>

@@ -1,6 +1,6 @@
 {
   "upstream": "https://github.com/NaxeCode/rigid-body-lab/tree/340ed9df1cdfa05e18f95c77960d4b575cd06a0e",
-  "modifications": "The portfolio adds navigation and its stylesheet to index.html.",
+  "modifications": "The portfolio adds navigation, its stylesheet and optional analytics to index.html.",
   "license": "UPSTREAM-LICENSE.txt",
   "sourceSha256": {
     "index.html": "3f52b005f2f77da12cc00dd69b89026161e91d15a9c5a5db0211002735f9b5a5",

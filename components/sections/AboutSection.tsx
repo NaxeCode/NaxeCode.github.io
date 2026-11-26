@@ -6,7 +6,6 @@ import type { Profile } from '@/types/profile';
 import type { Copy } from '@/types/copy';
 import { OutboundLink } from '@/components/TrackedLink';
 import { useInView } from '@/hooks/useInView';
-import { useSectionTracking } from '@/hooks/useSectionTracking';
 import { fadeInUp } from '@/lib/motion';
 
 type Props = {
@@ -16,7 +15,6 @@ type Props = {
 
 export function AboutSection({ profile, copy }: Props) {
   const { ref, inView } = useInView({ threshold: 0.2 });
-  useSectionTracking({ sectionId: 'about', threshold: 0.5 });
 
   return (
     <motion.section

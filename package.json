@@ -6,11 +6,11 @@
     "dev": "next dev",
     "build": "node -r ./scripts/rename-fallback.cjs node_modules/next/dist/bin/next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "npm run build && node --test tests/analytics.test.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
-    "@next/third-parties": "^16.1.1",
     "@stargazers-stella/cosmic-ui": "^0.1.4",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",
@@ -30,6 +30,7 @@
     "autoprefixer": "^10.4.22",
     "eslint": "^9",
     "eslint-config-next": "15.1.3",
+    "playwright-core": "1.65.1",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.7",
