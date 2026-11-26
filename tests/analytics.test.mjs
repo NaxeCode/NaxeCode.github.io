@@ -327,3 +327,22 @@ for (const [entry, slug, collector, id, action] of [
     }
   });
 }
+
+test('eligible activity at minute 29 keeps the cohort at minute 31, while an idle cohort expires', async t => {
+  const start = new Date('2026-11-01T12:00:00Z');
+  const { page, wait, event } = await visit(t);
+  await page.clock.setFixedTime(start);
+  await page.goto(host + '/labs/shallow-water/' + campaign);
+  await consent(page).check();
+  await wait('lab_open');
+  await page.clock.setFixedTime(new Date(start.getTime() + 29 * 60_000));
+  await page.locator('#step').click();
+  await wait('lab_interaction');
+  await page.clock.setFixedTime(new Date(start.getTime() + 31 * 60_000));
+  await page.getByRole('link', { name: 'Project notes' }).click();
+  assert.equal((await wait('case_study_view')).campaign_source, 'ats');
+  await page.clock.setFixedTime(new Date(start.getTime() + 62 * 60_000));
+  await page.locator('a.lab-link').click();
+  assert.equal((await wait('lab_open', 2)).campaign_source, undefined);
+  assert.equal(event('page_view').length, 3);
+});

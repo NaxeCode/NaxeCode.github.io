@@ -24,7 +24,8 @@
       gtag('js', new Date());
     }
     if (name === 'page_view') {
-      const settings = { ...fields, send_page_view: false, allow_google_signals: false,
+      const { page_location, page_referrer, page_title } = fields;
+      const settings = { page_location, page_referrer, page_title, send_page_view: false, allow_google_signals: false,
         allow_ad_personalization_signals: false, cookie_domain: location.hostname, cookie_path: cookiePath };
       gtag('config', id, settings);
     }

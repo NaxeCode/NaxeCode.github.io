@@ -64,30 +64,45 @@
       campaigns.includes(data.campaign_name) && contentLabels.includes(data.campaign_content);
   }
 
-  function campaign() {
+  const campaignTimeout = 30 * 60_000;
+  let activeCohort;
+  function saveCohort() {
+    try {
+      if (activeCohort) sessionStorage.setItem(cohortKey, JSON.stringify(activeCohort));
+      else sessionStorage.removeItem(cohortKey);
+    } catch { /* Keep the approved cohort in this document if storage is unavailable. */ }
+  }
+
+  function renewCampaign() {
+    if (!activeCohort) return;
+    const now = Date.now();
+    if (activeCohort.expires > now) activeCohort.expires = now + campaignTimeout;
+    else activeCohort = undefined;
+    saveCohort();
+  }
+
+  function loadCampaign() {
     const params = new URLSearchParams(location.search);
     const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
-    const supplied = keys.some(key => params.has(key));
     let data;
-    if (supplied && keys.every(key => params.getAll(key).length === 1)) {
-      data = { campaign_source: params.get('utm_source'), campaign_medium: params.get('utm_medium'),
-        campaign_name: params.get('utm_campaign'), campaign_content: params.get('utm_content') };
+    if (keys.some(key => params.has(key))) {
+      if (keys.every(key => params.getAll(key).length === 1)) {
+        data = { campaign_source: params.get('utm_source'), campaign_medium: params.get('utm_medium'),
+          campaign_name: params.get('utm_campaign'), campaign_content: params.get('utm_content') };
+      }
+    } else {
+      let saved = activeCohort;
+      try { saved = JSON.parse(sessionStorage.getItem(cohortKey)); } catch { /* Use in-memory state. */ }
+      if (saved?.expires > Date.now()) data = saved.data;
     }
-    try {
-      if (!supplied) {
-        const saved = JSON.parse(sessionStorage.getItem(cohortKey));
-        if (saved?.expires > Date.now()) data = saved.data;
-      }
-      if (validCohort(data)) {
-        // Copy only these fields, including when reading browser storage.
-        const { campaign_source, campaign_medium, campaign_name, campaign_content } = data;
-        const clean = { campaign_source, campaign_medium, campaign_name, campaign_content };
-        sessionStorage.setItem(cohortKey, JSON.stringify({ data: clean, expires: Date.now() + 30 * 60_000 }));
-        return clean;
-      }
-      sessionStorage.removeItem(cohortKey);
-    } catch { /* An approved landing can still be measured with session storage disabled. */ }
-    return supplied && validCohort(data) ? data : {};
+    activeCohort = undefined;
+    if (validCohort(data)) {
+      // Copy only the four documented fields, including when reading browser storage.
+      const { campaign_source, campaign_medium, campaign_name, campaign_content } = data;
+      activeCohort = { data: { campaign_source, campaign_medium, campaign_name, campaign_content },
+        expires: Date.now() + campaignTimeout };
+    }
+    saveCohort();
   }
 
   function referringPage() {
@@ -112,7 +127,7 @@
   }
   function emit(name, action) {
     if (!granted() || !route || routeInfo()?.path !== route.path) return;
-    const params = { ...fields };
+    const params = { ...fields, ...activeCohort?.data };
     if (route.project) params.project_slug = route.project;
     if (action) params.action = action;
     pending.push([name, params]);
@@ -122,7 +137,7 @@
     // Disable transport before the frame unloads (including automatic engagement events).
     frame?.contentWindow?.portfolioStop?.();
     frame?.remove();
-    frame = route = fields = previousPath = undefined;
+    frame = route = fields = previousPath = activeCohort = undefined;
     pending = [];
   }
 
@@ -139,9 +154,9 @@
     if (next.path === route?.path) return;
     previousPath = route?.path;
     route = next;
+    loadCampaign();
     fields = { page_location: location.origin + route.path, page_referrer: previousPath ? location.origin + previousPath : referringPage(),
-      page_title: route.project || ({ '/': 'Portfolio', '/projects/': 'Engineering work', '/contact/': 'Contact', '/about/': 'About' })[route.path],
-      ...campaign() };
+      page_title: route.project || ({ '/': 'Portfolio', '/projects/': 'Engineering work', '/contact/': 'Contact', '/about/': 'About' })[route.path] };
     usedLab = playedTour = false;
     if (!frame) {
       frame = document.createElement('iframe');
@@ -187,6 +202,7 @@
       return;
     }
     if (!route || !granted() || routeInfo()?.path !== route.path) return;
+    renewCampaign();
     if (!usedLab && route.publicDemo && event.type === 'click' && target.closest('[data-demo-action="' + route.action + '"]')) {
       usedLab = true;
       emit('demo_interaction', route.action);
