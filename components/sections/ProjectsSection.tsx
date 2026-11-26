@@ -8,7 +8,6 @@ import { ProjectLink, OutboundLink } from '@/components/TrackedLink';
 import { IdentityRow } from '@/components/IdentityRow';
 import { getBrand } from '@/lib/brand';
 import { useInView } from '@/hooks/useInView';
-import { useSectionTracking } from '@/hooks/useSectionTracking';
 import { staggerContainer, staggerItem } from '@/lib/motion';
 
 type Props = {
@@ -18,7 +17,6 @@ type Props = {
 
 export function ProjectsSection({ projects, copy }: Props) {
   const { ref, inView } = useInView({ threshold: 0.05 });
-  useSectionTracking({ sectionId: 'projects', threshold: 0.5 });
 
   if (!projects || projects.length === 0) return null;
 

@@ -6,6 +6,9 @@ export function Footer() {
   return (
     <footer className="portfolio-shell site-footer">
       <span>© {new Date().getFullYear()} Aladdin Ali</span>
+      <label hidden data-analytics-preference="">
+        <input type="checkbox" /> Allow Google Analytics
+      </label>
       <nav aria-label="Footer navigation">
         <a href={contact.github}>GitHub</a>
         <a href={contact.linkedin}>LinkedIn</a>

@@ -1,6 +1,6 @@
 {
   "upstream": "https://github.com/NaxeCode/Minnen/tree/1f1b75e70b8cfedd6195cc4465a2993c59df33dc/tools/frame-triage",
-  "modifications": "The portfolio adds navigation and its stylesheet to index.html.",
+  "modifications": "The portfolio adds navigation, its stylesheet and optional analytics to index.html.",
   "license": "UPSTREAM-LICENSE.txt",
   "sourceSha256": {
     "index.html": "6cfa5fb2cc938d381b848905f14e78f4a5fcd16b9b0e85b8601c0d4f899cde2a",

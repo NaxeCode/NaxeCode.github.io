@@ -1,6 +1,6 @@
 {
   "upstream": "https://github.com/NaxeCode/Cosmic-Digest/tree/51bd39cb4c27e08ef0ccd3442483399e5acf9f05/tools/BriefingLab",
-  "modifications": "The portfolio adds navigation and its stylesheet to index.html.",
+  "modifications": "The portfolio adds navigation, its stylesheet and optional analytics to index.html.",
   "license": "UPSTREAM-LICENSE.txt",
   "sourceSha256": {
     "index.html": "19c59dd5f9fb7d4b30e158267b0a34c9e69fefdfa968674146ed3be70754cc54",

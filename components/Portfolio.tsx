@@ -176,7 +176,7 @@ export function MoreWork() {
           </a>
         </div>
         <div>
-          <h3>Kruu</h3>
+          <h3 id="kruu">Kruu</h3>
           <p>
             I integrated work-order extraction and scheduling for a Miami hackathon team. Faye’s demo
             follows a fictional outdoor shift.

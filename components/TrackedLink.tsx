@@ -1,9 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { trackOutboundLink, trackProjectClick } from "@/lib/analytics";
-import { withOutboundUtm } from "@/lib/utm";
 
 type BaseProps = {
   className?: string;
@@ -23,12 +19,11 @@ type OutboundLinkProps = BaseProps & {
   rel?: string;
 };
 
-export function ProjectLink({ href, slug, title, className, children }: ProjectLinkProps) {
+export function ProjectLink({ href, className, children }: ProjectLinkProps) {
   return (
     <Link
       href={href}
       className={className}
-      onClick={() => trackProjectClick(slug, title)}
       prefetch={false}
     >
       {children}
@@ -36,15 +31,13 @@ export function ProjectLink({ href, slug, title, className, children }: ProjectL
   );
 }
 
-export function OutboundLink({ href, label, className, target = "_blank", rel = "noreferrer", children }: OutboundLinkProps) {
-  const trackedHref = withOutboundUtm(href, label);
+export function OutboundLink({ href, className, target = "_blank", rel = "noreferrer", children }: OutboundLinkProps) {
   return (
     <a
-      href={trackedHref}
+      href={href}
       target={target}
       rel={rel}
       className={className}
-      onClick={() => trackOutboundLink(href, label)}
     >
       {children}
     </a>

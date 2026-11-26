@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import type { ExperienceItem } from '@/types/experience';
 import type { Copy } from '@/types/copy';
 import { useInView } from '@/hooks/useInView';
-import { useSectionTracking } from '@/hooks/useSectionTracking';
 import { staggerContainer, staggerItem } from '@/lib/motion';
 
 type Props = {
@@ -15,7 +14,6 @@ type Props = {
 
 export function ExperienceSection({ experience, copy }: Props) {
   const { ref, inView } = useInView({ threshold: 0.1 });
-  useSectionTracking({ sectionId: 'experience', threshold: 0.5 });
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const maxVisibleBullets = 3;
   const maxBulletChars = 260;
